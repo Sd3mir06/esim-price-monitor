@@ -204,6 +204,14 @@ def parse_airalo(slug):
                 po = rz(p["price"])
                 if not isinstance(po, dict):
                     continue
+                # CURRENCY GUARD: Airalo renders prices in the geo-IP currency.
+                # Only accept USD — otherwise we'd record a non-USD amount as USD
+                # (e.g. from a non-US runner). If nothing is USD the provider
+                # returns 0 rows -> carry-forward keeps the last good USD data.
+                cur = rz(po.get("currency"))
+                code = rz(cur.get("code")) if isinstance(cur, dict) else None
+                if code and str(code).upper() != "USD":
+                    continue
                 amt = rz(po.get("amount"))
                 try:
                     price = float(amt)

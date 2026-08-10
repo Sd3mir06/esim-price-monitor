@@ -75,7 +75,13 @@ Bir firmanın sitesi değişirse `collect.py` içindeki ilgili parser'ı burayı
 - **Airalo** — `parse_airalo(slug)`. Ülke listesi `sitemap-v2-countries.xml`'den (`{slug}-esim`).
   Fiyatlar sayfadaki `<script id="__NUXT_DATA__">` JSON dizisinde. Paket dict'leri
   `data / day / is_unlimited / price` alanlarına sahip; `price` bir index-pointer'dır,
-  çözülünce `{amount}` verir. Sesli+SMS paketleri (`voice`/`text` dolu olanlar) atlanır.
+  çözülünce `{amount, currency}` verir. Sesli+SMS paketleri (`voice`/`text` dolu) atlanır.
+  **⚠ PARA BİRİMİ:** Airalo fiyatı, isteği yapan sunucunun **konumuna (geo-IP)** göre farklı
+  para biriminde render eder. Parser'da bir **USD kilidi** var: `price.currency.code != "USD"`
+  ise satır atlanır (bozuk veri girmesin). GitHub Actions runner'ları **ABD IP**'sinden çıktığı
+  için Airalo doğru USD verir — sorun yok. Ama iş ABD-dışı bir sunucuda çalıştırılırsa Airalo
+  0 satır döner ve **carry-forward** son iyi USD veriyi korur. (Diğer 5 firma her IP'den USD
+  verdiği için etkilenmez.) Kısacası: **toplamayı ABD bölgeli bir runner'da çalıştır.**
 - **Holafly** — `parse_holafly(slug)`. Ülke listesi `product-sitemap.xml`'den (`esim-{slug}`).
   Fiyat tablosu: `<th ...>N days</th> ... <span>$ 11.90</span>` deseni.
 - **esim.io** — `parse_esimio(slug)`. Ülke listesi `esim.io/destinations` sayfasındaki
