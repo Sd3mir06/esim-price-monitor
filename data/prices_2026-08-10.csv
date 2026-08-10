@@ -249,14 +249,6 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Breeze,nimble Caribbean Relief,3 GB,,23.5,https://breezesim.com/products/nimble-caribbean-relief-esim
 2026-08-10,Breeze,nimble Caribbean Relief,Unlimited,3,27.5,https://breezesim.com/products/nimble-caribbean-relief-esim
 2026-08-10,Breeze,nimble Caribbean Relief,5 GB,,33.5,https://breezesim.com/products/nimble-caribbean-relief-esim
-2026-08-10,Breeze,Travel Pass Top-up,3 GB,,12.0,https://breezesim.com/products/travelpass_rgb_v2
-2026-08-10,Breeze,Travel Pass Top-up,5 GB,,19.0,https://breezesim.com/products/travelpass_rgb_v2
-2026-08-10,Breeze,Travel Pass Top-up,10 GB,,33.5,https://breezesim.com/products/travelpass_rgb_v2
-2026-08-10,Breeze,10GB - Travel Pass,10 GB,,400.0,https://breezesim.com/products/travelpass_10gb_1m_rgb_x12
-2026-08-10,Breeze,5GB - Travel Pass,5 GB,,300.0,https://breezesim.com/products/travelpass_5gb_1m_rgb_x12
-2026-08-10,Breeze,3GB - Travel Pass,3 GB,,250.0,https://breezesim.com/products/travelpass_3gb_1m_rgb_x12
-2026-08-10,Breeze,2GB - Travel Pass,2 GB,,200.0,https://breezesim.com/products/travelpass_2gb_1m_rgb_x12
-2026-08-10,Breeze,1GB - Travel Pass,1 GB,,150.0,https://breezesim.com/products/travelpass_1gb_1m_rgb_x12
 2026-08-10,Breeze,Palestine,1 GB,,24.49,https://breezesim.com/products/esimg_ps_v2
 2026-08-10,Breeze,Palestine,Unlimited,1,39.99,https://breezesim.com/products/esimg_ps_v2
 2026-08-10,Breeze,Palestine,2 GB,,44.49,https://breezesim.com/products/esimg_ps_v2
@@ -2891,20 +2883,20 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Albania,10 GB,7,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Albania,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Albania,3 GB,15,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Albania,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Albania,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Albania,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Albania,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Algeria,10 GB,30,20.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Algeria,10 GB,7,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Algeria,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Algeria,25 GB,30,38.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Algeria,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Algeria,1000 GB,8,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Algeria,1000 GB,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Algeria,Unlimited,8,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Algeria,Unlimited,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Andorra,10 GB,30,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Andorra,10 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Andorra,1 GB,7,3.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Andorra,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Andorra,1000 GB,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Andorra,Unlimited,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Angola,1 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Angola,3 GB,15,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Argentina,10 GB,30,23.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -2912,14 +2904,14 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Argentina,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Argentina,25 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Argentina,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Argentina,1000 GB,30,78.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Argentina,1000 GB,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Argentina,Unlimited,30,78.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Argentina,Unlimited,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Armenia,10 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Armenia,10 GB,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Armenia,1 GB,7,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Armenia,3 GB,15,16.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Armenia,1000 GB,15,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Armenia,1000 GB,7,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Armenia,Unlimited,15,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Armenia,Unlimited,7,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Aruba,10 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Aruba,10 GB,7,28.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Aruba,1 GB,7,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -2929,17 +2921,17 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Austria,25 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Austria,3 GB,15,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Austria,50 GB,30,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Austria,1000 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Austria,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Austria,Unlimited,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Austria,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Australia,10 GB,30,16.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Australia,10 GB,7,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Australia,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Australia,25 GB,30,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Australia,3 GB,15,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Australia,50 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Australia,1000 GB,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Australia,1000 GB,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Australia,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Australia,Unlimited,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Australia,Unlimited,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Australia,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Azerbaijan,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Azerbaijan,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bahamas,10 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -2951,22 +2943,22 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Bahrain,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bahrain,25 GB,30,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bahrain,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Bahrain,1000 GB,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Bahrain,1000 GB,7,37.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Bahrain,Unlimited,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Bahrain,Unlimited,7,37.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belarus,10 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belarus,10 GB,7,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belarus,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belarus,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Belarus,1000 GB,8,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Belarus,Unlimited,8,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belize,1 GB,7,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belgium,10 GB,30,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belgium,10 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belgium,25 GB,30,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belgium,3 GB,30,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belgium,50 GB,30,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Belgium,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Belgium,1000 GB,30,56.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Belgium,1000 GB,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Belgium,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Belgium,Unlimited,30,56.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Belgium,Unlimited,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Benin,10 GB,30,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Benin,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Benin,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -2975,13 +2967,13 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Bolivia,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bolivia,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bolivia,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Bolivia,1000 GB,15,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Bolivia,1000 GB,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Bolivia,Unlimited,15,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Bolivia,Unlimited,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bosnia And Herzegovina,10 GB,30,20.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bosnia And Herzegovina,10 GB,7,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bosnia And Herzegovina,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Bosnia And Herzegovina,1000 GB,30,68.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Bosnia And Herzegovina,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Bosnia And Herzegovina,Unlimited,30,68.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Bosnia And Herzegovina,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Botswana,10 GB,30,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Botswana,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Botswana,25 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -2991,10 +2983,10 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Brazil,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Brazil,25 GB,30,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Brazil,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Brazil,0.5,2,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Brazil,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Brazil,1000 GB,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Brazil,1000 GB,8,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Brazil,0.5 GB,2,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Brazil,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Brazil,Unlimited,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Brazil,Unlimited,8,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Brunei,10 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Brunei,10 GB,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Brunei,1 GB,7,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3004,9 +2996,9 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Bulgaria,25 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bulgaria,3 GB,15,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Bulgaria,50 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Bulgaria,1000 GB,15,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Bulgaria,1000 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Bulgaria,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Bulgaria,Unlimited,15,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Bulgaria,Unlimited,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Bulgaria,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Burkina Faso,1 GB,7,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Burkina Faso,3 GB,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Burundi,1 GB,7,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3020,39 +3012,39 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Cambodia,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Cambodia,25 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Cambodia,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Cambodia,1000 GB,30,68.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Cambodia,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Cambodia,Unlimited,30,68.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Cambodia,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Cameroon,10 GB,30,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Cameroon,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Cameroon,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Cameroon,1000 GB,8,38.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Cameroon,1000 GB,15,58.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Cameroon,Unlimited,8,38.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Cameroon,Unlimited,15,58.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Canada,10 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Canada,10 GB,7,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Canada,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Canada,25 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Canada,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Canada,50 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Canada,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Canada,1000 GB,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Canada,1000 GB,8,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Canada,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Canada,Unlimited,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Canada,Unlimited,8,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Cape Verde,1 GB,7,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Cape Verde,3 GB,15,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Chile,10 GB,30,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Chile,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Chile,25 GB,30,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Chile,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Chile,1000 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Chile,1000 GB,30,68.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Chile,1000 GB,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Chile,Unlimited,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Chile,Unlimited,30,68.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Chile,Unlimited,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,China,10 GB,30,17.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,China,10 GB,7,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,China,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,China,25 GB,30,33.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,China,3 GB,30,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,China,1000 GB,15,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,China,1000 GB,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,China,1000 GB,8,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,China,Unlimited,15,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,China,Unlimited,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,China,Unlimited,8,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ivory Coast,10 GB,30,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ivory Coast,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ivory Coast,25 GB,30,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3061,8 +3053,8 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Colombia,10 GB,7,23.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Colombia,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Colombia,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Colombia,1000 GB,15,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Colombia,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Colombia,Unlimited,15,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Colombia,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Comoros,10 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Comoros,10 GB,7,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Comoros,1 GB,7,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3074,17 +3066,17 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Costa Rica,10 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Costa Rica,10 GB,7,17.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Costa Rica,25 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Costa Rica,1000 GB,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Costa Rica,1000 GB,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Costa Rica,1000 GB,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Costa Rica,Unlimited,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Costa Rica,Unlimited,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Costa Rica,Unlimited,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Costa Rica,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Costa Rica,3 GB,15,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Croatia,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Croatia,10 GB,7,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Croatia,25 GB,30,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Croatia,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Croatia,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Croatia,1000 GB,7,20.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Croatia,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Croatia,Unlimited,7,20.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Curacao,10 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Curacao,10 GB,7,28.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Curacao,1 GB,7,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3094,24 +3086,24 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Cyprus,25 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Cyprus,3 GB,15,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Cyprus,50 GB,30,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Cyprus,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Cyprus,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Cyprus,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Cyprus,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Cyprus,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Cyprus,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Czechia,10 GB,30,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Czechia,10 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Czechia,25 GB,30,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Czechia,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Czechia,50 GB,30,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Czechia,1000 GB,15,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Czechia,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Czechia,Unlimited,15,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Czechia,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Denmark,10 GB,30,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Denmark,10 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Denmark,25 GB,30,21.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Denmark,3 GB,15,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Denmark,50 GB,30,37.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Denmark,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Denmark,1000 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Denmark,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Denmark,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Denmark,Unlimited,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Denmark,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Djibouti,10 GB,30,88.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Djibouti,1 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Djibouti,3 GB,15,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3120,38 +3112,38 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Dominican Republic,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Dominican Republic,25 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Dominican Republic,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Dominican Republic,1000 GB,15,53.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Dominican Republic,1000 GB,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Dominican Republic,1000 GB,7,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Dominican Republic,Unlimited,15,53.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Dominican Republic,Unlimited,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Dominican Republic,Unlimited,7,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Congo,1 GB,7,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ecuador,10 GB,30,28.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ecuador,1 GB,30,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ecuador,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Ecuador,1000 GB,8,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Ecuador,1000 GB,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Ecuador,Unlimited,8,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Ecuador,Unlimited,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Egypt,10 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Egypt,10 GB,7,17.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Egypt,1 GB,30,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Egypt,25 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Egypt,3 GB,30,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Egypt,1000 GB,15,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Egypt,1000 GB,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Egypt,1000 GB,8,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Egypt,Unlimited,15,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Egypt,Unlimited,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Egypt,Unlimited,8,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Spain,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Spain,10 GB,8,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Spain,25 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Spain,3 GB,30,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Spain,50 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Spain,1000 GB,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Spain,1000 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Spain,1000 GB,8,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Spain,Unlimited,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Spain,Unlimited,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Spain,Unlimited,8,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Estonia,10 GB,30,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Estonia,10 GB,7,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Estonia,3 GB,15,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Estonia,50 GB,30,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Estonia,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Estonia,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Estonia,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Estonia,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Estonia,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Estonia,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Eswatini,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ethiopia,1 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ethiopia,3 GB,15,38.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3165,18 +3157,18 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Finland,10 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Finland,3 GB,15,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Finland,50 GB,30,37.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Finland,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Finland,1000 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Finland,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,France,1000 GB,1,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Finland,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Finland,Unlimited,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Finland,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,France,Unlimited,1,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,France,10 GB,30,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,France,10 GB,7,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,France,25 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,France,3 GB,30,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,France,50 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,France,1000 GB,15,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,France,1000 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,France,1000 GB,7,20.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,France,Unlimited,15,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,France,Unlimited,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,France,Unlimited,7,20.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,French Guiana,3 GB,15,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Gabon,1 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Gabon,3 GB,15,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3189,17 +3181,17 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Georgia,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Georgia,25 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Georgia,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Georgia,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Georgia,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Georgia,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Georgia,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Germany,10 GB,30,12.5,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Germany,10 GB,7,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Germany,25 GB,30,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Germany,3 GB,15,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Germany,50 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Germany,1000 GB,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Germany,1000 GB,1,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Germany,1000 GB,30,58.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Germany,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Germany,Unlimited,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Germany,Unlimited,1,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Germany,Unlimited,30,58.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Germany,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ghana,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ghana,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Gibraltar,1 GB,7,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3209,9 +3201,9 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Greece,25 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Greece,3 GB,30,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Greece,50 GB,30,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Greece,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Greece,1000 GB,30,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Greece,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Greece,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Greece,Unlimited,30,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Greece,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Greenland,10 GB,7,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Greenland,10 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Greenland,1 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3220,8 +3212,8 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Guatemala,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Guatemala,25 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Guatemala,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Guatemala,1000 GB,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Guatemala,1000 GB,7,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Guatemala,Unlimited,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Guatemala,Unlimited,7,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,French Guiana,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Guam,10 GB,8,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Guam,1 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3230,7 +3222,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Guinea-Bissau,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Guinea-Bissau,25 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Guinea-Bissau,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Guinea-Bissau,1000 GB,7,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Guinea-Bissau,Unlimited,7,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Guinea,10 GB,30,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Guinea,10 GB,7,31.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Guinea,1 GB,7,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3243,67 +3235,67 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Hong Kong,10 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Hong Kong,25 GB,30,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Hong Kong,3 GB,15,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Hong Kong,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Hong Kong,1000 GB,30,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Hong Kong,1000 GB,7,23.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Hong Kong,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Hong Kong,Unlimited,30,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Hong Kong,Unlimited,7,23.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Honduras,10 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Honduras,10 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Honduras,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Honduras,3 GB,15,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Honduras,1000 GB,15,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Honduras,1000 GB,7,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Honduras,Unlimited,15,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Honduras,Unlimited,7,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Hungary,10 GB,30,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Hungary,10 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Hungary,3 GB,15,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Hungary,50 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Hungary,1000 GB,15,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Hungary,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Hungary,Unlimited,15,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Hungary,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Iceland,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Iceland,10 GB,7,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Iceland,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Iceland,50 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Iceland,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Iceland,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,India,25 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Indonesia,10 GB,30,16.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Indonesia,10 GB,7,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Indonesia,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Indonesia,25 GB,30,28.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Indonesia,3 GB,15,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Indonesia,1000 GB,15,40.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Indonesia,1000 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Indonesia,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Indonesia,Unlimited,15,40.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Indonesia,Unlimited,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Indonesia,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,India,10 GB,30,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,India,10 GB,7,13.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,India,1 GB,7,3.5,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,India,3 GB,30,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,India,50 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,India,1000 GB,15,46.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,India,1000 GB,30,68.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,India,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,India,Unlimited,15,46.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,India,Unlimited,30,68.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,India,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Iraq,10 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Iraq,3 GB,15,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ireland,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ireland,10 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ireland,3 GB,15,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ireland,50 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Ireland,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Ireland,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Ireland,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Ireland,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Ireland,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Ireland,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Israel,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Israel,10 GB,7,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Israel,3 GB,30,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Israel,50 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Israel,1000 GB,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Israel,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Israel,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Israel,Unlimited,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Israel,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Israel,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Italy,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Italy,10 GB,8,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Italy,25 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Italy,3 GB,30,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Italy,50 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Italy,1000 GB,15,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Italy,1000 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Italy,1000 GB,8,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Italy,Unlimited,15,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Italy,Unlimited,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Italy,Unlimited,8,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Jordan,10 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Jordan,1 GB,7,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Jordan,3 GB,15,16.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3315,41 +3307,41 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Japan,3 GB,15,7.5,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Japan,50 GB,30,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Japan,5 GB,15,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Japan,1000 GB,8,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Japan,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Japan,1000 GB,30,65.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Japan,Unlimited,8,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Japan,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Japan,Unlimited,30,65.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kazakhstan,10 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kazakhstan,10 GB,7,17.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kazakhstan,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kazakhstan,25 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kazakhstan,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kazakhstan,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kazakhstan,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kazakhstan,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kazakhstan,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kenya,10 GB,30,42.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kenya,10 GB,7,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kenya,1 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kenya,3 GB,15,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kenya,1000 GB,15,88.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kenya,1000 GB,30,99.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kenya,1000 GB,7,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kenya,Unlimited,15,88.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kenya,Unlimited,30,99.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kenya,Unlimited,7,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kyrgyzstan,10 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kyrgyzstan,10 GB,7,17.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kyrgyzstan,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kyrgyzstan,25 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kyrgyzstan,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kyrgyzstan,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kyrgyzstan,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kyrgyzstan,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kyrgyzstan,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Korea,10 GB,30,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Korea,10 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Korea,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Korea,25 GB,30,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Korea,3 GB,7,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,South Korea,1000 GB,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,South Korea,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,South Korea,1000 GB,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,South Korea,Unlimited,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,South Korea,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,South Korea,Unlimited,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kosovo,10 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kosovo,3 GB,15,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kosovo,1000 GB,8,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kosovo,Unlimited,8,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Saudi Arabia,10 GB,30,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Saudi Arabia,10 GB,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Saudi Arabia,1 GB,7,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3358,20 +3350,20 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Kuwait,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kuwait,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Kuwait,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kuwait,1000 GB,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Kuwait,1000 GB,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kuwait,Unlimited,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Kuwait,Unlimited,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Latvia,10 GB,30,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Latvia,10 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Latvia,50 GB,30,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Latvia,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Latvia,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Latvia,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Latvia,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Latvia,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Latvia,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Lithuania,10 GB,30,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Lithuania,10 GB,7,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Lithuania,25 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Lithuania,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Lithuania,1000 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Lithuania,1000 GB,7,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Lithuania,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Lithuania,Unlimited,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Lithuania,Unlimited,7,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Luxembourg,10 GB,7,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Luxembourg,3 GB,15,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,North Macedonia,1 GB,7,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3380,8 +3372,8 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Macau,10 GB,7,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Macau,25 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Macau,3 GB,15,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Macau,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Macau,1000 GB,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Macau,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Macau,Unlimited,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Malawi,10 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Malawi,1 GB,7,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Malawi,3 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3389,29 +3381,29 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Malaysia,10 GB,7,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Malaysia,25 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Malaysia,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Malaysia,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Malaysia,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Malaysia,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Malaysia,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Malaysia,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Malaysia,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mali,10 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mali,10 GB,7,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mali,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mali,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Mali,1000 GB,8,37.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Mali,Unlimited,8,37.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Malta,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Malta,10 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Malta,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Malta,50 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Malta,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Malta,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Malta,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Malta,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Malta,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Malta,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mauritania,1 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mauritania,3 GB,15,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mauritius,10 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mauritius,10 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mauritius,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mauritius,3 GB,15,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Mauritius,1000 GB,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Mauritius,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Mauritius,Unlimited,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Mauritius,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mayotte,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mayotte,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Madagascar,10 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3419,20 +3411,20 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Madagascar,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Madagascar,25 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Madagascar,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Madagascar,1000 GB,15,58.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Madagascar,1000 GB,8,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Madagascar,Unlimited,15,58.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Madagascar,Unlimited,8,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mexico,10 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mexico,10 GB,7,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mexico,1 GB,30,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mexico,3 GB,30,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Mexico,0.5,2,3.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Mexico,1000 GB,7,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Mexico,0.5 GB,2,3.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Mexico,Unlimited,7,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Moldova,10 GB,30,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Moldova,10 GB,7,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Moldova,25 GB,30,28.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Moldova,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Moldova,50 GB,30,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Moldova,1000 GB,8,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Moldova,Unlimited,8,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mongolia,10 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mongolia,1 GB,7,16.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mongolia,3 GB,15,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3440,16 +3432,16 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Montenegro,10 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Montenegro,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Montenegro,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Montenegro,1000 GB,15,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Montenegro,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Montenegro,Unlimited,15,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Montenegro,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Morocco,10 GB,30,23.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Morocco,10 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Morocco,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Morocco,25 GB,30,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Morocco,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Morocco,1000 GB,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Morocco,1000 GB,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Morocco,1000 GB,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Morocco,Unlimited,15,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Morocco,Unlimited,30,69.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Morocco,Unlimited,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mozambique,1 GB,7,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Mozambique,3 GB,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Namibia,1 GB,7,50.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3466,16 +3458,16 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Netherlands,25 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Netherlands,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Netherlands,50 GB,30,33.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Netherlands,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Netherlands,1000 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Netherlands,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Netherlands,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Netherlands,Unlimited,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Netherlands,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Nicaragua,10 GB,30,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Nicaragua,10 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Nicaragua,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Nicaragua,25 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Nicaragua,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Nicaragua,1000 GB,15,66.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Nicaragua,1000 GB,7,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Nicaragua,Unlimited,15,66.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Nicaragua,Unlimited,7,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Nigeria,10 GB,30,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Nigeria,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Nigeria,25 GB,30,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3485,16 +3477,16 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Norway,25 GB,30,21.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Norway,3 GB,15,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Norway,50 GB,30,37.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Norway,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Norway,1000 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Norway,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Norway,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Norway,Unlimited,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Norway,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,New Zealand,10 GB,30,16.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,New Zealand,10 GB,7,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,New Zealand,25 GB,30,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,New Zealand,3 GB,30,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,New Zealand,1000 GB,15,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,New Zealand,1000 GB,30,65.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,New Zealand,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,New Zealand,Unlimited,15,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,New Zealand,Unlimited,30,65.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,New Zealand,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Oman,10 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Oman,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Oman,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3505,8 +3497,8 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Pakistan,25 GB,30,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Pakistan,3 GB,15,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Pakistan,50 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Pakistan,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Pakistan,1000 GB,7,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Pakistan,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Pakistan,Unlimited,7,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Palestine,10 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Palestine,1 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Palestine,3 GB,15,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3515,56 +3507,56 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Panama,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Panama,25 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Panama,3 GB,15,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Panama,1000 GB,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Panama,1000 GB,7,31.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Panama,Unlimited,15,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Panama,Unlimited,7,31.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Paraguay,10 GB,30,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Paraguay,10 GB,7,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Paraguay,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Paraguay,25 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Paraguay,3 GB,15,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Paraguay,1000 GB,15,56.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Paraguay,1000 GB,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Paraguay,Unlimited,15,56.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Paraguay,Unlimited,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Peru,10 GB,30,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Peru,10 GB,7,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Peru,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Peru,25 GB,30,42.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Peru,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Peru,1000 GB,30,79.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Peru,1000 GB,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Peru,Unlimited,30,79.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Peru,Unlimited,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Philippines,10 GB,30,16.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Philippines,10 GB,7,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Philippines,1 GB,7,3.5,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Philippines,25 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Philippines,3 GB,15,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Philippines,50 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Philippines,1000 GB,15,40.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Philippines,1000 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Philippines,1000 GB,7,23.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Philippines,Unlimited,15,40.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Philippines,Unlimited,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Philippines,Unlimited,7,23.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,French Polynesia,10 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,French Polynesia,10 GB,7,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,French Polynesia,1 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,French Polynesia,25 GB,30,79.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,French Polynesia,3 GB,15,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,French Polynesia,1000 GB,7,73.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,French Polynesia,Unlimited,7,73.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Poland,10 GB,30,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Poland,10 GB,7,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Poland,25 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Poland,3 GB,30,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Poland,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Poland,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Poland,1000 GB,7,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Poland,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Poland,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Poland,Unlimited,7,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Portugal,10 GB,30,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Portugal,10 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Portugal,25 GB,30,28.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Portugal,3 GB,30,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Portugal,50 GB,30,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Portugal,1000 GB,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Portugal,1000 GB,30,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Portugal,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Portugal,Unlimited,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Portugal,Unlimited,30,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Portugal,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Qatar,10 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Qatar,10 GB,7,16.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Qatar,3 GB,30,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Qatar,1000 GB,7,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Qatar,Unlimited,7,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Reunion,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Reunion,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Romania,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3576,9 +3568,9 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Russia,25 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Russia,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Russia,50 GB,30,46.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Russia,1000 GB,15,42.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Russia,1000 GB,30,64.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Russia,1000 GB,7,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Russia,Unlimited,15,42.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Russia,Unlimited,30,64.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Russia,Unlimited,7,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Rwanda,10 GB,30,27.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Rwanda,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Rwanda,25 GB,30,48.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3592,13 +3584,13 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Senegal,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Senegal,25 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Senegal,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Senegal,1000 GB,7,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Senegal,Unlimited,7,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Serbia,10 GB,30,15.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Serbia,10 GB,7,13.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Serbia,25 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Serbia,3 GB,15,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Serbia,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Serbia,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Serbia,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Serbia,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Seychelles,10 GB,30,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Seychelles,10 GB,7,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Seychelles,1 GB,7,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3612,17 +3604,17 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Singapore,1 GB,7,3.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Singapore,25 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Singapore,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Singapore,1000 GB,15,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Singapore,1000 GB,2,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Singapore,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Singapore,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Singapore,Unlimited,15,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Singapore,Unlimited,2,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Singapore,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Singapore,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Slovakia,10 GB,30,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Slovakia,10 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Slovakia,25 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Slovakia,3 GB,15,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Slovakia,1000 GB,15,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Slovakia,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Slovakia,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Slovakia,Unlimited,15,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Slovakia,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Slovakia,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Slovenia,10 GB,30,13.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Slovenia,10 GB,7,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Slovenia,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3630,17 +3622,17 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,El Salvador,10 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,El Salvador,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,El Salvador,3 GB,15,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,El Salvador,1000 GB,15,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,El Salvador,1000 GB,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,El Salvador,Unlimited,15,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,El Salvador,Unlimited,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Sudan,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Sudan,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Sri Lanka,10 GB,30,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Sri Lanka,10 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Sri Lanka,3 GB,15,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Sri Lanka,50 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Sri Lanka,1000 GB,15,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Sri Lanka,1000 GB,30,65.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Sri Lanka,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Sri Lanka,Unlimited,15,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Sri Lanka,Unlimited,30,65.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Sri Lanka,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Sudan,10 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Sudan,3 GB,15,17.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Suriname,10 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3651,46 +3643,46 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Sweden,10 GB,7,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Sweden,3 GB,15,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Sweden,50 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Sweden,1000 GB,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Sweden,1000 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Sweden,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Sweden,Unlimited,15,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Sweden,Unlimited,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Sweden,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Switzerland,10 GB,30,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Switzerland,10 GB,7,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Switzerland,25 GB,30,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Switzerland,3 GB,30,6.5,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Switzerland,50 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Switzerland,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Switzerland,1000 GB,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Switzerland,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Switzerland,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Switzerland,Unlimited,30,59.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Switzerland,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Taiwan,10 GB,30,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Taiwan,10 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Taiwan,1 GB,7,3.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Taiwan,25 GB,30,28.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Taiwan,3 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Taiwan,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Taiwan,1000 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Taiwan,1000 GB,7,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Taiwan,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Taiwan,Unlimited,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Taiwan,Unlimited,7,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tajikistan,10 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tajikistan,10 GB,7,17.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tajikistan,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tajikistan,25 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tajikistan,3 GB,15,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Tajikistan,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Tajikistan,1000 GB,30,89.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Tajikistan,1000 GB,7,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Tajikistan,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Tajikistan,Unlimited,30,89.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Tajikistan,Unlimited,7,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tanzania,10 GB,8,26.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tanzania,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tanzania,25 GB,30,45.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tanzania,3 GB,15,13.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Tanzania,1000 GB,8,33.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Tanzania,Unlimited,8,33.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Thailand,10 GB,30,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Thailand,10 GB,7,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Thailand,1 GB,7,3.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Thailand,25 GB,30,24.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Thailand,3 GB,15,6.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Thailand,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Thailand,1000 GB,30,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Thailand,1000 GB,7,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Thailand,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Thailand,Unlimited,30,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Thailand,Unlimited,7,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Togo,1 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tonga,3 GB,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Trinidad And Tobago,10 GB,30,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3702,24 +3694,24 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,Tunisia,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tunisia,25 GB,30,38.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Tunisia,3 GB,15,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Tunisia,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Tunisia,1000 GB,7,33.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Tunisia,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Tunisia,Unlimited,7,33.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Turkey,10 GB,30,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Turkey,10 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Turkey,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Turkey,25 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Turkey,3 GB,30,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Turkey,1000 GB,15,37.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Turkey,1000 GB,1,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Turkey,1000 GB,30,64.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Turkey,1000 GB,8,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Turkey,Unlimited,15,37.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Turkey,Unlimited,1,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Turkey,Unlimited,30,64.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Turkey,Unlimited,8,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United Arab Emirates,10 GB,30,21.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United Arab Emirates,10 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United Arab Emirates,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United Arab Emirates,25 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United Arab Emirates,3 GB,15,10.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United Arab Emirates,1000 GB,1,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United Arab Emirates,1000 GB,7,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United Arab Emirates,Unlimited,1,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United Arab Emirates,Unlimited,7,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uganda,1 GB,7,6.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uganda,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United Kingdom,10 GB,30,11.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
@@ -3727,62 +3719,62 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-10,Ubigi,United Kingdom,25 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United Kingdom,3 GB,30,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United Kingdom,50 GB,30,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United Kingdom,1000 GB,15,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United Kingdom,1000 GB,1,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United Kingdom,1000 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United Kingdom,1000 GB,7,21.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United Kingdom,Unlimited,15,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United Kingdom,Unlimited,1,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United Kingdom,Unlimited,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United Kingdom,Unlimited,7,21.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ukraine,10 GB,30,8.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Ukraine,50 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Ukraine,1000 GB,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Ukraine,1000 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Ukraine,Unlimited,30,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Ukraine,Unlimited,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uruguay,10 GB,30,22.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uruguay,10 GB,7,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uruguay,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uruguay,25 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uruguay,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Uruguay,1000 GB,30,88.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Uruguay,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Uruguay,Unlimited,30,88.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Uruguay,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United States,10 GB,30,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United States,10 GB,7,12.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United States,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United States,25 GB,30,32.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United States,3 GB,15,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United States,0.5,1,2.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United States,0.5 GB,1,2.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,United States,50 GB,30,42.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United States,1000 GB,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United States,1000 GB,1,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United States,1000 GB,30,65.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,United States,1000 GB,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United States,Unlimited,15,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United States,Unlimited,1,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United States,Unlimited,30,65.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,United States,Unlimited,7,25.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uzbekistan,10 GB,30,19.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uzbekistan,10 GB,7,17.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uzbekistan,1 GB,7,4.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uzbekistan,25 GB,30,44.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Uzbekistan,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Uzbekistan,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Uzbekistan,1000 GB,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Uzbekistan,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Uzbekistan,Unlimited,7,29.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Vanuatu,1 GB,7,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Vanuatu,3 GB,15,34.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Venezuela,10 GB,30,28.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Venezuela,1 GB,7,7.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Venezuela,25 GB,30,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Venezuela,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Venezuela,1000 GB,8,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Venezuela,Unlimited,8,36.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Vietnam,10 GB,30,12.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Vietnam,10 GB,7,10.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Vietnam,3 GB,15,6.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Vietnam,50 GB,30,36.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Vietnam,1000 GB,15,39.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Vietnam,1000 GB,30,54.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,Vietnam,1000 GB,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Vietnam,Unlimited,15,39.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Vietnam,Unlimited,30,54.9,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,Vietnam,Unlimited,7,24.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Africa,10 GB,30,20.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Africa,10 GB,7,18.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Africa,1 GB,30,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Africa,25 GB,30,39.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Africa,3 GB,15,9.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,South Africa,50 GB,30,55.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,South Africa,1000 GB,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,South Africa,1000 GB,30,79.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
-2026-08-10,Ubigi,South Africa,1000 GB,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,South Africa,Unlimited,15,49.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,South Africa,Unlimited,30,79.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
+2026-08-10,Ubigi,South Africa,Unlimited,7,35.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Zambia,1 GB,7,5.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Zambia,3 GB,15,14.0,https://cellulardata.ubigi.com/data-plans-and-coverage/
 2026-08-10,Ubigi,Belgium,20 GB,1000,16.0,https://cellulardata.ubigi.com/data-plans-and-coverage/

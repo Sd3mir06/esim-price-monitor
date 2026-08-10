@@ -332,7 +332,10 @@ def collect_breeze(limit=None):
     for p in products:
         handle = p.get("handle", "")
         title = p.get("title", "").strip()
-        if SKIP_BREEZE.search(handle) or not title:
+        # Only country/region eSIM products (handles start with "esim"). Drops
+        # non-country junk like "10gb-travel-pass", gift cards and top-ups that
+        # would otherwise be recorded with a data amount as the "country".
+        if SKIP_BREEZE.search(handle) or not title or not handle.startswith("esim"):
             continue
         # country slug from handle: esim-{country} or esimg_{cc}_v2
         m = re.match(r"esim-([a-z0-9-]+)$", handle)
@@ -384,7 +387,14 @@ def collect_ubigi(limit=None):
             continue
         if p <= 0:
             continue
-        data = f"{allow} GB" if str(allow).isdigit() else norm_data(str(allow))
+        # Ubigi encodes UNLIMITED as allowance=1000 (real plans max ~200GB);
+        # also handle decimal allowances like "0.5" -> "0.5 GB".
+        try:
+            av = float(allow)
+            data = "Unlimited" if av >= 1000 else (
+                f"{int(av)} GB" if av == int(av) else f"{av} GB")
+        except (TypeError, ValueError):
+            data = norm_data(str(allow))
         days = int(valid) if str(valid).isdigit() else ""
         k = (country, data, days, p)
         if k in seen:
