@@ -1,68 +1,75 @@
 # eSIM Competitor Price Monitor
 
-Collects competitor eSIM **package prices for every country, every day**, and saves
-them as a spreadsheet you can open in Excel / Google Sheets.
+Collects competitor eSIM **package prices for every country** on a schedule, stores the
+history, and publishes a bilingual (TR/EN) **competitor-intelligence dashboard**.
 
-## What it collects
+**🔗 Live dashboard:** https://sd3mir06.github.io/esim-price-monitor/
 
-| Competitor | Countries | Method | Status |
-|---|---|---|---|
-| **Airalo** | ~216 | Public country pages (`/{country}-esim`, Nuxt data) | ✅ working |
-| **Holafly** | ~413 (incl. cities) | Public country pages (`/esim-{country}`) | ✅ working |
-| **esim.io** (“Esimio”) | ~188 | Public country pages (`/destinations/esim-{country}`) | ✅ working |
-| **Breeze** | ~200 | Shopify catalog (`/products.json`) | ✅ working |
-| **PocketeSIM** | ~197 | Public country pages (`/en/esim/{country}`) | ✅ working |
-| **Ubigi** | ~167 | Single plans page, all countries (card attrs) | ✅ working |
-| **Nomad** | — | JavaScript app — needs a headless browser | ⚠️ not included |
-| **Yesim** | — | Country pages load prices via JavaScript | ⚠️ not included |
-| **Simly** | — | App/SPA, prices from third-party API | ⚠️ not included |
+---
 
-Countries are re-discovered from each site on every run, so new destinations the
-competitors add get picked up automatically. No login or paid API needed — all data
-comes from public pages.
+## What it does
 
-## Output
+- Scrapes 6 competitors' public pricing pages → one row per package (country · data · days · price).
+- Runs in the cloud (GitHub Actions) — **weekly** baseline, plus **daily near big events**.
+- Keeps every run as a dated snapshot → price **history** accumulates.
+- Rebuilds a self-contained dashboard: market KPIs, per-competitor positioning, country
+  drill-down, smart price table, price-trend charts, and an upcoming-events section with a
+  live countdown.
 
-Each run writes, in `data/`:
-- `prices_YYYY-MM-DD.csv` — one row per package: `date, competitor, country, data, days, price_usd, source_url`
-- `prices_YYYY-MM-DD.json` — same data as JSON
+## Competitors
 
-One file per day, so you build a price history over time.
+| Collected (6) | How |
+|---|---|
+| Airalo, Holafly, esim.io, Breeze, PocketeSIM, Ubigi | public SSR pages / Shopify / catalog JSON |
 
-## Run it manually
+Not collected (prices load via JavaScript → need a headless browser): **Nomad, Yesim, Simly**.
+
+## How it runs
+
+GitHub Actions triggers **daily** (`0 6 * * *` UTC), but `should_collect.py` gates it —
+it actually collects only:
+- on **Mondays** (weekly baseline), or
+- within **7 days before → end** of an event in `events.json` (event-driven close monitoring).
+
+Other days it's a cheap no-op. Results are committed back; GitHub Pages serves `docs/`.
+
+## File map
+
+```
+collect.py           # THE COLLECTOR — scrapes all 6 competitors -> data/prices_YYYY-MM-DD.csv
+build_dashboard.py   # builds docs/index.html (the dashboard) from the latest CSV
+build_history.py     # aggregates all dated CSVs -> docs/history.json (powers trend charts)
+should_collect.py    # gate: should today's run actually collect? (Monday / near-event)
+events.json          # big global events (2026-27): name, country, dates, flag
+HANDOFF.md           # detailed runbook (setup, per-competitor parsing, reliability, maintenance)
+.github/workflows/collect.yml   # the daily cloud cron
+data/
+  prices_YYYY-MM-DD.csv/json    # dated snapshots (history — never deleted)
+  latest/<Competitor>.json      # each competitor's last-good data (carry-forward)
+docs/
+  index.html                    # published dashboard  ← GitHub Pages serves this
+  history.json                  # price history for the trend charts
+```
+
+**No dependencies:** all scripts use only the Python standard library — no `pip install`.
+
+## Run locally
 
 ```bash
-cd "/Users/sukrudemir/general things/esim-price-monitor"
-python3 collect.py                 # all countries, all 4 providers (~10 min)
-python3 collect.py --limit 10      # quick test: 10 countries each
-python3 collect.py --providers airalo,holafly   # subset of providers
+python3 collect.py            # all competitors, all countries (~2-10 min)
+python3 build_dashboard.py    # -> docs/index.html
+python3 build_history.py      # -> docs/history.json
 ```
 
-## Daily automation (already installed)
+Then open `docs/index.html`. (Price-trend charts fetch `history.json`, so they load on the
+live Pages URL or via a local server — not via `file://`.)
 
-A cron job runs it every day at **08:00**:
+## Data & reliability
 
-```
-0 8 * * * "/Users/sukrudemir/general things/esim-price-monitor/run.sh"
-```
+- **CSV columns:** `date, competitor, country, data, days, price_usd, source_url`
+- **Carry-forward:** if a competitor is rate-limited/unreachable on a run, its last-good data
+  is kept (dashboard shows a `⚠ stale` note) so nothing goes blank.
+- **Airalo currency guard:** Airalo prices are USD only when collected from a US IP (GitHub
+  runners are US) — a guard drops non-USD rows to avoid corrupt data.
 
-- View/edit schedule: `crontab -e`   ·   list: `crontab -l`
-- Logs: `logs/cron.log`
-- **Note:** cron only runs while your Mac is **awake**. If it's often asleep at 8am,
-  change the time, or ask me to switch it to a `launchd` job (runs at next wake) or a
-  cloud schedule.
-- macOS may need **Full Disk Access** for `cron` the first time (System Settings →
-  Privacy & Security → Full Disk Access → add `/usr/sbin/cron`).
-
-## Notes on the data
-
-- **Airalo & Holafly** sell mostly *Unlimited* plans priced by duration → directly comparable.
-- **esim.io & Breeze** sell mostly *fixed-GB* plans → compare on $/GB.
-- Breeze GB plans don't publish a validity in the catalog, so `days` is blank for those.
-- All prices are the public USD retail price shown to a US visitor.
-
-## Adding Nomad later
-
-Nomad (`nomadesim.com`) renders prices with JavaScript, so `curl` can't see them.
-Options: (a) Playwright headless browser to load each country page, or (b) reverse-engineer
-their internal product API. Ask me to build either.
+Full details, per-competitor parsing, and maintenance steps are in **[HANDOFF.md](HANDOFF.md)**.

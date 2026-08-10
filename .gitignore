@@ -4,7 +4,7 @@ _*.py
 __pycache__/
 logs/
 
-# keep: collect.py, build_dashboard.py, dashboard.html,
+# keep: collect.py, build_dashboard.py, build_history.py, should_collect.py,
 #       data/prices_*.csv/json, data/latest/*.json, docs/, .github/
 
 # macOS

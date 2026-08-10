@@ -122,7 +122,8 @@ def main():
     }, separators=(",", ":"))
 
     html = TEMPLATE.replace("__PAYLOAD__", payload)
-    out = os.path.join(HERE, "dashboard.html")
+    os.makedirs(os.path.join(HERE, "docs"), exist_ok=True)
+    out = os.path.join(HERE, "docs", "index.html")   # single build output (served by Pages)
     with open(out, "w") as f:
         f.write(html)
     print(f"Dashboard built: {out}  ({total} packages, {len(countries)} countries)")

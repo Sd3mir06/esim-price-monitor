@@ -42,21 +42,21 @@ Günlük tam çıktı: ~13.000–13.500 paket satırı.
 
 ```
 esim-price-monitor/
-├── collect.py              # ANA TOPLAYICI. Tüm firmaları çeker, data/prices_YYYY-MM-DD.csv üretir
-├── build_dashboard.py      # En son CSV'den dashboard.html üretir (self-contained, tek dosya)
-├── run.sh                  # (Eski, Mac cron'u için) — GitHub'a taşıyınca GEREKMEZ
-├── dashboard.html          # Üretilen dashboard (tarayıcıda açılır)
-├── README.md               # Genel açıklama
+├── collect.py              # ANA TOPLAYICI. Tüm firmaları çeker → data/prices_YYYY-MM-DD.csv
+├── build_dashboard.py      # En son CSV'den → docs/index.html (self-contained dashboard)
+├── build_history.py        # Tüm dated CSV'leri → docs/history.json (trend grafikleri)
+├── should_collect.py       # Kapı: bugün toplansın mı? (Pazartesi / etkinliğe yakın)
+├── events.json             # Büyük küresel etkinlikler (isim, ülke, tarih, bayrak)
+├── README.md               # Genel harita
 ├── HANDOFF.md              # (bu dosya)
 ├── .github/workflows/
-│   └── collect.yml         # GİTHUB ACTIONS CRON — bulut kurulumun kalbi
-└── data/
-    ├── prices_YYYY-MM-DD.csv   # her günün fiyat anlık görüntüsü (bir satır = bir paket)
-    ├── prices_YYYY-MM-DD.json
-    └── latest/                 # her firmanın SON BAŞARILI verisi (dayanıklılık için — bkz. §4)
-        ├── Airalo.json
-        ├── Breeze.json
-        └── ...
+│   └── collect.yml         # GÜNLÜK CRON (kapı ile Pazartesi/etkinlik'te toplar)
+├── data/
+│   ├── prices_YYYY-MM-DD.csv/json   # her çalışmanın anlık görüntüsü (geçmiş — silinmez)
+│   └── latest/<Firma>.json          # her firmanın SON BAŞARILI verisi (carry-forward, §4)
+└── docs/                    # YAYINLANAN çıktı — GitHub Pages buradan servis eder
+    ├── index.html           # dashboard
+    └── history.json         # trend grafiği verisi
 ```
 
 **Önemli teknik gerçek:** `collect.py` ve `build_dashboard.py` **yalnızca Python standart
