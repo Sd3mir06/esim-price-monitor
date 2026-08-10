@@ -243,3 +243,8 @@ Bittiğinde `dashboard.html`'i tarayıcıda aç. Bulutta bunları workflow otoma
 - `build_history.py` tüm dated CSV'leri `docs/history.json`'a toplar; dashboard'daki **Price Trends / Fiyat Trendi** bölümü bunu çekip paket/plan/firma bazında zaman-serisi grafiği çizer.
 - Grafik **canlı (Pages) adresinde** çalışır (history.json fetch edilir); `file://` ile açınca trend yüklenmez.
 - Cron artık **HAFTALIK** (`0 6 * * 1`, Pazartesi). Her hafta grafiğe bir nokta eklenir.
+
+## 11. Etkinlik takibi & yakın-dönem toplama
+- `events.json` — büyük küresel etkinlikler (ülke, tarih aralığı, bayrak). Dashboard'da **Yaklaşan Etkinlikler** bölümü + tepede **canlı geri sayım** bunu kullanır (embed, offline çalışır).
+- **Cron artık GÜNLÜK** (`0 6 * * *`) ama `should_collect.py` kapısı sadece şu durumlarda gerçekten toplar: (a) Pazartesi (haftalık taban), (b) bir etkinliğin başlangıcına **7 gün kala → bitişine kadar** (yakın takip). Diğer günler erken çıkar (ucuz no-op). Elle tetikleme (workflow_dispatch) her zaman toplar.
+- Yeni etkinlik eklemek/çıkarmak: sadece `events.json`'u düzenle (isim en/tr, country = veri setindeki ülke adı, flag, start/end ISO, opsiyonel `approx:true`).

@@ -110,10 +110,15 @@ def main():
         "unlimLeader": max(competitors, key=lambda c: perComp[c]["unlimLeader"]),
     }
 
+    try:
+        events = json.load(open(os.path.join(HERE, "events.json")))
+    except Exception:
+        events = []
+
     payload = json.dumps({
         "date": newest, "competitors": competitors, "countries": countries,
         "recs": recs, "total": total, "stale": stale,
-        "market": {"perComp": perComp, "leaders": leaders},
+        "market": {"perComp": perComp, "leaders": leaders}, "events": events,
     }, separators=(",", ":"))
 
     html = TEMPLATE.replace("__PAYLOAD__", payload)
@@ -227,6 +232,21 @@ TEMPLATE = r"""<!doctype html>
   .sc .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:6px}
   .sc .row b{color:var(--text);font-variant-numeric:tabular-nums}
   .glab{color:var(--muted);font-size:11.5px;display:block}
+  .cdbar{max-width:1240px;margin:0 auto;padding:10px 22px}
+  .cdbar .cdinner{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-radius:12px;
+    padding:11px 16px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .cdbar .cdinner b{font-weight:800;font-variant-numeric:tabular-nums}
+  .evgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin:4px 0 6px}
+  .evcard{display:flex;align-items:center;gap:11px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:11px 13px;cursor:pointer;transition:border-color .12s}
+  .evcard:hover{border-color:var(--accent)}
+  .evflag{font-size:26px;line-height:1}
+  .evbody{flex:1;min-width:0}
+  .evname{font-weight:800;font-size:14px}
+  .evname .evapx{font-weight:600;font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 4px;margin-left:4px}
+  .evmeta{color:var(--muted);font-size:11.5px;margin-top:1px}
+  .evpill{font-size:11.5px;font-weight:800;color:var(--accent);white-space:nowrap;text-align:right}
+  .evpill.on{color:var(--lowtx)}
 </style>
 </head>
 <body>
@@ -239,7 +259,12 @@ TEMPLATE = r"""<!doctype html>
     <button data-l="en">EN</button><button data-l="tr">TR</button>
   </div>
 </header>
+<div class="cdbar" id="cdbar"></div>
 <div class="wrap">
+
+  <h2 id="h2-events"></h2>
+  <div id="events-2026"></div>
+  <div id="events-2027"></div>
 
   <h2 id="h2-market"></h2>
   <div class="kpis" id="mkpis"></div>
@@ -334,6 +359,9 @@ const T = {
   t_cheap:"🏆 Cheapest", t_cheap_t:"The cheapest provider and price in THIS row (same data size + same days). For the absolute cheapest per size regardless of days, use the 'Best deal by data size' panel above.",
   t_empty:"No plans match these filters.", firms:"firms", plan_rows:"plan",
   leg_cheaprow:"cheapest in row", leg_exp:"most expensive", leg_gb:"$/GB = price ÷ GB (GB plans only)", leg_trophy:"🏆 = cheapest firm in that row",
+  s_events:"Upcoming Events", s_events_t:"Big global events (World-Cup scale) that trigger event-specific eSIM packages. Prices are re-collected daily from 7 days before each event. Click a card to jump to that country's prices.",
+  ev_2026:"2026 — upcoming", ev_2027:"2027 — upcoming", ev_left:"days left", ev_ongoing:"ONGOING", ev_approx:"approx.",
+  cd_next:"Next event", cd_ongoing:"happening now", cd_d:"d", cd_h:"h", cd_m:"m", cd_s:"s",
   s_trends:"Price Trends", s_trends_t:"How a package's price changes over time — one point per weekly snapshot. Pick a country and a package to see every competitor's line.",
   tr_plan:"Package (data · days)", tr_note_build:"Trends build up over time — one point per weekly run; more points appear each week.", tr_note_pages:"Trends load on the live (Pages) URL — history is fetched there.", tr_nodata:"No history for this selection yet.",
   badge:{Budget:"Budget", Mid:"Mid", Premium:"Premium", "Unlimited-only":"Unlimited-only"},
@@ -377,6 +405,9 @@ const T = {
   t_cheap:"🏆 En ucuz", t_cheap_t:"Bu SATIRIN (aynı veri boyutu + aynı gün) en ucuz firması ve fiyatı. Boyuta göre gün-bağımsız MUTLAK en ucuz için üstteki 'En uygun — boyuta göre' paneline bak.",
   t_empty:"Bu filtrelere uyan plan yok.", firms:"firma", plan_rows:"plan",
   leg_cheaprow:"satırda en ucuz", leg_exp:"en pahalı", leg_gb:"$/GB = fiyat ÷ GB (sadece GB planları)", leg_trophy:"🏆 = o satırdaki en ucuz firma",
+  s_events:"Yaklaşan Etkinlikler", s_events_t:"Etkinliğe özel eSIM paketlerini tetikleyen büyük küresel organizasyonlar (Dünya Kupası ölçeğinde). Her etkinliğe 7 gün kala fiyatlar günlük yeniden toplanır. Karta tıkla → o ülkenin fiyatlarına git.",
+  ev_2026:"2026 — yaklaşan", ev_2027:"2027 — yaklaşan", ev_left:"gün kaldı", ev_ongoing:"SÜRÜYOR", ev_approx:"yaklaşık",
+  cd_next:"Sonraki etkinlik", cd_ongoing:"şu an sürüyor", cd_d:"g", cd_h:"s", cd_m:"dk", cd_s:"sn",
   s_trends:"Fiyat Trendi", s_trends_t:"Bir paketin fiyatının zaman içinde nasıl değiştiği — her haftalık anlık görüntü bir nokta. Ülke ve paket seç, her rakibin çizgisini gör.",
   tr_plan:"Paket (veri · gün)", tr_note_build:"Trend zamanla dolar — her haftalık çalışmada bir nokta; her hafta yeni nokta eklenir.", tr_note_pages:"Trend grafiği canlı (Pages) adresinde yüklenir.", tr_nodata:"Bu seçim için henüz geçmiş yok.",
   badge:{Budget:"Budget", Mid:"Mid", Premium:"Premium", "Unlimited-only":"Unlimited-only"},
@@ -426,6 +457,40 @@ function renderStatic(){
   $("#h2-trends").innerHTML=tr("s_trends")+qm(tr("s_trends_t"));
   $("#lab-trend-country").textContent=tr("c_country");
   $("#lab-trend-plan").textContent=tr("tr_plan");
+  $("#h2-events").innerHTML=tr("s_events")+qm(tr("s_events_t"));
+}
+
+// ---------------- upcoming events + live countdown ----------------
+function evList(){
+  const now=new Date();
+  return (D.events||[]).map(e=>({...e, s:new Date(e.start+"T00:00:00"), e2:new Date((e.end||e.start)+"T23:59:59")}))
+    .filter(e=>e.e2>=now).sort((a,b)=>a.s-b.s);
+}
+function fmtD(iso){return new Date(iso+"T00:00:00").toLocaleDateString(LANG==="tr"?"tr-TR":"en-US",{day:"numeric",month:"short",year:"numeric"});}
+function evCard(e){
+  const now=new Date(), nm=e.name[LANG]||e.name.en, on=e.s<=now&&now<=e.e2;
+  const days=Math.ceil((e.s-now)/864e5);
+  const status=on?`<span class="evpill on">${tr("ev_ongoing")}</span>`:`<span class="evpill">${days} ${tr("ev_left")}</span>`;
+  const dr=fmtD(e.start)+(e.end&&e.end!==e.start?" – "+fmtD(e.end):"");
+  const linkable=D.countries.includes(e.country);
+  return `<div class="evcard" data-country="${linkable?e.country:''}">
+    <div class="evflag">${e.flag||"📅"}</div>
+    <div class="evbody"><div class="evname">${nm}${e.approx?`<span class="evapx">${tr("ev_approx")}</span>`:""}</div>
+    <div class="evmeta">${e.country||""} · ${dr}</div></div>${status}</div>`;
+}
+function renderEvents(){
+  const up=evList();
+  const y26=up.filter(e=>e.start<"2027"), y27=up.filter(e=>e.start>="2027");
+  $("#events-2026").innerHTML=y26.length?`<div class="glab">${tr("ev_2026")}</div><div class="evgrid">${y26.map(evCard).join("")}</div>`:"";
+  $("#events-2027").innerHTML=y27.length?`<div class="glab" style="margin-top:14px">${tr("ev_2027")}</div><div class="evgrid">${y27.map(evCard).join("")}</div>`:"";
+}
+function tickCountdown(){
+  const up=evList();
+  if(!up.length){$("#cdbar").innerHTML="";return;}
+  const e=up[0], now=new Date(), nm=e.name[LANG]||e.name.en, tag=`${nm} ${e.flag||""} ${e.country||""}`;
+  if(e.s<=now){$("#cdbar").innerHTML=`<div class="cdinner">⏳ <b>${nm}</b> ${e.flag||""} — <b>${tr("cd_ongoing")}</b></div>`;return;}
+  let ms=e.s-now; const d=Math.floor(ms/864e5); ms-=d*864e5; const h=Math.floor(ms/36e5); ms-=h*36e5; const m=Math.floor(ms/6e4); ms-=m*6e4; const s=Math.floor(ms/1e3);
+  $("#cdbar").innerHTML=`<div class="cdinner">⏳ ${tr("cd_next")}: <b>${tag}</b> — <b>${d}${tr("cd_d")} ${h}${tr("cd_h")} ${m}${tr("cd_m")} ${s}${tr("cd_s")}</b></div>`;
 }
 
 // ---------------- price trends (history.json, fetched on Pages) ----------------
@@ -639,7 +704,7 @@ function renderTable(){
 }
 
 function refreshCountry(){fillSize();fillDays();renderCountry();renderTable();}
-function renderAll(){renderStatic();renderMarket();fillCountry($("#search").value);fillCoChips();refreshCountry();if(HIST){fillTrendPlans();drawTrend();}}
+function renderAll(){renderStatic();renderEvents();tickCountdown();renderMarket();fillCountry($("#search").value);fillCoChips();refreshCountry();if(HIST){fillTrendPlans();drawTrend();}}
 
 $("#langtog").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
   LANG=b.dataset.l; localStorage.setItem("esimlang",LANG);
@@ -655,11 +720,16 @@ $("#tbl").addEventListener("click",e=>{if(e.target.closest(".qm"))return;const h
 $("#reset").addEventListener("click",()=>{sizes.clear();days="All";hidden.clear();sortCol=null;sortDir=1;fillCoChips();refreshCountry();});
 $("#trend-country").addEventListener("change",e=>{trendCountry=e.target.value;fillTrendPlans();drawTrend();});
 $("#trend-plan").addEventListener("change",e=>{trendPlan=e.target.value;drawTrend();});
+// click an event card -> jump to that country's prices
+document.addEventListener("click",e=>{const c=e.target.closest(".evcard");if(!c||!c.dataset.country)return;
+  country=c.dataset.country; sizes.clear(); days="All"; $("#search").value=""; fillCountry(""); $("#country").value=country;
+  refreshCountry(); document.querySelector("#h2-country").scrollIntoView({behavior:"smooth",block:"start"});});
 
 // init
 [...$("#langtog").children].forEach(x=>x.classList.toggle("on",x.dataset.l===LANG));
 renderAll();
 loadHistory();
+setInterval(tickCountdown,1000);
 </script>
 </body>
 </html>

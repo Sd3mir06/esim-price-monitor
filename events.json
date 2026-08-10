@@ -1,0 +1,14 @@
+[
+  {"name":{"en":"Asian Games","tr":"Asya Oyunları"},"country":"Japan","flag":"🇯🇵","start":"2026-09-19","end":"2026-10-04"},
+  {"name":{"en":"Oktoberfest","tr":"Oktoberfest"},"country":"Germany","flag":"🇩🇪","start":"2026-09-19","end":"2026-10-04"},
+  {"name":{"en":"Diwali","tr":"Diwali"},"country":"India","flag":"🇮🇳","start":"2026-11-08","end":"2026-11-12"},
+  {"name":{"en":"Super Bowl LXI","tr":"Super Bowl LXI"},"country":"United States","flag":"🇺🇸","start":"2027-02-14","end":"2027-02-14"},
+  {"name":{"en":"Rio Carnival","tr":"Rio Karnavalı"},"country":"Brazil","flag":"🇧🇷","start":"2027-02-05","end":"2027-02-10","approx":true},
+  {"name":{"en":"Hajj","tr":"Hac"},"country":"Saudi Arabia","flag":"🇸🇦","start":"2027-05-16","end":"2027-05-21","approx":true},
+  {"name":{"en":"Expo 2027","tr":"Expo 2027"},"country":"Serbia","flag":"🇷🇸","start":"2027-05-15","end":"2027-08-15"},
+  {"name":{"en":"Pan American Games","tr":"Pan Amerikan Oyunları"},"country":"Peru","flag":"🇵🇪","start":"2027-08-13","end":"2027-08-29","approx":true},
+  {"name":{"en":"World Athletics Championships","tr":"Dünya Atletizm Şampiyonası"},"country":"China","flag":"🇨🇳","start":"2027-09-04","end":"2027-09-13","approx":true},
+  {"name":{"en":"Oktoberfest 2027","tr":"Oktoberfest 2027"},"country":"Germany","flag":"🇩🇪","start":"2027-09-18","end":"2027-10-03"},
+  {"name":{"en":"Rugby World Cup","tr":"Rugby Dünya Kupası"},"country":"Australia","flag":"🇦🇺","start":"2027-10-01","end":"2027-11-13"},
+  {"name":{"en":"Cricket World Cup","tr":"Kriket Dünya Kupası"},"country":"South Africa","flag":"🇿🇦","start":"2027-10-04","end":"2027-11-04","approx":true}
+]
