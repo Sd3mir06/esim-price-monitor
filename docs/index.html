@@ -106,16 +106,25 @@
   .cdbar .cdinner{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-radius:12px;
     padding:11px 16px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .cdbar .cdinner b{font-weight:800;font-variant-numeric:tabular-nums}
-  .evgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin:4px 0 6px}
-  .evcard{display:flex;align-items:center;gap:11px;background:var(--panel);border:1px solid var(--line);
-    border-radius:12px;padding:11px 13px;cursor:pointer;transition:border-color .12s}
+  /* tabs */
+  .tabs{position:sticky;top:0;z-index:20;background:var(--bg);max-width:1240px;margin:0 auto;
+    padding:8px 22px 0;display:flex;gap:2px;border-bottom:1px solid var(--line);overflow-x:auto}
+  .tabs button{background:none;border:0;color:var(--muted);font:inherit;font-size:14px;font-weight:700;
+    padding:11px 15px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+  .tabs button:hover{color:var(--text)}
+  .tabs button.on{color:var(--accent);border-bottom-color:var(--accent)}
+  .panel{display:none} .panel.on{display:block}
+  /* event cards (column layout — name / meta / pill never collide) */
+  .evgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:11px;margin:4px 0 6px}
+  .evcard{display:flex;flex-direction:column;gap:6px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:13px 15px;cursor:pointer;transition:border-color .12s}
   .evcard:hover{border-color:var(--accent)}
-  .evflag{font-size:26px;line-height:1}
-  .evbody{flex:1;min-width:0}
-  .evname{font-weight:800;font-size:14px}
-  .evname .evapx{font-weight:600;font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 4px;margin-left:4px}
-  .evmeta{color:var(--muted);font-size:11.5px;margin-top:1px}
-  .evpill{font-size:11.5px;font-weight:800;color:var(--accent);white-space:nowrap;text-align:right}
+  .evhead{display:flex;align-items:center;gap:9px}
+  .evflag{font-size:24px;line-height:1}
+  .evname{font-weight:800;font-size:14px;line-height:1.25}
+  .evapx{font-weight:600;font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 4px;margin-left:4px;white-space:nowrap}
+  .evmeta{color:var(--muted);font-size:11.5px}
+  .evpill{align-self:flex-start;font-size:11.5px;font-weight:800;color:var(--accent);background:var(--panel2);border-radius:999px;padding:3px 10px}
   .evpill.on{color:var(--lowtx)}
 </style>
 </head>
@@ -130,52 +139,66 @@
   </div>
 </header>
 <div class="cdbar" id="cdbar"></div>
+<nav class="tabs" id="tabs">
+  <button data-tab="overview" class="on"></button>
+  <button data-tab="country"></button>
+  <button data-tab="trends"></button>
+  <button data-tab="events"></button>
+</nav>
 <div class="wrap">
 
-  <h2 id="h2-events"></h2>
-  <div id="events-2026"></div>
-  <div id="events-2027"></div>
+  <section class="panel on" data-tab="overview">
+    <h2 id="h2-market"></h2>
+    <div class="kpis" id="mkpis"></div>
+    <h2 id="h2-pos"></h2>
+    <div class="card scroll"><table id="posTbl"></table></div>
+    <div class="legend" id="pos-legend"></div>
+  </section>
 
-  <h2 id="h2-market"></h2>
-  <div class="kpis" id="mkpis"></div>
-
-  <h2 id="h2-pos"></h2>
-  <div class="card scroll"><table id="posTbl"></table></div>
-  <div class="legend" id="pos-legend"></div>
-
-  <h2 id="h2-country"></h2>
-  <div class="controls">
-    <div class="ctl"><label id="lab-country"></label>
-      <input id="search" autocomplete="off">
-      <select id="country"></select>
+  <section class="panel" data-tab="country">
+    <h2 id="h2-country"></h2>
+    <div class="controls">
+      <div class="ctl"><label id="lab-country"></label>
+        <input id="search" autocomplete="off">
+        <select id="country"></select>
+      </div>
     </div>
-  </div>
-  <div class="kpis" id="ckpis" style="margin-top:6px"></div>
-  <div class="scoregrid" id="score" style="margin-top:12px"></div>
+    <div class="kpis" id="ckpis" style="margin-top:6px"></div>
+    <div class="scoregrid" id="score" style="margin-top:12px"></div>
 
-  <h2 id="h2-detail"></h2>
-  <div class="controls">
-    <div class="ctl"><label id="lab-size"></label>
-      <select id="size" multiple size="4"></select></div>
-    <div class="ctl"><label id="lab-days"></label><select id="days"></select></div>
-    <button class="reset" id="reset"></button>
-  </div>
-  <label class="glab" id="lab-cochips"></label>
-  <div class="chips" id="cochips"></div>
-  <label class="glab" id="lab-sizechips"></label>
-  <div class="chips" id="sizechips"></div>
-  <div id="dealwrap"></div>
-  <div class="card scroll"><table id="tbl"></table></div>
-  <div class="count" id="count"></div>
-  <div class="legend" id="tbl-legend"></div>
+    <h2 id="h2-detail"></h2>
+    <div class="controls">
+      <div class="ctl"><label id="lab-size"></label>
+        <select id="size" multiple size="4"></select></div>
+      <div class="ctl"><label id="lab-days"></label><select id="days"></select></div>
+      <button class="reset" id="reset"></button>
+    </div>
+    <label class="glab" id="lab-cochips"></label>
+    <div class="chips" id="cochips"></div>
+    <label class="glab" id="lab-sizechips"></label>
+    <div class="chips" id="sizechips"></div>
+    <div id="dealwrap"></div>
+    <div class="card scroll"><table id="tbl"></table></div>
+    <div class="count" id="count"></div>
+    <div class="legend" id="tbl-legend"></div>
+  </section>
 
-  <h2 id="h2-trends"></h2>
-  <div class="controls">
-    <div class="ctl"><label id="lab-trend-country"></label><select id="trend-country"></select></div>
-    <div class="ctl"><label id="lab-trend-plan"></label><select id="trend-plan" style="min-width:190px"></select></div>
-  </div>
-  <div class="card" style="padding:16px 14px 12px"><div id="trend-chart"></div></div>
-  <div class="count" id="trend-note"></div>
+  <section class="panel" data-tab="trends">
+    <h2 id="h2-trends"></h2>
+    <div class="controls">
+      <div class="ctl"><label id="lab-trend-country"></label><select id="trend-country"></select></div>
+      <div class="ctl"><label id="lab-trend-plan"></label><select id="trend-plan" style="min-width:190px"></select></div>
+    </div>
+    <div class="card" style="padding:16px 14px 12px"><div id="trend-chart"></div></div>
+    <div class="count" id="trend-note"></div>
+  </section>
+
+  <section class="panel" data-tab="events">
+    <h2 id="h2-events"></h2>
+    <div id="events-2026"></div>
+    <div id="events-2027"></div>
+  </section>
+
 </div>
 
 <script>
@@ -231,6 +254,7 @@ const T = {
   leg_cheaprow:"cheapest in row", leg_exp:"most expensive", leg_gb:"$/GB = price ÷ GB (GB plans only)", leg_trophy:"🏆 = cheapest firm in that row",
   s_events:"Upcoming Events", s_events_t:"Big global events (World-Cup scale) that trigger event-specific eSIM packages. Prices are re-collected daily from 7 days before each event. Click a card to jump to that country's prices.",
   ev_2026:"2026 — upcoming", ev_2027:"2027 — upcoming", ev_left:"days left", ev_ongoing:"ONGOING", ev_approx:"approx.",
+  tab_overview:"Overview", tab_country:"By Country", tab_trends:"Trends", tab_events:"Events",
   cd_next:"Next event", cd_ongoing:"happening now", cd_d:"d", cd_h:"h", cd_m:"m", cd_s:"s",
   s_trends:"Price Trends", s_trends_t:"How a package's price changes over time — one point per weekly snapshot. Pick a country and a package to see every competitor's line.",
   tr_plan:"Package (data · days)", tr_note_build:"Trends build up over time — one point per weekly run; more points appear each week.", tr_note_pages:"Trends load on the live (Pages) URL — history is fetched there.", tr_nodata:"No history for this selection yet.",
@@ -277,6 +301,7 @@ const T = {
   leg_cheaprow:"satırda en ucuz", leg_exp:"en pahalı", leg_gb:"$/GB = fiyat ÷ GB (sadece GB planları)", leg_trophy:"🏆 = o satırdaki en ucuz firma",
   s_events:"Yaklaşan Etkinlikler", s_events_t:"Etkinliğe özel eSIM paketlerini tetikleyen büyük küresel organizasyonlar (Dünya Kupası ölçeğinde). Her etkinliğe 7 gün kala fiyatlar günlük yeniden toplanır. Karta tıkla → o ülkenin fiyatlarına git.",
   ev_2026:"2026 — yaklaşan", ev_2027:"2027 — yaklaşan", ev_left:"gün kaldı", ev_ongoing:"SÜRÜYOR", ev_approx:"yaklaşık",
+  tab_overview:"Genel Bakış", tab_country:"Ülke", tab_trends:"Trendler", tab_events:"Etkinlikler",
   cd_next:"Sonraki etkinlik", cd_ongoing:"şu an sürüyor", cd_d:"g", cd_h:"s", cd_m:"dk", cd_s:"sn",
   s_trends:"Fiyat Trendi", s_trends_t:"Bir paketin fiyatının zaman içinde nasıl değiştiği — her haftalık anlık görüntü bir nokta. Ülke ve paket seç, her rakibin çizgisini gör.",
   tr_plan:"Paket (veri · gün)", tr_note_build:"Trend zamanla dolar — her haftalık çalışmada bir nokta; her hafta yeni nokta eklenir.", tr_note_pages:"Trend grafiği canlı (Pages) adresinde yüklenir.", tr_nodata:"Bu seçim için henüz geçmiş yok.",
@@ -328,6 +353,13 @@ function renderStatic(){
   $("#lab-trend-country").textContent=tr("c_country");
   $("#lab-trend-plan").textContent=tr("tr_plan");
   $("#h2-events").innerHTML=tr("s_events")+qm(tr("s_events_t"));
+  [["overview","tab_overview"],["country","tab_country"],["trends","tab_trends"],["events","tab_events"]]
+    .forEach(([t,k])=>{const b=document.querySelector(`.tabs button[data-tab="${t}"]`); if(b)b.textContent=tr(k);});
+}
+function switchTab(t){
+  document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x.dataset.tab===t));
+  document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("on",p.dataset.tab===t));
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 // ---------------- upcoming events + live countdown ----------------
@@ -344,9 +376,9 @@ function evCard(e){
   const dr=fmtD(e.start)+(e.end&&e.end!==e.start?" – "+fmtD(e.end):"");
   const linkable=D.countries.includes(e.country);
   return `<div class="evcard" data-country="${linkable?e.country:''}">
-    <div class="evflag">${e.flag||"📅"}</div>
-    <div class="evbody"><div class="evname">${nm}${e.approx?`<span class="evapx">${tr("ev_approx")}</span>`:""}</div>
-    <div class="evmeta">${e.country||""} · ${dr}</div></div>${status}</div>`;
+    <div class="evhead"><span class="evflag">${e.flag||"📅"}</span><span class="evname">${nm}${e.approx?`<span class="evapx">${tr("ev_approx")}</span>`:""}</span></div>
+    <div class="evmeta">${e.country||""} · ${dr}</div>
+    ${status}</div>`;
 }
 function renderEvents(){
   const up=evList();
@@ -593,7 +625,10 @@ $("#trend-plan").addEventListener("change",e=>{trendPlan=e.target.value;drawTren
 // click an event card -> jump to that country's prices
 document.addEventListener("click",e=>{const c=e.target.closest(".evcard");if(!c||!c.dataset.country)return;
   country=c.dataset.country; sizes.clear(); days="All"; $("#search").value=""; fillCountry(""); $("#country").value=country;
-  refreshCountry(); document.querySelector("#h2-country").scrollIntoView({behavior:"smooth",block:"start"});});
+  refreshCountry(); switchTab("country");});
+$("#tabs").addEventListener("click",e=>{const b=e.target.closest("button[data-tab]");if(b)switchTab(b.dataset.tab);});
+$("#cdbar").style.cursor="pointer";
+$("#cdbar").addEventListener("click",()=>switchTab("events"));
 
 // init
 [...$("#langtog").children].forEach(x=>x.classList.toggle("on",x.dataset.l===LANG));
