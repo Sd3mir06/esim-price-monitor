@@ -1,0 +1,54 @@
+name: eSIM daily price collection
+
+# Runs the collector every day, rebuilds the dashboard, and commits the
+# results back into the repo. GitHub Pages then serves docs/index.html.
+on:
+  schedule:
+    # ---- TEST AŞAMASI (şu an aktif): HER GÜN ----
+    - cron: "0 6 * * *"      # every day at 06:00 UTC (09:00 Türkiye)
+    # ---- NORMAL DÜZEN: AYDA 1 (test bitince yukarıdaki satırı sil, aşağıdakini aç) ----
+    # - cron: "0 6 1 * *"    # her ayın 1'i, 06:00 UTC (ayda bir kez)
+  workflow_dispatch: {}       # Actions sekmesinden elle "Run workflow" için
+
+permissions:
+  contents: write             # needed to commit the new data back
+
+concurrency:
+  group: esim-collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+        # NOTE: collect.py uses ONLY the Python standard library —
+        # there is nothing to `pip install`.
+
+      - name: Collect competitor prices
+        run: python3 collect.py
+
+      - name: Build dashboard
+        run: |
+          python3 build_dashboard.py
+          mkdir -p docs
+          cp dashboard.html docs/index.html
+
+      - name: Commit results back to the repo
+        run: |
+          git config user.name  "esim-price-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data dashboard.html docs
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "prices: $(date -u +%F)"
+            git push
+          fi

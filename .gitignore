@@ -1,0 +1,11 @@
+# scratch / temp — never commit these
+*.log
+_*.py
+__pycache__/
+logs/
+
+# keep: collect.py, build_dashboard.py, dashboard.html,
+#       data/prices_*.csv/json, data/latest/*.json, docs/, .github/
+
+# macOS
+.DS_Store
