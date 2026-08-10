@@ -219,6 +219,14 @@ TEMPLATE = r"""<!doctype html>
   .empty{padding:36px;text-align:center;color:var(--muted)}
   .legend{display:flex;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:11.5px;margin-top:11px}
   .sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:4px}
+  /* best-deal-by-size cards (auto-update with filters) */
+  .deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin:2px 0 14px}
+  .deal{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:12px;padding:10px 13px;position:relative}
+  .deal .ds{font-size:11.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+  .deal .dco{font-size:14.5px;font-weight:800;color:var(--lowtx);margin-top:1px}
+  .deal .dp{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.4px}
+  .deal .dm{font-size:11.5px;color:var(--muted);margin-top:1px}
   .scoregrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:11px}
   .sc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
   .sc .co{font-weight:800;font-size:15px}
@@ -265,6 +273,7 @@ TEMPLATE = r"""<!doctype html>
   <div class="chips" id="cochips"></div>
   <label style="color:var(--muted);font-size:11.5px">Data size (çoklu)</label>
   <div class="chips" id="sizechips"></div>
+  <div id="dealwrap"></div>
   <div class="card scroll"><table id="tbl"></table></div>
   <div class="count" id="count"></div>
   <div class="legend">
@@ -404,15 +413,39 @@ function fillDays(){
   if(days!=="All"&&days!=="none"&&!ds.map(String).includes(String(days)))days="All";
 }
 
+// 🏆 best deal per DATA SIZE (cheapest across all durations), auto-updates with filters
+function renderDeals(vis){
+  const bySize={};
+  for(const r of vis){
+    const b=bySize[r.d];
+    if(!b || r.p<b.p) bySize[r.d]={co:r.co,p:r.p,n:r.n,g:r.g};
+  }
+  const list=Object.keys(bySize).sort(sizeOrder);
+  if(!list.length){$("#dealwrap").innerHTML="";return;}
+  const cards=list.map(s=>{
+    const b=bySize[s];
+    const rate=b.g?" · "+money(b.p/b.g)+"/GB":"";
+    const dur=b.n==null?"süresiz":b.n+" gün";
+    return `<div class="deal"><div class="ds">${s} · en uygun</div>`
+      +`<div class="dco">${b.co}</div><div class="dp">${money(b.p)}</div>`
+      +`<div class="dm">${dur}${rate}</div></div>`;
+  }).join("");
+  $("#dealwrap").innerHTML =
+    `<label style="color:var(--muted);font-size:11.5px">🏆 En uygun — boyuta göre `
+    +`(gün fark etmeksizin, seçili filtreye göre otomatik)</label>`
+    +`<div class="deals">${cards}</div>`;
+}
+
 function renderTable(){
   const show=shownCos();
   let rows=cRecs().filter(sizeMatch);
   if(days==="none")rows=rows.filter(r=>r.n==null);
   else if(days!=="All")rows=rows.filter(r=>String(r.n)===String(days));
+  const vis=rows.filter(r=>!hidden.has(r.co));
+  renderDeals(vis);
 
   const plans={};
-  for(const r of rows){
-    if(hidden.has(r.co))continue;
+  for(const r of vis){
     const k=r.d+"||"+(r.n==null?"":r.n);
     const p=(plans[k]=plans[k]||{d:r.d,n:r.n,g:r.g,px:{}});
     p.px[r.co]=(p.px[r.co]==null)?r.p:Math.min(p.px[r.co],r.p);
