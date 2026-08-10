@@ -21,14 +21,16 @@
   body{margin:0;background:var(--bg);color:var(--text);
     font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
   .wrap{max-width:1240px;margin:0 auto;padding:0 22px 70px}
-  header{padding:26px 22px 10px;max-width:1240px;margin:0 auto}
+  header{padding:26px 22px 10px;max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
   h1{margin:0;font-size:21px;font-weight:800;letter-spacing:-.3px}
   h2{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
     color:var(--muted);margin:30px 0 12px;display:flex;align-items:center;gap:8px}
   h2::after{content:"";flex:1;height:1px;background:var(--line)}
   .sub{color:var(--muted);font-size:12.5px;margin-top:4px}
   .warn{color:var(--hightx)}
-  /* info tooltips */
+  .langtog{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;flex:none}
+  .langtog button{background:var(--panel);color:var(--muted);border:0;padding:6px 11px;font-size:12.5px;font-weight:700;cursor:pointer}
+  .langtog button.on{background:var(--accent);color:#fff}
   .qm{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;
     background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:10px;font-weight:700;
     margin-left:5px;cursor:help;vertical-align:middle;text-transform:none;letter-spacing:0}
@@ -36,16 +38,13 @@
   .floattip{position:fixed;max-width:280px;background:var(--panel);color:var(--text);border:1px solid var(--line);
     border-radius:11px;padding:11px 13px;font-size:12px;line-height:1.55;font-weight:400;text-align:left;
     text-transform:none;letter-spacing:normal;box-shadow:0 14px 38px rgba(0,0,0,.42);z-index:1000;display:none}
-  /* KPI cards */
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:11px}
-  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 15px;
-    position:relative;overflow:hidden}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 15px;position:relative;overflow:hidden}
   .kpi .lab{color:var(--muted);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
   .kpi .val{font-size:22px;font-weight:800;margin-top:3px;letter-spacing:-.5px}
   .kpi .sub2{color:var(--muted);font-size:12px;margin-top:1px}
   .kpi.hl{background:linear-gradient(135deg,var(--panel),var(--panel2))}
   .kpi.hl .val{color:var(--accent)}
-  /* generic card + table */
   .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
   .scroll{overflow-x:auto}
   table{border-collapse:collapse;width:100%;font-size:13.5px}
@@ -74,7 +73,6 @@
   .bar{height:7px;border-radius:4px;background:var(--panel2);min-width:70px;overflow:hidden;display:inline-block;vertical-align:middle;width:90px}
   .bar > i{display:block;height:100%;border-radius:4px}
   .win{color:var(--lowtx);font-weight:700}
-  /* controls */
   .controls{display:flex;gap:13px;flex-wrap:wrap;align-items:flex-end;margin:6px 0 4px}
   .ctl{display:flex;flex-direction:column}
   label{color:var(--muted);font-size:11.5px;margin-bottom:5px}
@@ -92,10 +90,8 @@
   .empty{padding:36px;text-align:center;color:var(--muted)}
   .legend{display:flex;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:11.5px;margin-top:11px}
   .sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:4px}
-  /* best-deal-by-size cards (auto-update with filters) */
   .deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin:2px 0 14px}
-  .deal{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);
-    border-radius:12px;padding:10px 13px;position:relative}
+  .deal{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:10px 13px}
   .deal .ds{font-size:11.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.4px}
   .deal .dco{font-size:14.5px;font-weight:800;color:var(--lowtx);margin-top:1px}
   .deal .dp{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.4px}
@@ -105,56 +101,53 @@
   .sc .co{font-weight:800;font-size:15px}
   .sc .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:6px}
   .sc .row b{color:var(--text);font-variant-numeric:tabular-nums}
+  .glab{color:var(--muted);font-size:11.5px;display:block}
 </style>
 </head>
 <body>
 <header>
-  <h1>eSIM Competitor Intelligence</h1>
-  <div class="sub" id="sub"></div>
+  <div>
+    <h1 id="h1"></h1>
+    <div class="sub" id="sub"></div>
+  </div>
+  <div class="langtog" id="langtog">
+    <button data-l="en">EN</button><button data-l="tr">TR</button>
+  </div>
 </header>
 <div class="wrap">
 
-  <h2>Market Overview <span class="qm" data-tip="Tüm rakiplerin bugünkü pazar özeti — kim en geniş kapsamlı, kim birim veride en uygun, kim fiyat lideri.">?</span></h2>
+  <h2 id="h2-market"></h2>
   <div class="kpis" id="mkpis"></div>
 
-  <h2>Competitor Positioning <span class="qm" data-tip="Her rakibin fiyat konumlandırması: kapsama, tipik birim veri fiyatı (medyan $/GB) ve kaç pazarda en ucuz olduğu. Her sütundaki ? ile ayrıntı.">?</span></h2>
+  <h2 id="h2-pos"></h2>
   <div class="card scroll"><table id="posTbl"></table></div>
-  <div class="legend">
-    <span><span class="sw" style="background:var(--barlo)"></span>düşük $/GB (uygun)</span>
-    <span><span class="sw" style="background:var(--barhi)"></span>yüksek $/GB (pahalı)</span>
-    <span><span class="badge b-Budget">Budget</span> / <span class="badge b-Mid">Mid</span> / <span class="badge b-Premium">Premium</span> = ortalama $/GB'a göre konum</span>
-  </div>
+  <div class="legend" id="pos-legend"></div>
 
-  <h2>Country Drill-down <span class="qm" data-tip="Bir ülke seç; o ülkedeki en uygun teklifler, her rakibin skor kartı ve alttaki detaylı tablo o ülkeye göre güncellenir.">?</span></h2>
+  <h2 id="h2-country"></h2>
   <div class="controls">
-    <div class="ctl"><label>Country / destination</label>
-      <input id="search" placeholder="type to search…" autocomplete="off">
+    <div class="ctl"><label id="lab-country"></label>
+      <input id="search" autocomplete="off">
       <select id="country"></select>
     </div>
   </div>
   <div class="kpis" id="ckpis" style="margin-top:6px"></div>
   <div class="scoregrid" id="score" style="margin-top:12px"></div>
 
-  <h2>Detailed Price Comparison <span class="qm" data-tip="Seçili ülkedeki tüm paketler tek tabloda. Boyut/gün/rakip filtrele, sütun başlığına tıklayıp sırala; her satırda en ucuz yeşil. Üstteki 'En uygun' paneli boyuta göre mutlak en ucuzu gösterir.">?</span></h2>
+  <h2 id="h2-detail"></h2>
   <div class="controls">
-    <div class="ctl"><label>Data size (⌘/Ctrl-click)</label>
+    <div class="ctl"><label id="lab-size"></label>
       <select id="size" multiple size="4"></select></div>
-    <div class="ctl"><label>Validity (days)</label><select id="days"></select></div>
-    <button class="reset" id="reset">Reset</button>
+    <div class="ctl"><label id="lab-days"></label><select id="days"></select></div>
+    <button class="reset" id="reset"></button>
   </div>
-  <label style="color:var(--muted);font-size:11.5px">Competitors (tıkla: göster/gizle)</label>
+  <label class="glab" id="lab-cochips"></label>
   <div class="chips" id="cochips"></div>
-  <label style="color:var(--muted);font-size:11.5px">Data size (çoklu)</label>
+  <label class="glab" id="lab-sizechips"></label>
   <div class="chips" id="sizechips"></div>
   <div id="dealwrap"></div>
   <div class="card scroll"><table id="tbl"></table></div>
   <div class="count" id="count"></div>
-  <div class="legend">
-    <span><span class="sw" style="background:var(--lowtx)"></span>satırda en ucuz</span>
-    <span><span class="sw" style="background:var(--hightx)"></span>en pahalı</span>
-    <span>$/GB = fiyat ÷ GB (sadece GB planları)</span>
-    <span>🏆 = o satırın en ucuz firması</span>
-  </div>
+  <div class="legend" id="tbl-legend"></div>
 </div>
 
 <script>
@@ -162,82 +155,173 @@ const D = {"date":"2026-08-10","competitors":["Airalo","Breeze","Holafly","Pocke
 const $ = s => document.querySelector(s);
 const M = D.market, PC = M.perComp, cos = D.competitors;
 const money = v => "$"+v.toFixed(2);
-function qm(t){return ` <span class="qm" data-tip="${(t||"").replace(/"/g,'&quot;')}">?</span>`;}
 
-// floating tooltip (hover on desktop, tap on mobile) — never clipped by tables
+// ---------------- i18n ----------------
+const T = {
+ en:{
+  title:"eSIM Competitor Intelligence",
+  snap:"Snapshot", w_comp:"competitors", w_pack:"packages", w_ctry:"countries", stale:"stale (last good)",
+  s_market:"Market Overview", s_market_t:"Market-wide summary of every competitor for today's snapshot — who has the widest reach, who is cheapest per unit of data, who leads on price.",
+  s_pos:"Competitor Positioning", s_pos_t:"Each competitor's price stance: coverage, typical unit-data price (median $/GB) and how many markets they lead on price. See the ? on each column for detail.",
+  s_country:"Country Drill-down", s_country_t:"Pick a country; the best deals, each competitor's scorecard and the detailed table below all update for that country.",
+  s_detail:"Detailed Price Comparison", s_detail_t:"Every package for the selected country in one table. Filter by size/days/competitor, click a header to sort; cheapest in each row is green. The panel above gives the absolute cheapest per size.",
+  // market KPIs
+  k_comp:"Competitors", k_comp_s:"tracked", k_comp_t:"Number of competitor eSIM providers whose prices are collected automatically every day.",
+  k_pack:"Packages", k_pack_s:"total plans", k_pack_t:"Total packages in today's snapshot across all competitors × countries × data/day combinations (one package = one row).",
+  k_cov:"Widest coverage", k_cov_t:"The provider serving the most countries/destinations, by number of unique countries where they offer a package.",
+  k_val:"Best value ($/GB)", k_val_s:"median /GB", k_val_t:"Provider with the lowest unit-data price (price ÷ GB) on GB plans, by median $/GB across all their GB plans. Lower = cheaper.",
+  k_gbl:"Price leader (GB)", k_gbl_s:"country","k_gbl_s2":"cheapest in", k_gbl_t:"Provider with the lowest $/GB in the most countries. Per country, each provider's best unit price is compared; the one winning the most countries shows here.",
+  k_unl:"Unlimited leader", k_unl_t:"Provider that is cheapest on the 7-day UNLIMITED plan in the most countries. Compares the unlimited-data model (e.g. Holafly).",
+  cheapest_in:"countries won", ctry:"countries",
+  // positioning
+  p_comp:"Competitor", p_comp_t:"Competitor eSIM provider. Rows are sorted cheapest (low median $/GB) to most expensive.",
+  p_cov:"Coverage", p_cov_t:"Number of distinct countries/destinations where this provider offers at least one package (unique). Note: Holafly's count includes city pages, so it is high.",
+  p_plans:"Plans", p_plans_t:"Total packages collected from this provider — all countries × all data/day combinations. One row = one package.",
+  p_medgb:"Median $/GB", p_medgb_t:"MEDIAN of the unit price (price ÷ GB) across ALL of the provider's GB plans. Median ignores outliers (1GB plans are very pricey) → reflects the typical unit price. Lower = cheaper. Unlimited plans excluded. Bar is proportional to the highest median (green=cheap, red=pricey).",
+  p_7d:"7d Unlimited", p_7d_t:"Median price of the provider's 7-DAY UNLIMITED plans across all countries. For comparing unlimited-data providers (e.g. Holafly). '—' = no 7-day unlimited plan.",
+  p_gbc:"Cheapest in GB", p_gbc_t:"In how many countries this provider has the lowest $/GB. Per country, each provider's best $/GB is compared; the lowest 'wins' that country. Higher = unit-price leader in more markets.",
+  p_pos:"Position", p_pos_t:"Automatic tier by median $/GB: cheapest third = Budget, middle = Mid, priciest = Premium. Providers with no GB plans (unlimited only) = Unlimited-only.",
+  leg_low:"low $/GB (cheap)", leg_high:"high $/GB (pricey)", leg_badge:"= tier by median $/GB",
+  // country
+  c_country:"Country / destination", c_search:"type to search…",
+  ck_cheapgb:"Cheapest $/GB here", ck_cheapgb_t:"The provider offering the lowest unit-data price (price ÷ GB) in the selected country, and that value. Based on the provider's BEST (cheapest) GB plan here.",
+  ck_cheapunl:"Cheapest 7d unlimited", ck_cheapunl_t:"The provider whose 7-day unlimited plan is cheapest in the selected country, and its price. '—' = nobody offers 7d unlimited here.",
+  ck_comp:"Competitors here", ck_comp_s:"active", ck_comp_t:"Number of providers with at least one package in the selected country.",
+  ck_range:"Price range", ck_range_t:"The lowest and highest package price in this country (all sizes/durations included).",
+  sc_cheap:"Cheapest plan", sc_bestgb:"Best $/GB", sc_7d:"7d unlimited", sc_plans:"Plans",
+  // deals + table
+  d_label:"🏆 Best deal — by data size (cheapest across all durations, auto-updates with filters)",
+  d_suffix:"· cheapest", no_exp:"no expiry", w_days:"days",
+  f_size:"Data size (⌘/Ctrl-click)", f_days:"Validity (days)", f_reset:"Reset",
+  f_cochips:"Competitors (click to show/hide)", f_sizechips:"Data size (multi)",
+  opt_all:"All", opt_novalid:"No fixed validity",
+  t_data:"Data", t_data_t:"Package data amount: GB amount or Unlimited. Click header → sort by size.",
+  t_days:"Days", t_days_t:"Package validity in days. '—' = no fixed validity stated (e.g. some Breeze GB plans).",
+  t_rate:"$/GB", t_rate_t:"Unit-data cost = the CHEAPEST price in this row ÷ GB. GB plans only; '—' for unlimited. Click header → sort by best unit price.",
+  t_cheap:"🏆 Cheapest", t_cheap_t:"The cheapest provider and price in THIS row (same data size + same days). For the absolute cheapest per size regardless of days, use the 'Best deal by data size' panel above.",
+  t_empty:"No plans match these filters.", firms:"firms", plan_rows:"plan",
+  leg_cheaprow:"cheapest in row", leg_exp:"most expensive", leg_gb:"$/GB = price ÷ GB (GB plans only)", leg_trophy:"🏆 = cheapest firm in that row",
+  badge:{Budget:"Budget", Mid:"Mid", Premium:"Premium", "Unlimited-only":"Unlimited-only"},
+ },
+ tr:{
+  title:"eSIM Rakip İstihbaratı",
+  snap:"Anlık görüntü", w_comp:"rakip", w_pack:"paket", w_ctry:"ülke", stale:"eski (son iyi veri)",
+  s_market:"Pazar Özeti", s_market_t:"Tüm rakiplerin bugünkü anlık görüntüye göre pazar geneli özeti — kim en geniş kapsamlı, kim birim veride en uygun, kim fiyat lideri.",
+  s_pos:"Rakip Konumlandırma", s_pos_t:"Her rakibin fiyat konumu: kapsama, tipik birim veri fiyatı (medyan $/GB) ve kaç pazarda en ucuz olduğu. Her sütundaki ? ile ayrıntı.",
+  s_country:"Ülke Detayı", s_country_t:"Bir ülke seç; en uygun teklifler, her rakibin skor kartı ve alttaki detaylı tablo o ülkeye göre güncellenir.",
+  s_detail:"Detaylı Fiyat Karşılaştırma", s_detail_t:"Seçili ülkedeki tüm paketler tek tabloda. Boyut/gün/rakip filtrele, başlığa tıklayıp sırala; satırda en ucuz yeşil. Üstteki panel boyuta göre mutlak en ucuzu verir.",
+  k_comp:"Rakip sayısı", k_comp_s:"takip edilen", k_comp_t:"Fiyatları her gün otomatik toplanan rakip eSIM firması sayısı.",
+  k_pack:"Paket", k_pack_s:"toplam plan", k_pack_t:"Bugünkü anlık görüntüde tüm firmalar × ülkeler × veri/gün kombinasyonlarından toplanan toplam paket (bir paket = bir satır).",
+  k_cov:"En geniş kapsama", k_cov_t:"En çok ülke/destinasyona hizmet veren firma; paket sunduğu benzersiz ülke sayısına göre.",
+  k_val:"En iyi değer ($/GB)", k_val_s:"medyan /GB", k_val_t:"GB planlarında birim veri fiyatı (fiyat ÷ GB) en düşük olan firma; tüm GB planlarındaki $/GB medyanına göre. Düşük = daha uygun.",
+  k_gbl:"Fiyat lideri (GB)", k_gbl_s:"ülke","k_gbl_s2":"ülkede en ucuz", k_gbl_t:"En çok ülkede en düşük $/GB'a sahip firma. Her ülkede firmaların en iyi birim fiyatı kıyaslanır; en çok ülke kazanan burada görünür.",
+  k_unl:"Sınırsız lideri", k_unl_t:"7 günlük SINIRSIZ planda en çok ülkede en ucuz olan firma. Sınırsız-veri modelini kıyaslar (ör. Holafly).",
+  cheapest_in:"ülkede en ucuz", ctry:"ülke",
+  p_comp:"Firma", p_comp_t:"Rakip eSIM firması. Satırlar en uygundan (düşük medyan $/GB) pahalıya sıralıdır.",
+  p_cov:"Kapsama", p_cov_t:"Firmanın en az bir paket sunduğu farklı ülke/destinasyon sayısı (benzersiz). Not: Holafly'ın sayısı şehir sayfalarını da içerir, o yüzden yüksektir.",
+  p_plans:"Plan", p_plans_t:"Bu firmadan toplanan toplam paket — tüm ülkeler × tüm veri/gün kombinasyonları. Bir satır = bir paket.",
+  p_medgb:"Medyan $/GB", p_medgb_t:"Firmanın TÜM GB planlarında birim fiyatın (fiyat ÷ GB) MEDYANI. Medyan, uç değerlerden (1GB planları çok pahalıdır) etkilenmez → tipik birim fiyatı yansıtır. Düşük = daha uygun. Sınırsız planlar hariç. Bar: en yüksek medyana göre orantılı (yeşil=ucuz, kırmızı=pahalı).",
+  p_7d:"7g Sınırsız", p_7d_t:"Firmanın tüm ülkelerdeki 7 GÜNLÜK SINIRSIZ planlarının fiyat medyanı. Sınırsız-veri modelli firmaları (ör. Holafly) kıyaslamak için. '—' = 7g sınırsız planı yok.",
+  p_gbc:"GB'de en ucuz", p_gbc_t:"Bu firmanın kaç ülkede en düşük $/GB'a sahip olduğu. Her ülkede firmaların en iyi $/GB'ı kıyaslanır; en düşük olan o ülkeyi kazanır. Yüksek = daha çok pazarda birim-fiyat lideri.",
+  p_pos:"Konum", p_pos_t:"Medyan $/GB'a göre otomatik: en ucuz üçte bir = Budget, orta = Mid, en pahalı = Premium. GB planı olmayan (sadece sınırsız) firmalar = Unlimited-only.",
+  leg_low:"düşük $/GB (uygun)", leg_high:"yüksek $/GB (pahalı)", leg_badge:"= medyan $/GB'a göre konum",
+  c_country:"Ülke / destinasyon", c_search:"aramak için yaz…",
+  ck_cheapgb:"Buradaki en ucuz $/GB", ck_cheapgb_t:"Seçili ülkede en düşük birim veri fiyatını (fiyat ÷ GB) sunan firma ve o değeri. Firmanın bu ülkedeki EN İYİ (en ucuz) GB planına göre.",
+  ck_cheapunl:"En ucuz 7g sınırsız", ck_cheapunl_t:"Seçili ülkede 7 günlük sınırsız planı en ucuz olan firma ve fiyatı. '—' = bu ülkede kimsenin 7g sınırsızı yok.",
+  ck_comp:"Buradaki firmalar", ck_comp_s:"aktif", ck_comp_t:"Seçili ülkede en az bir paketi olan firma sayısı.",
+  ck_range:"Fiyat aralığı", ck_range_t:"Bu ülkedeki tüm paketlerin en düşük ve en yüksek fiyatı (tüm boyut/süreler dahil).",
+  sc_cheap:"En ucuz plan", sc_bestgb:"En iyi $/GB", sc_7d:"7g sınırsız", sc_plans:"Plan sayısı",
+  d_label:"🏆 En uygun — boyuta göre (gün fark etmeksizin, seçili filtreye göre otomatik)",
+  d_suffix:"· en uygun", no_exp:"süresiz", w_days:"gün",
+  f_size:"Veri boyutu (⌘/Ctrl-tıkla)", f_days:"Süre (gün)", f_reset:"Sıfırla",
+  f_cochips:"Rakipler (tıkla: göster/gizle)", f_sizechips:"Veri boyutu (çoklu)",
+  opt_all:"Tümü", opt_novalid:"Sabit süre yok",
+  t_data:"Veri", t_data_t:"Paketin veri miktarı: GB miktarı veya Sınırsız. Başlığa tıkla → boyuta göre sırala.",
+  t_days:"Gün", t_days_t:"Paketin geçerlilik süresi (gün). '—' = sabit süre belirtilmemiş (ör. bazı Breeze GB planları).",
+  t_rate:"$/GB", t_rate_t:"Birim veri maliyeti = bu satırdaki EN UCUZ fiyat ÷ GB. Sadece GB planları; sınırsızlarda '—'. Başlığa tıkla → en uygun birim fiyata göre sırala.",
+  t_cheap:"🏆 En ucuz", t_cheap_t:"Bu SATIRIN (aynı veri boyutu + aynı gün) en ucuz firması ve fiyatı. Boyuta göre gün-bağımsız MUTLAK en ucuz için üstteki 'En uygun — boyuta göre' paneline bak.",
+  t_empty:"Bu filtrelere uyan plan yok.", firms:"firma", plan_rows:"plan",
+  leg_cheaprow:"satırda en ucuz", leg_exp:"en pahalı", leg_gb:"$/GB = fiyat ÷ GB (sadece GB planları)", leg_trophy:"🏆 = o satırdaki en ucuz firma",
+  badge:{Budget:"Budget", Mid:"Mid", Premium:"Premium", "Unlimited-only":"Unlimited-only"},
+ }
+};
+let LANG = localStorage.getItem("esimlang");
+if(!["tr","en"].includes(LANG)) LANG = (navigator.language||"").toLowerCase().startsWith("tr") ? "tr" : "en";
+const tr = k => T[LANG][k];
+
+function qm(t){return ` <span class="qm" data-tip="${(t||"").replace(/"/g,'&quot;')}">?</span>`;}
 const tipEl=document.createElement("div"); tipEl.className="floattip"; document.body.appendChild(tipEl);
-function showTip(el){
-  const t=el.getAttribute("data-tip"); if(!t)return;
-  tipEl.textContent=t; tipEl.style.display="block";
-  const r=el.getBoundingClientRect(), w=tipEl.offsetWidth, h=tipEl.offsetHeight;
+function showTip(el){const t=el.getAttribute("data-tip"); if(!t)return; tipEl.textContent=t; tipEl.style.display="block";
+  const r=el.getBoundingClientRect(),w=tipEl.offsetWidth,h=tipEl.offsetHeight;
   let left=r.left+r.width/2-w/2; left=Math.max(8,Math.min(left,innerWidth-w-8));
   let top=r.bottom+8; if(top+h>innerHeight-8) top=r.top-h-8;
-  tipEl.style.left=left+"px"; tipEl.style.top=Math.max(8,top)+"px";
-}
+  tipEl.style.left=left+"px"; tipEl.style.top=Math.max(8,top)+"px";}
 function hideTip(){tipEl.style.display="none";}
 document.addEventListener("mouseover",e=>{const q=e.target.closest(".qm"); if(q)showTip(q);});
 document.addEventListener("mouseout",e=>{if(e.target.closest(".qm"))hideTip();});
 document.addEventListener("click",e=>{const q=e.target.closest(".qm"); if(q){e.preventDefault();e.stopPropagation();showTip(q);}else hideTip();});
 addEventListener("scroll",hideTip,true);
 
-const staleList = Object.entries(D.stale||{});
-$("#sub").innerHTML = "Snapshot "+D.date+" · "+cos.length+" competitors · "
-  + D.total.toLocaleString()+" packages · "+D.countries.length+" countries"
-  + (staleList.length ? ` &nbsp;<span class="warn">⚠ stale: `
-      +staleList.map(([c,d])=>`${c} ${d}`).join(", ")+`</span>` : "");
-document.title = "eSIM Intelligence — "+D.date;
-
-// ---------- 1. MARKET KPIs ----------
 function kpi(lab,val,sub,hl,tip){return `<div class="kpi${hl?' hl':''}"><div class="lab">${lab}${tip?qm(tip):""}</div><div class="val">${val}</div><div class="sub2">${sub||""}</div></div>`;}
-$("#mkpis").innerHTML = [
-  kpi("Competitors", cos.length, "takip edilen", false,
-      "Fiyatları her gün otomatik toplanan rakip eSIM firması sayısı."),
-  kpi("Packages", D.total.toLocaleString(), "toplam plan", false,
-      "Bugünkü anlık görüntüde tüm firmalar × tüm ülkeler × tüm veri/gün kombinasyonlarından toplanan toplam paket sayısı (bir paket = bir satır)."),
-  kpi("Widest coverage", M.leaders.coverage, PC[M.leaders.coverage].countries+" ülke", true,
-      "En çok ülke/destinasyona hizmet veren firma. Firmanın paket sunduğu benzersiz ülke sayısına göre belirlenir."),
-  kpi("En iyi değer ($/GB)", M.leaders.value||"—", M.leaders.value?money(PC[M.leaders.value].avgGB)+" medyan /GB":"", true,
-      "GB planlarında birim veri fiyatı (fiyat ÷ GB) en düşük olan firma. Firmanın tüm GB planlarındaki $/GB medyanına göre. Düşük = daha uygun."),
-  kpi("Price leader (GB)", M.leaders.gbLeader, PC[M.leaders.gbLeader].gbLeader+" ülkede en ucuz", true,
-      "En çok ülkede en düşük $/GB'a sahip firma. Her ülkede firmaların en iyi birim fiyatı kıyaslanır; en çok ülke kazanan burada görünür."),
-  kpi("Unlimited leader", M.leaders.unlimLeader, PC[M.leaders.unlimLeader].unlimLeader+" ülkede en ucuz (7g)", true,
-      "7 günlük SINIRSIZ planda en çok ülkede en ucuz olan firma. Sınırsız-veri modelini kıyaslar (ör. Holafly)."),
-].join("");
+function badgeName(b){return tr("badge")[b]||b;}
 
-// ---------- 2. POSITIONING TABLE ----------
-(function(){
-  const rows = cos.map(c=>({c, ...PC[c]}))
-    .sort((a,b)=>(a.avgGB??1e9)-(b.avgGB??1e9));
-  const head = `<thead><tr>
-    <th class="l">Competitor${qm("Takip edilen rakip eSIM firması. Satırlar en uygundan (düşük medyan $/GB) pahalıya sıralıdır.")}</th>
-    <th>Coverage${qm("Firmanın en az bir paket sunduğu farklı ülke/destinasyon sayısı (benzersiz). Not: Holafly'ın sayısı şehir sayfalarını da içerir, o yüzden yüksektir.")}</th>
-    <th>Plans${qm("Bu firmadan toplanan toplam paket sayısı — tüm ülkeler × tüm veri/gün kombinasyonları. Bir satır = bir paket.")}</th>
-    <th class="l">Medyan $/GB${qm("Firmanın TÜM GB planlarında birim fiyatın (fiyat ÷ GB) MEDYANI. Medyan, uç değerlerden (1GB planları çok pahalıdır) etkilenmez → tipik birim fiyatı yansıtır. Düşük = daha uygun. Sınırsız planlar hariç. Bar: firmalar arası en yüksek medyana göre orantılı (yeşil=ucuz, kırmızı=pahalı).")}</th>
-    <th>7d Unlimited${qm("Firmanın tüm ülkelerdeki 7 GÜNLÜK SINIRSIZ planlarının fiyat medyanı. Sınırsız-veri modelli firmaları (ör. Holafly) kıyaslamak için. '—' = 7g sınırsız planı yok.")}</th>
-    <th>GB'de en ucuz${qm("Bu firmanın kaç ülkede en düşük $/GB'a sahip olduğu. Her ülkede firmaların en iyi $/GB'ı kıyaslanır; en düşük olan o ülkeyi 'kazanır'. Yüksek = daha çok pazarda birim-fiyat lideri.")}</th>
-    <th>Position${qm("Medyan $/GB'a göre otomatik konum: en ucuz üçte bir = Budget, orta = Mid, en pahalı = Premium. GB planı olmayan (sadece sınırsız) firmalar = Unlimited-only.")}</th></tr></thead>`;
+// ---------------- renderers ----------------
+function renderStatic(){
+  document.documentElement.lang=LANG;
+  document.title=tr("title"); $("#h1").textContent=tr("title");
+  const staleList=Object.entries(D.stale||{});
+  $("#sub").innerHTML=tr("snap")+" "+D.date+" · "+cos.length+" "+tr("w_comp")+" · "
+    +D.total.toLocaleString()+" "+tr("w_pack")+" · "+D.countries.length+" "+tr("w_ctry")
+    +(staleList.length?` &nbsp;<span class="warn">⚠ ${tr("stale")}: `+staleList.map(([c,d])=>`${c} ${d}`).join(", ")+`</span>`:"");
+  $("#h2-market").innerHTML=tr("s_market")+qm(tr("s_market_t"));
+  $("#h2-pos").innerHTML=tr("s_pos")+qm(tr("s_pos_t"));
+  $("#h2-country").innerHTML=tr("s_country")+qm(tr("s_country_t"));
+  $("#h2-detail").innerHTML=tr("s_detail")+qm(tr("s_detail_t"));
+  $("#lab-country").textContent=tr("c_country"); $("#search").placeholder=tr("c_search");
+  $("#lab-size").textContent=tr("f_size"); $("#lab-days").textContent=tr("f_days"); $("#reset").textContent=tr("f_reset");
+  $("#lab-cochips").textContent=tr("f_cochips"); $("#lab-sizechips").textContent=tr("f_sizechips");
+  $("#pos-legend").innerHTML=`<span><span class="sw" style="background:var(--barlo)"></span>${tr("leg_low")}</span>`
+    +`<span><span class="sw" style="background:var(--barhi)"></span>${tr("leg_high")}</span>`
+    +`<span><span class="badge b-Budget">${badgeName("Budget")}</span> / <span class="badge b-Mid">${badgeName("Mid")}</span> / <span class="badge b-Premium">${badgeName("Premium")}</span> ${tr("leg_badge")}</span>`;
+  $("#tbl-legend").innerHTML=`<span><span class="sw" style="background:var(--lowtx)"></span>${tr("leg_cheaprow")}</span>`
+    +`<span><span class="sw" style="background:var(--hightx)"></span>${tr("leg_exp")}</span>`
+    +`<span>${tr("leg_gb")}</span><span>${tr("leg_trophy")}</span>`;
+}
+
+function renderMarket(){
+  const L=M.leaders;
+  $("#mkpis").innerHTML=[
+    kpi(tr("k_comp"),cos.length,tr("k_comp_s"),false,tr("k_comp_t")),
+    kpi(tr("k_pack"),D.total.toLocaleString(),tr("k_pack_s"),false,tr("k_pack_t")),
+    kpi(tr("k_cov"),L.coverage,PC[L.coverage].countries+" "+tr("ctry"),true,tr("k_cov_t")),
+    kpi(tr("k_val"),L.value||"—",L.value?money(PC[L.value].avgGB)+" "+tr("k_val_s"):"",true,tr("k_val_t")),
+    kpi(tr("k_gbl"),L.gbLeader,PC[L.gbLeader].gbLeader+" "+tr("cheapest_in"),true,tr("k_gbl_t")),
+    kpi(tr("k_unl"),L.unlimLeader,PC[L.unlimLeader].unlimLeader+" "+tr("cheapest_in")+" (7"+tr("w_days")[0]+")",true,tr("k_unl_t")),
+  ].join("");
+  const rows=cos.map(c=>({c,...PC[c]})).sort((a,b)=>(a.avgGB??1e9)-(b.avgGB??1e9));
+  const head=`<thead><tr>
+    <th class="l">${tr("p_comp")}${qm(tr("p_comp_t"))}</th>
+    <th>${tr("p_cov")}${qm(tr("p_cov_t"))}</th>
+    <th>${tr("p_plans")}${qm(tr("p_plans_t"))}</th>
+    <th class="l">${tr("p_medgb")}${qm(tr("p_medgb_t"))}</th>
+    <th>${tr("p_7d")}${qm(tr("p_7d_t"))}</th>
+    <th>${tr("p_gbc")}${qm(tr("p_gbc_t"))}</th>
+    <th>${tr("p_pos")}${qm(tr("p_pos_t"))}</th></tr></thead>`;
   let body="<tbody>";
   for(const r of rows){
-    const col = `linear-gradient(90deg,var(--barlo),var(--barhi))`;
-    const bar = r.avgGB!=null
-      ? `<div class="bar"><i style="width:${Math.max(6,r.barPct)}%;background:${col}"></i></div> <span class="num">${money(r.avgGB)}</span>`
-      : `<span class="na">— (unlimited-only)</span>`;
-    body += `<tr>
-      <td class="l"><b>${r.c}</b></td>
-      <td class="num">${r.countries}</td>
-      <td class="num">${r.plans.toLocaleString()}</td>
-      <td class="l">${bar}</td>
+    const bar=r.avgGB!=null
+      ? `<div class="bar"><i style="width:${Math.max(6,r.barPct)}%;background:linear-gradient(90deg,var(--barlo),var(--barhi))"></i></div> <span class="num">${money(r.avgGB)}</span>`
+      : `<span class="na">—</span>`;
+    body+=`<tr><td class="l"><b>${r.c}</b></td><td class="num">${r.countries}</td>
+      <td class="num">${r.plans.toLocaleString()}</td><td class="l">${bar}</td>
       <td class="num">${r.unlim7!=null?money(r.unlim7):'<span class=na>—</span>'}</td>
-      <td class="num">${r.gbLeader} ülke</td>
-      <td><span class="badge b-${r.badge}">${r.badge}</span></td>
-    </tr>`;
+      <td class="num">${r.gbLeader} ${tr("ctry")}</td>
+      <td><span class="badge b-${r.badge}">${badgeName(r.badge)}</span></td></tr>`;
   }
-  $("#posTbl").innerHTML = head+body+"</tbody>";
-})();
+  $("#posTbl").innerHTML=head+body+"</tbody>";
+}
 
-// ---------- 3. COUNTRY DRILL-DOWN ----------
 let country = D.countries.includes("United States")?"United States":D.countries[0];
-
 function fillCountry(f){
   const el=$("#country");
   const list=D.countries.filter(c=>!f||c.toLowerCase().includes(f.toLowerCase()));
@@ -247,99 +331,68 @@ function fillCountry(f){
 function cRecs(){return D.recs.filter(r=>r.c===country);}
 
 function renderCountry(){
-  const rows=cRecs();
-  // per competitor stats for this country
-  const stat={};
+  const rows=cRecs(); const stat={};
   for(const r of rows){
     const s=stat[r.co]=stat[r.co]||{plans:0,minRate:null,cheapest:null,unlim7:null};
     s.plans++;
-    if(r.g){const rate=r.p/r.g; if(s.minRate==null||rate<s.minRate){s.minRate=rate;}}
-    if(s.cheapest==null||r.p<s.cheapest.p) s.cheapest=r;
-    if(r.d==="Unlimited"&&r.n===7&&(s.unlim7==null||r.p<s.unlim7)) s.unlim7=r.p;
+    if(r.g){const rate=r.p/r.g; if(s.minRate==null||rate<s.minRate)s.minRate=rate;}
+    if(s.cheapest==null||r.p<s.cheapest.p)s.cheapest=r;
+    if(r.d==="Unlimited"&&r.n===7&&(s.unlim7==null||r.p<s.unlim7))s.unlim7=r.p;
   }
   const active=Object.keys(stat);
-  // country KPIs
-  const gbLeader = active.filter(c=>stat[c].minRate!=null)
-    .sort((a,b)=>stat[a].minRate-stat[b].minRate)[0];
-  const u7Leader = active.filter(c=>stat[c].unlim7!=null)
-    .sort((a,b)=>stat[a].unlim7-stat[b].unlim7)[0];
-  const allPrices=rows.map(r=>r.p);
+  const gbL=active.filter(c=>stat[c].minRate!=null).sort((a,b)=>stat[a].minRate-stat[b].minRate)[0];
+  const uL=active.filter(c=>stat[c].unlim7!=null).sort((a,b)=>stat[a].unlim7-stat[b].unlim7)[0];
+  const ap=rows.map(r=>r.p);
   $("#ckpis").innerHTML=[
-    kpi("Cheapest $/GB here", gbLeader||"—", gbLeader?money(stat[gbLeader].minRate)+" /GB":"", true,
-        "Seçili ülkede en düşük birim veri fiyatını (fiyat ÷ GB) sunan firma ve o değeri. Firmanın bu ülkedeki EN İYİ (en ucuz) GB planına göre."),
-    kpi("Cheapest 7d unlimited", u7Leader||"—", u7Leader?money(stat[u7Leader].unlim7):"—", true,
-        "Seçili ülkede 7 günlük sınırsız planı en ucuz olan firma ve fiyatı. '—' = bu ülkede kimsenin 7g sınırsızı yok."),
-    kpi("Competitors here", active.length, "aktif firma", false,
-        "Seçili ülkede en az bir paketi olan firma sayısı."),
-    kpi("Price range", allPrices.length?money(Math.min(...allPrices)):"—",
-        allPrices.length?"→ "+money(Math.max(...allPrices)):"", false,
-        "Bu ülkedeki tüm paketlerin en düşük ve en yüksek fiyatı (tüm boyut/süreler dahil)."),
+    kpi(tr("ck_cheapgb"),gbL||"—",gbL?money(stat[gbL].minRate)+" /GB":"",true,tr("ck_cheapgb_t")),
+    kpi(tr("ck_cheapunl"),uL||"—",uL?money(stat[uL].unlim7):"—",true,tr("ck_cheapunl_t")),
+    kpi(tr("ck_comp"),active.length,tr("ck_comp_s"),false,tr("ck_comp_t")),
+    kpi(tr("ck_range"),ap.length?money(Math.min(...ap)):"—",ap.length?"→ "+money(Math.max(...ap)):"",false,tr("ck_range_t")),
   ].join("");
-  // scorecards
-  $("#score").innerHTML = active.sort((a,b)=>(stat[a].minRate??1e9)-(stat[b].minRate??1e9))
-    .map(c=>{
-      const s=stat[c], ch=s.cheapest;
-      return `<div class="sc">
-        <div class="co">${c} <span class="badge b-${PC[c].badge}" style="font-size:10px">${PC[c].badge}</span></div>
-        <div class="row"><span>En ucuz plan</span><b>${ch?ch.d+(ch.n?"/"+ch.n+"g":"")+" · "+money(ch.p):"—"}</b></div>
-        <div class="row"><span>En iyi $/GB</span><b>${s.minRate!=null?money(s.minRate):"—"}</b></div>
-        <div class="row"><span>7g sınırsız</span><b>${s.unlim7!=null?money(s.unlim7):"—"}</b></div>
-        <div class="row"><span>Plan sayısı</span><b>${s.plans}</b></div>
-      </div>`;
-    }).join("");
+  $("#score").innerHTML=active.sort((a,b)=>(stat[a].minRate??1e9)-(stat[b].minRate??1e9)).map(c=>{
+    const s=stat[c],ch=s.cheapest;
+    return `<div class="sc"><div class="co">${c} <span class="badge b-${PC[c].badge}" style="font-size:10px">${badgeName(PC[c].badge)}</span></div>
+      <div class="row"><span>${tr("sc_cheap")}</span><b>${ch?ch.d+(ch.n?"/"+ch.n+tr("w_days")[0]:"")+" · "+money(ch.p):"—"}</b></div>
+      <div class="row"><span>${tr("sc_bestgb")}</span><b>${s.minRate!=null?money(s.minRate):"—"}</b></div>
+      <div class="row"><span>${tr("sc_7d")}</span><b>${s.unlim7!=null?money(s.unlim7):"—"}</b></div>
+      <div class="row"><span>${tr("sc_plans")}</span><b>${s.plans}</b></div></div>`;
+  }).join("");
 }
 
-// ---------- 4. DETAILED TABLE (filters + sort) ----------
 let sizes=new Set(), days="All", hidden=new Set(), sortCol=null, sortDir=1;
 function gbVal(d){if(d==="Unlimited")return 1e9;const m=d.match(/([\d.]+)\s*GB/);return m?parseFloat(m[1]):1e8;}
 function sizeOrder(a,b){if(a==="Unlimited")return -1;if(b==="Unlimited")return 1;return gbVal(a)-gbVal(b);}
 function sizeMatch(r){return sizes.size===0||sizes.has(r.d);}
 function shownCos(){return cos.filter(c=>!hidden.has(c));}
-
-function fillCoChips(){
-  $("#cochips").innerHTML=cos.map(c=>`<span class="chip co${hidden.has(c)?"":" on"}" data-c="${c}">${c}</span>`).join("");
-}
+function fillCoChips(){$("#cochips").innerHTML=cos.map(c=>`<span class="chip co${hidden.has(c)?"":" on"}" data-c="${c}">${c}</span>`).join("");}
 function fillSize(){
   const avail=[...new Set(cRecs().map(r=>r.d))].sort(sizeOrder);
   for(const s of [...sizes]) if(!avail.includes(s)) sizes.delete(s);
-  $("#sizechips").innerHTML=[`<span class="chip${sizes.size===0?" on":""}" data-v="__all">All</span>`]
+  $("#sizechips").innerHTML=[`<span class="chip${sizes.size===0?" on":""}" data-v="__all">${tr("opt_all")}</span>`]
     .concat(avail.map(s=>`<span class="chip${sizes.has(s)?" on":""}" data-v="${s}">${s}</span>`)).join("");
-  const el=$("#size"), cur=[...el.options].map(o=>o.value);
+  const el=$("#size"),cur=[...el.options].map(o=>o.value);
   if(cur.join("|")!==avail.join("|")) el.innerHTML=avail.map(s=>`<option value="${s}">${s}</option>`).join("");
-  for(const o of el.options) o.selected=sizes.has(o.value);
+  for(const o of el.options)o.selected=sizes.has(o.value);
 }
 function fillDays(){
   let ds=[...new Set(cRecs().filter(sizeMatch).map(r=>r.n))];
   const blank=ds.includes(null); ds=ds.filter(x=>x!=null).sort((a,b)=>a-b);
-  let o=`<option>All</option>`+ds.map(d=>`<option${String(d)===String(days)?" selected":""}>${d}</option>`).join("");
-  if(blank)o+=`<option value="none"${days==="none"?" selected":""}>No fixed validity</option>`;
+  let o=`<option value="All">${tr("opt_all")}</option>`+ds.map(d=>`<option${String(d)===String(days)?" selected":""}>${d}</option>`).join("");
+  if(blank)o+=`<option value="none"${days==="none"?" selected":""}>${tr("opt_novalid")}</option>`;
   $("#days").innerHTML=o;
   if(days!=="All"&&days!=="none"&&!ds.map(String).includes(String(days)))days="All";
 }
-
-// 🏆 best deal per DATA SIZE (cheapest across all durations), auto-updates with filters
 function renderDeals(vis){
   const bySize={};
-  for(const r of vis){
-    const b=bySize[r.d];
-    if(!b || r.p<b.p) bySize[r.d]={co:r.co,p:r.p,n:r.n,g:r.g};
-  }
+  for(const r of vis){const b=bySize[r.d]; if(!b||r.p<b.p)bySize[r.d]={co:r.co,p:r.p,n:r.n,g:r.g};}
   const list=Object.keys(bySize).sort(sizeOrder);
   if(!list.length){$("#dealwrap").innerHTML="";return;}
-  const cards=list.map(s=>{
-    const b=bySize[s];
-    const rate=b.g?" · "+money(b.p/b.g)+"/GB":"";
-    const dur=b.n==null?"süresiz":b.n+" gün";
-    return `<div class="deal"><div class="ds">${s} · en uygun</div>`
-      +`<div class="dco">${b.co}</div><div class="dp">${money(b.p)}</div>`
-      +`<div class="dm">${dur}${rate}</div></div>`;
-  }).join("");
-  $("#dealwrap").innerHTML =
-    `<label style="color:var(--muted);font-size:11.5px">🏆 En uygun — boyuta göre `
-    +`(gün fark etmeksizin, seçili filtreye göre otomatik)</label>`
-    +`<div class="deals">${cards}</div>`;
+  const cards=list.map(s=>{const b=bySize[s];const rate=b.g?" · "+money(b.p/b.g)+"/GB":"";
+    const dur=b.n==null?tr("no_exp"):b.n+" "+tr("w_days");
+    return `<div class="deal"><div class="ds">${s} ${tr("d_suffix")}</div><div class="dco">${b.co}</div><div class="dp">${money(b.p)}</div><div class="dm">${dur}${rate}</div></div>`;}).join("");
+  $("#dealwrap").innerHTML=`<label class="glab">${tr("d_label")}</label><div class="deals">${cards}</div>`;
 }
-
+function minPx(p){return Math.min(...Object.values(p.px));}
 function renderTable(){
   const show=shownCos();
   let rows=cRecs().filter(sizeMatch);
@@ -347,13 +400,8 @@ function renderTable(){
   else if(days!=="All")rows=rows.filter(r=>String(r.n)===String(days));
   const vis=rows.filter(r=>!hidden.has(r.co));
   renderDeals(vis);
-
   const plans={};
-  for(const r of vis){
-    const k=r.d+"||"+(r.n==null?"":r.n);
-    const p=(plans[k]=plans[k]||{d:r.d,n:r.n,g:r.g,px:{}});
-    p.px[r.co]=(p.px[r.co]==null)?r.p:Math.min(p.px[r.co],r.p);
-  }
+  for(const r of vis){const k=r.d+"||"+(r.n==null?"":r.n);const p=(plans[k]=plans[k]||{d:r.d,n:r.n,g:r.g,px:{}});p.px[r.co]=(p.px[r.co]==null)?r.p:Math.min(p.px[r.co],r.p);}
   let arr=Object.values(plans);
   const dfl=(a,b)=>sizeOrder(a.d,b.d)||((a.n||0)-(b.n||0));
   arr.sort((a,b)=>{
@@ -362,46 +410,42 @@ function renderTable(){
     if(sortCol==="days"){const an=a.n==null?1e9:a.n,bn=b.n==null?1e9:b.n;return (an-bn)*sortDir||sizeOrder(a.d,b.d);}
     if(sortCol==="rate"){const ar=a.g?minPx(a)/a.g:1e9,br=b.g?minPx(b)/b.g:1e9;return (ar-br)*sortDir||dfl(a,b);}
     const av=a.px[sortCol],bv=b.px[sortCol];
-    if(av==null&&bv==null)return dfl(a,b);
-    if(av==null)return 1; if(bv==null)return -1;
+    if(av==null&&bv==null)return dfl(a,b); if(av==null)return 1; if(bv==null)return -1;
     return (av-bv)*sortDir||dfl(a,b);
   });
-
   const t=$("#tbl");
-  if(!arr.length){t.innerHTML=`<tbody><tr><td class="empty">No plans match filters for ${country}.</td></tr></tbody>`;$("#count").textContent="";return;}
+  if(!arr.length){t.innerHTML=`<tbody><tr><td class="empty">${tr("t_empty")}</td></tr></tbody>`;$("#count").textContent="";return;}
   const arw=c=>c===sortCol?`<span class="arw">${sortDir>0?"▲":"▼"}</span>`:"";
   const th=(id,l,cls,tip)=>`<th class="${cls||''}${id===sortCol?' sorted':''}" data-sort="${id}">${l}${tip?qm(tip):""}${arw(id)}</th>`;
-  let head="<thead><tr>"
-    +th("data","Data","l","Paketin veri miktarı: GB miktarı veya Sınırsız. Başlığa tıkla → boyuta göre sırala.")
-    +th("days","Days","","Paketin geçerlilik süresi (gün). '—' = sabit süre belirtilmemiş (ör. bazı Breeze GB planları).")
-    +th("rate","$/GB","","Birim veri maliyeti = bu satırdaki EN UCUZ fiyat ÷ GB. Sadece GB planlarında; sınırsızlarda '—'. Başlığa tıkla → en uygun birim fiyata göre sırala.")
-    +show.map(c=>th(c,c)).join("")
-    +`<th class="l">🏆 Cheapest${qm("Bu SATIRIN (aynı veri boyutu + aynı gün) en ucuz firması ve fiyatı. Boyuta göre gün-bağımsız MUTLAK en ucuz için üstteki 'En uygun — boyuta göre' paneline bak.")}</th></tr></thead>`;
+  let head="<thead><tr>"+th("data",tr("t_data"),"l",tr("t_data_t"))+th("days",tr("t_days"),"",tr("t_days_t"))
+    +th("rate",tr("t_rate"),"",tr("t_rate_t"))+show.map(c=>th(c,c)).join("")
+    +`<th class="l">${tr("t_cheap")}${qm(tr("t_cheap_t"))}</th></tr></thead>`;
   let body="<tbody>";
   for(const p of arr){
     const vals=show.map(c=>p.px[c]).filter(v=>v!=null);
     if(!vals.length)continue;
     const lo=Math.min(...vals),hi=Math.max(...vals);
     const winC=show.find(c=>p.px[c]===lo);
-    const rate=p.g?money(lo/p.g):"—";
     body+=`<tr><td class="l"><b>${p.d}</b></td><td class="num">${p.n==null?"—":p.n}</td>`
-      +`<td class="num" style="color:var(--muted)">${rate}</td>`;
-    for(const c of show){
-      const v=p.px[c];
+      +`<td class="num" style="color:var(--muted)">${p.g?money(lo/p.g):"—"}</td>`;
+    for(const c of show){const v=p.px[c];
       if(v==null){body+=`<td class="price na">—</td>`;continue;}
       let cls="price"; if(vals.length>1&&v===lo)cls+=" low"; else if(vals.length>1&&v===hi)cls+=" high";
-      body+=`<td class="${cls}">${money(v)}</td>`;
-    }
+      body+=`<td class="${cls}">${money(v)}</td>`;}
     body+=`<td class="l"><span class="win">${winC}</span> ${money(lo)}</td></tr>`;
   }
   t.innerHTML=head+body+"</tbody>";
-  $("#count").textContent=`${arr.length} plan · ${country} · ${show.length}/${cos.length} firma`
-    +(sizes.size?" · "+[...sizes].join(", "):"")+(days!=="All"?" · "+days+"g":"");
+  $("#count").textContent=`${arr.length} ${tr("plan_rows")} · ${country} · ${show.length}/${cos.length} ${tr("firms")}`
+    +(sizes.size?" · "+[...sizes].join(", "):"")+(days!=="All"?" · "+days+tr("w_days")[0]:"");
 }
-function minPx(p){return Math.min(...Object.values(p.px));}
 
-// ---------- refresh / events ----------
 function refreshCountry(){fillSize();fillDays();renderCountry();renderTable();}
+function renderAll(){renderStatic();renderMarket();fillCountry($("#search").value);fillCoChips();refreshCountry();}
+
+$("#langtog").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+  LANG=b.dataset.l; localStorage.setItem("esimlang",LANG);
+  [...$("#langtog").children].forEach(x=>x.classList.toggle("on",x.dataset.l===LANG));
+  renderAll();});
 $("#search").addEventListener("input",e=>{fillCountry(e.target.value);country=$("#country").value;sizes.clear();days="All";refreshCountry();});
 $("#country").addEventListener("change",e=>{country=e.target.value;sizes.clear();days="All";refreshCountry();});
 $("#size").addEventListener("change",e=>{sizes=new Set([...e.target.selectedOptions].map(o=>o.value));days="All";fillSize();fillDays();renderTable();});
@@ -412,7 +456,8 @@ $("#tbl").addEventListener("click",e=>{if(e.target.closest(".qm"))return;const h
 $("#reset").addEventListener("click",()=>{sizes.clear();days="All";hidden.clear();sortCol=null;sortDir=1;fillCoChips();refreshCountry();});
 
 // init
-fillCountry(""); fillCoChips(); refreshCountry();
+[...$("#langtog").children].forEach(x=>x.classList.toggle("on",x.dataset.l===LANG));
+renderAll();
 </script>
 </body>
 </html>
