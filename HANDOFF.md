@@ -237,3 +237,9 @@ python3 build_dashboard.py         # en son CSV'den dashboard.html üret
 ```
 
 Bittiğinde `dashboard.html`'i tarayıcıda aç. Bulutta bunları workflow otomatik yapar.
+
+## 10. Fiyat geçmişi & trend grafiği
+- Her haftalık çalışma `data/prices_YYYY-MM-DD.csv` olarak **kalıcı** saklanır (silinmez) → fiyat geçmişi birikir.
+- `build_history.py` tüm dated CSV'leri `docs/history.json`'a toplar; dashboard'daki **Price Trends / Fiyat Trendi** bölümü bunu çekip paket/plan/firma bazında zaman-serisi grafiği çizer.
+- Grafik **canlı (Pages) adresinde** çalışır (history.json fetch edilir); `file://` ile açınca trend yüklenmez.
+- Cron artık **HAFTALIK** (`0 6 * * 1`, Pazartesi). Her hafta grafiğe bir nokta eklenir.

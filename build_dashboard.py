@@ -273,6 +273,14 @@ TEMPLATE = r"""<!doctype html>
   <div class="card scroll"><table id="tbl"></table></div>
   <div class="count" id="count"></div>
   <div class="legend" id="tbl-legend"></div>
+
+  <h2 id="h2-trends"></h2>
+  <div class="controls">
+    <div class="ctl"><label id="lab-trend-country"></label><select id="trend-country"></select></div>
+    <div class="ctl"><label id="lab-trend-plan"></label><select id="trend-plan" style="min-width:190px"></select></div>
+  </div>
+  <div class="card" style="padding:16px 14px 12px"><div id="trend-chart"></div></div>
+  <div class="count" id="trend-note"></div>
 </div>
 
 <script>
@@ -326,6 +334,8 @@ const T = {
   t_cheap:"🏆 Cheapest", t_cheap_t:"The cheapest provider and price in THIS row (same data size + same days). For the absolute cheapest per size regardless of days, use the 'Best deal by data size' panel above.",
   t_empty:"No plans match these filters.", firms:"firms", plan_rows:"plan",
   leg_cheaprow:"cheapest in row", leg_exp:"most expensive", leg_gb:"$/GB = price ÷ GB (GB plans only)", leg_trophy:"🏆 = cheapest firm in that row",
+  s_trends:"Price Trends", s_trends_t:"How a package's price changes over time — one point per weekly snapshot. Pick a country and a package to see every competitor's line.",
+  tr_plan:"Package (data · days)", tr_note_build:"Trends build up over time — one point per weekly run; more points appear each week.", tr_note_pages:"Trends load on the live (Pages) URL — history is fetched there.", tr_nodata:"No history for this selection yet.",
   badge:{Budget:"Budget", Mid:"Mid", Premium:"Premium", "Unlimited-only":"Unlimited-only"},
  },
  tr:{
@@ -367,6 +377,8 @@ const T = {
   t_cheap:"🏆 En ucuz", t_cheap_t:"Bu SATIRIN (aynı veri boyutu + aynı gün) en ucuz firması ve fiyatı. Boyuta göre gün-bağımsız MUTLAK en ucuz için üstteki 'En uygun — boyuta göre' paneline bak.",
   t_empty:"Bu filtrelere uyan plan yok.", firms:"firma", plan_rows:"plan",
   leg_cheaprow:"satırda en ucuz", leg_exp:"en pahalı", leg_gb:"$/GB = fiyat ÷ GB (sadece GB planları)", leg_trophy:"🏆 = o satırdaki en ucuz firma",
+  s_trends:"Fiyat Trendi", s_trends_t:"Bir paketin fiyatının zaman içinde nasıl değiştiği — her haftalık anlık görüntü bir nokta. Ülke ve paket seç, her rakibin çizgisini gör.",
+  tr_plan:"Paket (veri · gün)", tr_note_build:"Trend zamanla dolar — her haftalık çalışmada bir nokta; her hafta yeni nokta eklenir.", tr_note_pages:"Trend grafiği canlı (Pages) adresinde yüklenir.", tr_nodata:"Bu seçim için henüz geçmiş yok.",
   badge:{Budget:"Budget", Mid:"Mid", Premium:"Premium", "Unlimited-only":"Unlimited-only"},
  }
 };
@@ -411,6 +423,68 @@ function renderStatic(){
   $("#tbl-legend").innerHTML=`<span><span class="sw" style="background:var(--lowtx)"></span>${tr("leg_cheaprow")}</span>`
     +`<span><span class="sw" style="background:var(--hightx)"></span>${tr("leg_exp")}</span>`
     +`<span>${tr("leg_gb")}</span><span>${tr("leg_trophy")}</span>`;
+  $("#h2-trends").innerHTML=tr("s_trends")+qm(tr("s_trends_t"));
+  $("#lab-trend-country").textContent=tr("c_country");
+  $("#lab-trend-plan").textContent=tr("tr_plan");
+}
+
+// ---------------- price trends (history.json, fetched on Pages) ----------------
+let HIST=null, trendCountry=null, trendPlan=null;
+const PALETTE=["#5b8cff","#8b5cf6","#54e39a","#e6c34d","#ff8098","#3bd07f","#ff9f45","#4dd0e1"];
+function loadHistory(){
+  fetch("history.json").then(r=>r.ok?r.json():Promise.reject()).then(h=>{HIST=h;initTrends();})
+    .catch(()=>{$("#trend-note").textContent=tr("tr_note_pages");});
+}
+function initTrends(){
+  const cs=Object.keys(HIST.countries).sort();
+  trendCountry = cs.includes(country)?country:(cs.includes("United States")?"United States":cs[0]);
+  $("#trend-country").innerHTML=cs.map(c=>`<option${c===trendCountry?" selected":""}>${c}</option>`).join("");
+  fillTrendPlans(); drawTrend();
+}
+function fillTrendPlans(){
+  if(!HIST) return;
+  const keys=Object.keys(HIST.countries[trendCountry]||{});
+  const plans=[...new Set(keys.map(k=>{const a=k.split("|");return a[1]+"||"+a[2];}))]
+    .sort((a,b)=>{const x=a.split("||"),y=b.split("||");return sizeOrder(x[0],y[0])||((+x[1]||0)-(+y[1]||0));});
+  if(!plans.includes(trendPlan)){ // default = the plan the most competitors offer
+    const cd=HIST.countries[trendCountry]||{}; let best=null,bn=-1;
+    for(const p of plans){const a=p.split("||");let c=0;for(const co of cos)if(cd[co+"|"+a[0]+"|"+a[1]])c++;if(c>bn){bn=c;best=p;}}
+    trendPlan=best||plans[0]||null;
+  }
+  $("#trend-plan").innerHTML=plans.map(p=>{const a=p.split("||");
+    const lbl=a[0]+" · "+(a[1]?a[1]+" "+tr("w_days"):tr("no_exp"));
+    return `<option value="${p}"${p===trendPlan?" selected":""}>${lbl}</option>`;}).join("");
+}
+function drawTrend(){
+  if(!HIST||!trendPlan){$("#trend-chart").innerHTML="";return;}
+  const a=trendPlan.split("||"), pd=a[0], pn=a[1];
+  const cd=HIST.countries[trendCountry]||{}, series={};
+  for(const co of cos){const k=co+"|"+pd+"|"+pn; if(cd[k]) series[co]=cd[k];}
+  $("#trend-chart").innerHTML=chartSVG(series,HIST.dates);
+  $("#trend-note").textContent = HIST.dates.length<=1 ? tr("tr_note_build") : "";
+}
+function chartSVG(series,dates){
+  const list=Object.keys(series);
+  if(!list.length) return `<div class="empty">${tr("tr_nodata")}</div>`;
+  const W=760,H=300,mL=48,mR=14,mT=14,mB=34, iw=W-mL-mR, ih=H-mT-mB, n=dates.length;
+  let vals=[]; list.forEach(c=>series[c].forEach(v=>{if(v!=null)vals.push(v);}));
+  let mn=Math.min(...vals), mx=Math.max(...vals);
+  if(mn===mx){mn=Math.max(0,mn-1); mx=mx+1;}
+  const X=i=> n<=1 ? mL+iw/2 : mL+iw*i/(n-1);
+  const Y=v=> mT+ih*(1-(v-mn)/(mx-mn));
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:100%;font-size:11px;overflow:visible">`;
+  [mn,(mn+mx)/2,mx].forEach(v=>{const y=Y(v);
+    s+=`<line x1="${mL}" y1="${y.toFixed(1)}" x2="${W-mR}" y2="${y.toFixed(1)}" stroke="var(--line)"/>`
+      +`<text x="${mL-6}" y="${(y+3).toFixed(1)}" text-anchor="end" fill="var(--muted)">$${v.toFixed(0)}</text>`;});
+  (n<=1?[0]:[0,n-1]).forEach(i=>{s+=`<text x="${X(i).toFixed(1)}" y="${H-12}" text-anchor="middle" fill="var(--muted)">${dates[i]}</text>`;});
+  list.forEach(c=>{const col=PALETTE[cos.indexOf(c)%PALETTE.length]; let d="",on=false;
+    series[c].forEach((v,i)=>{if(v==null){on=false;return;}const x=X(i).toFixed(1),y=Y(v).toFixed(1);d+=(on?" L":" M")+x+" "+y;on=true;});
+    if(d) s+=`<path d="${d}" fill="none" stroke="${col}" stroke-width="2"/>`;
+    series[c].forEach((v,i)=>{if(v!=null)s+=`<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="3" fill="${col}"/>`;});
+  });
+  s+=`</svg><div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:12px">`
+    +list.map(c=>`<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${PALETTE[cos.indexOf(c)%PALETTE.length]};margin-right:5px"></span>${c}</span>`).join("")+`</div>`;
+  return s;
 }
 
 function renderMarket(){
@@ -565,7 +639,7 @@ function renderTable(){
 }
 
 function refreshCountry(){fillSize();fillDays();renderCountry();renderTable();}
-function renderAll(){renderStatic();renderMarket();fillCountry($("#search").value);fillCoChips();refreshCountry();}
+function renderAll(){renderStatic();renderMarket();fillCountry($("#search").value);fillCoChips();refreshCountry();if(HIST){fillTrendPlans();drawTrend();}}
 
 $("#langtog").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
   LANG=b.dataset.l; localStorage.setItem("esimlang",LANG);
@@ -579,10 +653,13 @@ $("#days").addEventListener("change",e=>{days=e.target.value;renderTable();});
 $("#cochips").addEventListener("click",e=>{if(!e.target.classList.contains("chip"))return;const c=e.target.dataset.c;hidden.has(c)?hidden.delete(c):hidden.add(c);if(hidden.size>=cos.length)hidden.delete(c);fillCoChips();renderTable();});
 $("#tbl").addEventListener("click",e=>{if(e.target.closest(".qm"))return;const h=e.target.closest("th[data-sort]");if(!h)return;const c=h.dataset.sort;if(sortCol===c)sortDir=-sortDir;else{sortCol=c;sortDir=1;}renderTable();});
 $("#reset").addEventListener("click",()=>{sizes.clear();days="All";hidden.clear();sortCol=null;sortDir=1;fillCoChips();refreshCountry();});
+$("#trend-country").addEventListener("change",e=>{trendCountry=e.target.value;fillTrendPlans();drawTrend();});
+$("#trend-plan").addEventListener("change",e=>{trendPlan=e.target.value;drawTrend();});
 
 // init
 [...$("#langtog").children].forEach(x=>x.classList.toggle("on",x.dataset.l===LANG));
 renderAll();
+loadHistory();
 </script>
 </body>
 </html>
