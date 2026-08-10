@@ -1,4 +1,4 @@
-name: eSIM daily price collection
+name: eSIM price collection
 
 # Runs the collector every day, rebuilds the dashboard, and commits the
 # results back into the repo. GitHub Pages then serves docs/index.html.

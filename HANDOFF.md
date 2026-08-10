@@ -110,8 +110,7 @@ blokları). Bunları çözmek için şu koruma katmanları var — bulut kurulum
 2. **429 retry.** `fetch()` ve `collect_breeze()`, 429 alınca artan beklemeyle tekrar dener.
 3. **Bayatlık göstergesi.** `build_dashboard.py`, bir firmanın verisi en yeni tarihten
    eskiyse dashboard üstünde `⚠ stale (last good): Breeze 2026-07-26` uyarısı gösterir.
-4. **(Eski Mac cron'unda) ağ-bekleme** `run.sh`'ta vardı; GitHub Actions'ta runner'ın ağı
-   hazır olduğu için gerekmez.
+4. **Ağ hazır** — GitHub Actions runner'larının ağı hazır olduğu için ek bekleme gerekmez.
 
 ---
 
@@ -126,7 +125,7 @@ blokları). Bunları çözmek için şu koruma katmanları var — bulut kurulum
 2. Bu klasördeki **tüm dosyaları** repo'ya koy: `collect.py`, `build_dashboard.py`,
    `README.md`, `HANDOFF.md`, `.github/workflows/collect.yml`, ve `data/` klasörü
    (**`data/latest/` dahil** — carry-forward için son iyi veriyi de taşı ki ilk günden
-   dolu başlasın). `run.sh` opsiyonel (bulutta kullanılmaz).
+   dolu başlasın).
    - CLI ile: `git init && git add . && git commit -m "initial" && git branch -M main &&
      git remote add origin <repo-url> && git push -u origin main`
 
@@ -134,18 +133,17 @@ blokları). Bunları çözmek için şu koruma katmanları var — bulut kurulum
 1. Repo → **Settings → Actions → General** → "Allow all actions and reusable workflows"
    seçili olsun. Ayrıca **Workflow permissions** → **Read and write permissions** işaretli
    olsun (workflow'un veriyi geri commit'leyebilmesi için).
-2. Repo → **Actions** sekmesi → "eSIM daily price collection" workflow'u → **Run workflow**
+2. Repo → **Actions** sekmesi → "eSIM price collection" workflow'u → **Run workflow**
    (workflow_dispatch) ile elle tetikle.
 3. Çalışmayı izle (~10 dk). Bitince repo'da yeni `data/prices_<bugün>.csv` ve güncellenmiş
-   `dashboard.html` + `docs/index.html` commit'lenmiş olmalı.
+   `docs/index.html` + `docs/history.json` commit'lenmiş olmalı.
 
 ### Adım 3 — GitHub Pages'i aç (dashboard'u yayınla)
 1. Repo → **Settings → Pages**.
 2. **Source: Deploy from a branch** → **Branch: `main`** → **Folder: `/docs`** → **Save**.
 3. Birkaç dakika sonra dashboard şu adreste yayında olur:
    `https://<kullanıcı-adı>.github.io/<repo-adı>/`
-   (Workflow her gün `dashboard.html`'i `docs/index.html`'e kopyalayıp commit'lediği için
-   Pages otomatik güncellenir.)
+   (Workflow `docs/index.html`'i doğrudan üretip commit'lediği için Pages otomatik güncellenir.)
 
 ### Adım 4 — Zamanlama (cron): TEST = GÜNLÜK, NORMAL = AYDA 1
 `.github/workflows/collect.yml` içinde iki cron seçeneği var. **Şu an TEST aşamasındayız,
@@ -194,7 +192,7 @@ normaldir. `workflow_dispatch` ile istediğin an elle de çalıştırabilirsin.
   genelde yok. İç bilgi eklenecekse private repo'ya geç.
 - **Actions dakika kotası.** Public repo'da sınırsız. Private repo'da aylık 2000 dk ücretsiz;
   günlük ~10 dk çalışma = ~300 dk/ay, rahat sığar.
-- **Commit gürültüsü.** Her gün `dashboard.html` (~550 KB) ve CSV commit'lenir. Repo zamanla
+- **Commit gürültüsü.** Her çalışmada `docs/index.html` (~1 MB) ve CSV commit'lenir. Repo zamanla
   büyür ama yıllarca sorun olmaz. İstenirse eski `data/*.json` dosyaları periyodik temizlenebilir
   (CSV'ler kalsın).
 
@@ -233,10 +231,11 @@ normaldir. `workflow_dispatch` ile istediğin an elle de çalıştırabilirsin.
 ```bash
 python3 collect.py                 # tüm firmalar, tüm ülkeler (~10 dk)
 python3 collect.py --limit 5       # hızlı test: firma başına 5 ülke
-python3 build_dashboard.py         # en son CSV'den dashboard.html üret
+python3 build_dashboard.py         # en son CSV'den docs/index.html üret
+python3 build_history.py            # docs/history.json (trend verisi)
 ```
 
-Bittiğinde `dashboard.html`'i tarayıcıda aç. Bulutta bunları workflow otomatik yapar.
+Bittiğinde `docs/index.html`'i tarayıcıda aç. Bulutta bunları workflow otomatik yapar.
 
 ## 10. Fiyat geçmişi & trend grafiği
 - Her haftalık çalışma `data/prices_YYYY-MM-DD.csv` olarak **kalıcı** saklanır (silinmez) → fiyat geçmişi birikir.
