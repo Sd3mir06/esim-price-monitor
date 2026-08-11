@@ -46,6 +46,7 @@ ALIASES = {
     "uk": "United Kingdom", "united-kingdom": "United Kingdom",
     "great-britain": "United Kingdom",
     "uae": "United Arab Emirates", "united-arab-emirates": "United Arab Emirates",
+    "arab-emirates": "United Arab Emirates",
     "south-korea": "South Korea", "korea": "South Korea",
     "republic-of-korea": "South Korea",
     "czech-republic": "Czechia", "czechia": "Czechia",
