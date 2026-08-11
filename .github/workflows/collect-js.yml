@@ -4,11 +4,13 @@ name: eSIM JS collector (Playwright)
 # (Nomad, Saily, Yesim, Simly). Manual for now — used to DISCOVER each site's
 # structure in CI (where the network reaches these hosts), then to collect.
 on:
+  schedule:
+    - cron: "0 7 * * 1"        # weekly Monday 07:00 UTC (after main collector at 06:00)
   workflow_dispatch:
     inputs:
       mode:
-        description: "discover | collect"
-        default: "discover"
+        description: "discover | probe | collect"
+        default: "collect"
 
 permissions:
   contents: write
@@ -34,7 +36,7 @@ jobs:
         env:
           MODE: ${{ github.event.inputs.mode }}
         run: |
-          case "$MODE" in discover|probe|collect) ;; *) MODE=discover ;; esac  # validate/allowlist
+          case "$MODE" in discover|probe|collect) ;; *) MODE=collect ;; esac  # scheduled runs -> collect
           python3 collect_js.py "$MODE"
       - name: Commit results
         run: |

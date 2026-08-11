@@ -161,9 +161,19 @@ async def probe():
         print(f"[{o.get('status','ERR')}] len={o.get('len','?')} {o['url'][:95]}")
 
 
-# country name -> url slug for the render-based sites (extend freely)
-COUNTRIES = ["united-states", "japan", "turkey", "france", "germany", "united-kingdom",
-             "spain", "italy", "thailand"]
+# url slugs for the render-based sites (major eSIM destinations; extend freely).
+# Playwright rendering is slow + Saily is behind Cloudflare, so we cover the top
+# ~60 markets rather than every country.
+COUNTRIES = [
+    "united-states", "canada", "mexico", "brazil", "argentina", "chile", "colombia", "peru",
+    "united-kingdom", "france", "germany", "spain", "italy", "portugal", "netherlands",
+    "belgium", "switzerland", "austria", "ireland", "greece", "poland", "czech-republic",
+    "sweden", "norway", "denmark", "iceland", "croatia", "serbia", "turkey", "russia",
+    "japan", "south-korea", "china", "hong-kong", "taiwan", "thailand", "vietnam",
+    "singapore", "malaysia", "indonesia", "philippines", "india", "sri-lanka", "nepal",
+    "cambodia", "laos", "united-arab-emirates", "saudi-arabia", "qatar", "israel", "jordan",
+    "egypt", "morocco", "south-africa", "kenya", "tanzania", "australia", "new-zealand", "fiji",
+]
 
 
 def norm_data(s):
