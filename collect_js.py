@@ -30,31 +30,29 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITES = {
     "Nomad": {
         "pages": [
-            "https://www.nomadesim.com/en/country/united-states",
-            "https://www.nomadesim.com/en/esim/united-states",
             "https://www.nomadesim.com/en/united-states-esim",
+            "https://www.nomadesim.com/en/japan-esim",
         ],
         "sitemap": "https://www.nomadesim.com/sitemap.xml",
     },
     "Saily": {
         "pages": [
-            "https://saily.com/data-plans/",
-            "https://saily.com/esim-usa/",
             "https://saily.com/esim-united-states/",
+            "https://saily.com/esim-japan/",
         ],
         "sitemap": "https://saily.com/sitemap.xml",
     },
     "Yesim": {
         "pages": [
             "https://yesim.app/country/united-states/",
-            "https://yesim.app/esim/united-states/",
+            "https://yesim.app/country/japan/",
         ],
-        "sitemap": "https://yesim.app/sitemap-index.xml",
+        "sitemap": "https://yesim.app/sitemap-en.xml",
     },
     "Simly": {
         "pages": [
-            "https://www.simly.com/buy-plan",
-            "https://www.simly.com/country/united-states",
+            "https://www.simly.com/buy-plan/choose-destination",
+            "https://www.simly.com/buy-plan/plans?country=US",
         ],
         "sitemap": "https://www.simly.com/sitemap.xml",
     },
@@ -74,27 +72,36 @@ async def discover():
         for name, cfg in SITES.items():
             rec = {"pages": [], "api_calls": [], "sitemap": None}
             page = await ctx.new_page()
-            api = []
-            page.on("response", lambda r: api.append((r.status, r.url)))
+            responses = []
+            page.on("response", lambda r: responses.append(r))
             for url in cfg["pages"]:
                 item = {"requested": url}
                 try:
                     await page.goto(url, wait_until="networkidle", timeout=35000)
-                    await page.wait_for_timeout(2500)
+                    await page.wait_for_timeout(3000)
                     txt = await page.inner_text("body")
                     item.update({"final_url": page.url, "title": await page.title(),
                                  "renders_prices": bool(PRICE_HINT.search(txt)),
-                                 "text_sample": re.sub(r"\s+", " ", txt)[:1800]})
+                                 "text_sample": re.sub(r"\s+", " ", txt)[:4000]})
                 except Exception as e:
                     item["error"] = str(e)[:200]
                 rec["pages"].append(item)
-            # interesting API/JSON endpoints seen while loading
-            seen = []
-            for st, u in api:
-                if st == 200 and re.search(r"/api/|\.json|graphql|getnomad|glowingbud|saily|yesim", u):
-                    if u not in seen:
-                        seen.append(u)
-            rec["api_calls"] = seen[:40]
+            # capture the actual JSON BODIES of pricing/product APIs
+            bodies, seen = [], []
+            for r in responses:
+                u = r.url
+                if u in seen:
+                    continue
+                seen.append(u)
+                if re.search(r"getnomad|glowingbud", u) and re.search(
+                        r"product|plan|countr|catalog|price", u, re.I):
+                    try:
+                        bodies.append({"url": u, "status": r.status,
+                                       "body": (await r.text())[:3500]})
+                    except Exception as e:
+                        bodies.append({"url": u, "err": str(e)[:80]})
+            rec["api_calls"] = [u for u in seen if re.search(r"getnomad|glowingbud|/api/", u)][:30]
+            rec["api_bodies"] = bodies[:8]
             # sitemap peek (country enumeration source)
             try:
                 await page.goto(cfg["sitemap"], wait_until="domcontentloaded", timeout=25000)
