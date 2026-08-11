@@ -161,14 +161,123 @@ async def probe():
         print(f"[{o.get('status','ERR')}] len={o.get('len','?')} {o['url'][:95]}")
 
 
+# country name -> url slug for the render-based sites (extend freely)
+COUNTRIES = ["united-states", "japan", "turkey", "france", "germany", "united-kingdom",
+             "spain", "italy", "thailand"]
+
+
+def norm_data(s):
+    s = s.strip()
+    if re.search(r"unlim", s, re.I):
+        return "Unlimited"
+    m = re.search(r"([\d.]+)\s*(GB|MB|TB)", s, re.I)
+    return f"{m.group(1)} {m.group(2).upper()}" if m else s
+
+
+def slug_to_name(slug):
+    fix = {"united-states": "United States", "united-kingdom": "United Kingdom"}
+    return fix.get(slug, slug.replace("-", " ").title())
+
+
+async def collect():
+    from playwright.async_api import async_playwright
+    today = datetime.date.today().isoformat()
+    rows = []
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        ctx = await browser.new_context(
+            user_agent=("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"))
+        page = await ctx.new_page()
+
+        async def grab(url):
+            try:
+                await page.goto(url, wait_until="networkidle", timeout=35000)
+                await page.wait_for_timeout(2000)
+                return await page.inner_text("body")
+            except Exception:
+                return ""
+
+        for slug in COUNTRIES:
+            country = slug_to_name(slug)
+            # NOMAD: "1 GB For 7 DAYS USD5"
+            txt = await grab(f"https://www.nomadesim.com/en/{slug}-esim")
+            n = 0
+            for m in re.finditer(r"([\d.]+\s*GB|Unlimited)\s+For\s+(\d+)\s*DAYS?\s+USD\s*([\d.]+)", txt, re.I):
+                rows.append({"date": today, "competitor": "Nomad", "country": country,
+                             "data": norm_data(m.group(1)), "days": int(m.group(2)),
+                             "price_usd": float(m.group(3)),
+                             "source_url": f"https://www.nomadesim.com/en/{slug}-esim"})
+                n += 1
+            # SAILY: "1 GB 7 days US$3.99"
+            txt = await grab(f"https://saily.com/esim-{slug}/")
+            s = 0
+            for m in re.finditer(r"([\d.]+)\s*GB\s+(\d+)\s*days?\s+US\$\s*([\d.]+)", txt, re.I):
+                rows.append({"date": today, "competitor": "Saily", "country": country,
+                             "data": f"{m.group(1)} GB", "days": int(m.group(2)),
+                             "price_usd": float(m.group(3)),
+                             "source_url": f"https://saily.com/esim-{slug}/"})
+                s += 1
+            print(f"  {country:16} Nomad={n} Saily={s}")
+        await browser.close()
+
+    # dedup
+    seen, uniq = set(), []
+    for r in rows:
+        k = (r["competitor"], r["country"], r["data"], r["days"], r["price_usd"])
+        if k not in seen:
+            seen.add(k)
+            uniq.append(r)
+    _merge_into_dataset(uniq, today)
+    print(f"\nJS collected {len(uniq)} rows "
+          f"(Nomad {sum(1 for r in uniq if r['competitor']=='Nomad')}, "
+          f"Saily {sum(1 for r in uniq if r['competitor']=='Saily')})")
+
+
+def _merge_into_dataset(js_rows, today):
+    """Merge JS-collected competitors into today's prices CSV + latest/, then
+    rebuild the dashboard and history."""
+    import csv
+    import glob
+    fields = ["date", "competitor", "country", "data", "days", "price_usd", "source_url"]
+    labels = sorted(set(r["competitor"] for r in js_rows))
+    base = os.path.join(HERE, "data", f"prices_{today}.csv")
+    existing = []
+    if os.path.exists(base):
+        existing = [r for r in csv.DictReader(open(base)) if r["competitor"] not in labels]
+    else:  # no run today yet — start from most recent snapshot
+        prev = sorted(glob.glob(os.path.join(HERE, "data", "prices_*.csv")))
+        if prev:
+            for r in csv.DictReader(open(prev[-1])):
+                if r["competitor"] not in labels:
+                    r["date"] = today
+                    existing.append(r)
+    merged = existing + [{k: str(r[k]) for k in fields} for r in js_rows]
+    with open(base, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fields)
+        w.writeheader()
+        w.writerows(merged)
+    with open(base.replace(".csv", ".json"), "w") as f:
+        json.dump(merged, f)
+    os.makedirs(os.path.join(HERE, "data", "latest"), exist_ok=True)
+    for lbl in labels:
+        with open(os.path.join(HERE, "data", "latest", lbl + ".json"), "w") as f:
+            json.dump([r for r in js_rows if r["competitor"] == lbl], f)
+    import subprocess  # trusted fixed args (no user input) — rebuild outputs
+    subprocess.run(["python3", "build_dashboard.py"], cwd=HERE, check=False)
+    subprocess.run(["python3", "build_history.py"], cwd=HERE, check=False)
+
+
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "discover"
     if mode == "discover":
         asyncio.run(discover())
     elif mode == "probe":
         asyncio.run(probe())
+    elif mode == "collect":
+        asyncio.run(collect())
     else:
-        print("collect mode not implemented yet — run 'discover'/'probe' first")
+        print("unknown mode")
 
 
 if __name__ == "__main__":
