@@ -119,6 +119,7 @@ def main():
         "date": newest, "competitors": competitors, "countries": countries,
         "recs": recs, "total": total, "stale": stale,
         "market": {"perComp": perComp, "leaders": leaders}, "events": events,
+        "beta": ["Nomad", "Saily"],   # newly added, Playwright-scraped — flag as beta
     }, separators=(",", ":"))
 
     html = TEMPLATE.replace("__PAYLOAD__", payload)
@@ -204,6 +205,9 @@ TEMPLATE = r"""<!doctype html>
   .bar{height:7px;border-radius:4px;background:var(--panel2);min-width:70px;overflow:hidden;display:inline-block;vertical-align:middle;width:90px}
   .bar > i{display:block;height:100%;border-radius:4px}
   .win{color:var(--lowtx);font-weight:700}
+  .betatag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
+    color:var(--accent2);background:color-mix(in srgb,var(--accent2) 18%,transparent);
+    border:1px solid var(--accent2);border-radius:5px;padding:0 4px;margin-left:5px;vertical-align:middle;cursor:help}
   .controls{display:flex;gap:13px;flex-wrap:wrap;align-items:flex-end;margin:6px 0 4px}
   .ctl{display:flex;flex-direction:column}
   label{color:var(--muted);font-size:11.5px;margin-bottom:5px}
@@ -387,6 +391,7 @@ const T = {
   s_events:"Upcoming Events", s_events_t:"Big global events (World-Cup scale) that trigger event-specific eSIM packages. Prices are re-collected daily from 7 days before each event. Click a card to jump to that country's prices.",
   ev_2026:"2026 — upcoming", ev_2027:"2027 — upcoming", ev_left:"days left", ev_ongoing:"ONGOING", ev_approx:"approx.",
   tab_overview:"Overview", tab_country:"By Country", tab_trends:"Trends", tab_events:"Events",
+  beta_t:"Newly added (auto-scraped in beta) — may contain errors",
   cd_next:"Next event", cd_ongoing:"happening now", cd_d:"d", cd_h:"h", cd_m:"m", cd_s:"s",
   s_trends:"Price Trends", s_trends_t:"How a package's price changes over time — one point per weekly snapshot. Pick a country and a package to see every competitor's line.",
   tr_plan:"Package (data · days)", tr_note_build:"Trends build up over time — one point per weekly run; more points appear each week.", tr_note_pages:"Trends load on the live (Pages) URL — history is fetched there.", tr_nodata:"No history for this selection yet.",
@@ -434,6 +439,7 @@ const T = {
   s_events:"Yaklaşan Etkinlikler", s_events_t:"Etkinliğe özel eSIM paketlerini tetikleyen büyük küresel organizasyonlar (Dünya Kupası ölçeğinde). Her etkinliğe 7 gün kala fiyatlar günlük yeniden toplanır. Karta tıkla → o ülkenin fiyatlarına git.",
   ev_2026:"2026 — yaklaşan", ev_2027:"2027 — yaklaşan", ev_left:"gün kaldı", ev_ongoing:"SÜRÜYOR", ev_approx:"yaklaşık",
   tab_overview:"Genel Bakış", tab_country:"Ülke", tab_trends:"Trendler", tab_events:"Etkinlikler",
+  beta_t:"Yeni eklendi (beta, otomatik çekiliyor) — hata olabilir",
   cd_next:"Sonraki etkinlik", cd_ongoing:"şu an sürüyor", cd_d:"g", cd_h:"s", cd_m:"dk", cd_s:"sn",
   s_trends:"Fiyat Trendi", s_trends_t:"Bir paketin fiyatının zaman içinde nasıl değiştiği — her haftalık anlık görüntü bir nokta. Ülke ve paket seç, her rakibin çizgisini gör.",
   tr_plan:"Paket (veri · gün)", tr_note_build:"Trend zamanla dolar — her haftalık çalışmada bir nokta; her hafta yeni nokta eklenir.", tr_note_pages:"Trend grafiği canlı (Pages) adresinde yüklenir.", tr_nodata:"Bu seçim için henüz geçmiş yok.",
@@ -459,6 +465,8 @@ addEventListener("scroll",hideTip,true);
 
 function kpi(lab,val,sub,hl,tip){return `<div class="kpi${hl?' hl':''}"><div class="lab">${lab}${tip?qm(tip):""}</div><div class="val">${val}</div><div class="sub2">${sub||""}</div></div>`;}
 function badgeName(b){return tr("badge")[b]||b;}
+const BETA=new Set(D.beta||[]);
+function betaTag(c){return BETA.has(c)?` <span class="betatag" title="${tr("beta_t")}">beta</span>`:"";}
 
 // ---------------- renderers ----------------
 function renderStatic(){
@@ -610,7 +618,7 @@ function renderMarket(){
     const bar=r.avgGB!=null
       ? `<div class="bar"><i style="width:${Math.max(6,r.barPct)}%;background:linear-gradient(90deg,var(--barlo),var(--barhi))"></i></div> <span class="num">${money(r.avgGB)}</span>`
       : `<span class="na">—</span>`;
-    body+=`<tr><td class="l"><b>${r.c}</b></td><td class="num">${r.countries}</td>
+    body+=`<tr><td class="l"><b>${r.c}</b>${betaTag(r.c)}</td><td class="num">${r.countries}</td>
       <td class="num">${r.plans.toLocaleString()}</td><td class="l">${bar}</td>
       <td class="num">${r.unlim7!=null?money(r.unlim7):'<span class=na>—</span>'}</td>
       <td class="num">${r.gbLeader} ${tr("ctry")}</td>
@@ -649,7 +657,7 @@ function renderCountry(){
   ].join("");
   $("#score").innerHTML=active.sort((a,b)=>(stat[a].minRate??1e9)-(stat[b].minRate??1e9)).map(c=>{
     const s=stat[c],ch=s.cheapest;
-    return `<div class="sc"><div class="co">${c} <span class="badge b-${PC[c].badge}" style="font-size:10px">${badgeName(PC[c].badge)}</span></div>
+    return `<div class="sc"><div class="co">${c}${betaTag(c)} <span class="badge b-${PC[c].badge}" style="font-size:10px">${badgeName(PC[c].badge)}</span></div>
       <div class="row"><span>${tr("sc_cheap")}</span><b>${ch?ch.d+(ch.n?"/"+ch.n+tr("w_days")[0]:"")+" · "+money(ch.p):"—"}</b></div>
       <div class="row"><span>${tr("sc_bestgb")}</span><b>${s.minRate!=null?money(s.minRate):"—"}</b></div>
       <div class="row"><span>${tr("sc_7d")}</span><b>${s.unlim7!=null?money(s.unlim7):"—"}</b></div>
@@ -716,7 +724,7 @@ function renderTable(){
   const arw=c=>c===sortCol?`<span class="arw">${sortDir>0?"▲":"▼"}</span>`:"";
   const th=(id,l,cls,tip)=>`<th class="${cls||''}${id===sortCol?' sorted':''}" data-sort="${id}">${l}${tip?qm(tip):""}${arw(id)}</th>`;
   let head="<thead><tr>"+th("data",tr("t_data"),"l",tr("t_data_t"))+th("days",tr("t_days"),"",tr("t_days_t"))
-    +th("rate",tr("t_rate"),"",tr("t_rate_t"))+show.map(c=>th(c,c)).join("")
+    +th("rate",tr("t_rate"),"",tr("t_rate_t"))+show.map(c=>th(c,c+betaTag(c))).join("")
     +`<th class="l">${tr("t_cheap")}${qm(tr("t_cheap_t"))}</th></tr></thead>`;
   let body="<tbody>";
   for(const p of arr){

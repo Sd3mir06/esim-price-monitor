@@ -200,32 +200,47 @@ async def collect():
                         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"))
         page = await ctx.new_page()
 
-        async def grab(url):
-            try:
-                await page.goto(url, wait_until="networkidle", timeout=35000)
-                await page.wait_for_timeout(2000)
-                return await page.inner_text("body")
-            except Exception:
-                return ""
+        async def grab(url, retries=1):
+            """Load a page; retry once if it fails or renders no price (Saily's
+            Cloudflare can challenge under load)."""
+            for attempt in range(retries + 1):
+                try:
+                    await page.goto(url, wait_until="networkidle", timeout=35000)
+                    await page.wait_for_timeout(2200)
+                    txt = await page.inner_text("body")
+                    if PRICE_HINT.search(txt):
+                        return txt
+                except Exception:
+                    pass
+                await page.wait_for_timeout(2500)   # back off then retry
+            return ""
 
         for slug in COUNTRIES:
             country = slug_to_name(slug)
-            # NOMAD: "1 GB For 7 DAYS USD5"
+            # NOMAD: "1 GB For 7 DAYS USD5" — price may be before OR after "USD"
             txt = await grab(f"https://www.nomadesim.com/en/{slug}-esim")
             n = 0
-            for m in re.finditer(r"([\d.]+\s*GB|Unlimited)\s+For\s+(\d+)\s*DAYS?\s+USD\s*([\d.]+)", txt, re.I):
+            for m in re.finditer(
+                    r"([\d.]+\s*GB|Unlimited)\s+For\s+(\d+)\s*DAYS?\s+(?:USD\s*)?([\d.]+)",
+                    txt, re.I):
                 rows.append({"date": today, "competitor": "Nomad", "country": country,
                              "data": norm_data(m.group(1)), "days": int(m.group(2)),
                              "price_usd": float(m.group(3)),
                              "source_url": f"https://www.nomadesim.com/en/{slug}-esim"})
                 n += 1
-            # SAILY: "1 GB 7 days US$3.99"
+            # SAILY: "1 GB 7 days US$3.99" (GB) + "Unlimited 15 days US$45.99"
             txt = await grab(f"https://saily.com/esim-{slug}/")
             s = 0
             for m in re.finditer(r"([\d.]+)\s*GB\s+(\d+)\s*days?\s+US\$\s*([\d.]+)", txt, re.I):
                 rows.append({"date": today, "competitor": "Saily", "country": country,
                              "data": f"{m.group(1)} GB", "days": int(m.group(2)),
                              "price_usd": float(m.group(3)),
+                             "source_url": f"https://saily.com/esim-{slug}/"})
+                s += 1
+            for m in re.finditer(r"Unlimited\s+(\d+)\s*days?\s+US\$\s*([\d.]+)", txt, re.I):
+                rows.append({"date": today, "competitor": "Saily", "country": country,
+                             "data": "Unlimited", "days": int(m.group(1)),
+                             "price_usd": float(m.group(2)),
                              "source_url": f"https://saily.com/esim-{slug}/"})
                 s += 1
             print(f"  {country:16} Nomad={n} Saily={s}")
