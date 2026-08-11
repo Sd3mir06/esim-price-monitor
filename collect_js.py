@@ -124,12 +124,51 @@ async def discover():
     print(f"-> {dst}")
 
 
+CID = "67b6bcade70516276739823d"   # Simly's public customerId (embedded in their frontend)
+PROBE_URLS = [
+    # Simly (glowingbud) — country list + plans (global + per-country param guesses)
+    f"https://api-eu.glowingbud.com/countries?customerId={CID}&currency=USD",
+    f"https://api-eu.glowingbud.com/plans?groupSelected=Global&isCountry=false&currency=USD&customerId={CID}",
+    f"https://api-eu.glowingbud.com/plans?groupSelected=United States&isCountry=true&currency=USD&customerId={CID}",
+    f"https://api-eu.glowingbud.com/plans?groupSelected=US&isCountry=true&currency=USD&customerId={CID}",
+    f"https://api-eu.glowingbud.com/plans?country=US&currency=USD&customerId={CID}",
+    # Nomad product API — country list + product/plans endpoint guesses
+    "https://api.getnomad.app/product/api/v3/product/get_countries",
+    "https://api.getnomad.app/product/api/v3/product/get_products?country=US",
+    "https://api.getnomad.app/product/api/v3/product/get_products?countryCode=US",
+    "https://api.getnomad.app/product/api/v3/product/products?country=US",
+    "https://api.getnomad.app/product/api/v3/product/get_country_products?country=US",
+]
+
+
+async def probe():
+    from playwright.async_api import async_playwright
+    out = []
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        ctx = await browser.new_context()
+        for u in PROBE_URLS:
+            try:
+                r = await ctx.request.get(u, timeout=25000)
+                body = await r.text()
+                out.append({"url": u, "status": r.status, "len": len(body),
+                            "body": body[:2200]})
+            except Exception as e:
+                out.append({"url": u, "err": str(e)[:150]})
+        await browser.close()
+    json.dump(out, open(os.path.join(HERE, "data", "js_probe.json"), "w"), indent=1)
+    for o in out:
+        print(f"[{o.get('status','ERR')}] len={o.get('len','?')} {o['url'][:95]}")
+
+
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "discover"
     if mode == "discover":
         asyncio.run(discover())
+    elif mode == "probe":
+        asyncio.run(probe())
     else:
-        print("collect mode not implemented yet — run 'discover' first and build extractors")
+        print("collect mode not implemented yet — run 'discover'/'probe' first")
 
 
 if __name__ == "__main__":
