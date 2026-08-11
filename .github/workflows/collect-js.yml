@@ -1,0 +1,49 @@
+name: eSIM JS collector (Playwright)
+
+# Headless-browser collector for the JavaScript-based competitors
+# (Nomad, Saily, Yesim, Simly). Manual for now — used to DISCOVER each site's
+# structure in CI (where the network reaches these hosts), then to collect.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "discover | collect"
+        default: "discover"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: esim-collect-js
+  cancel-in-progress: false
+
+jobs:
+  collect-js:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Playwright + Chromium
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Run JS collector
+        env:
+          MODE: ${{ github.event.inputs.mode }}
+        run: |
+          case "$MODE" in discover|collect) ;; *) MODE=discover ;; esac  # validate/allowlist
+          python3 collect_js.py "$MODE"
+      - name: Commit results
+        run: |
+          git config user.name  "esim-price-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "js-collector run $(date -u +%F)"
+            git push
+          fi
