@@ -13568,8 +13568,16 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Nomad,United States,3 GB,30,8.0,https://www.nomadesim.com/en/united-states-esim
 2026-08-11,Nomad,United States,5 GB,30,12.0,https://www.nomadesim.com/en/united-states-esim
 2026-08-11,Nomad,United States,10 GB,30,20.0,https://www.nomadesim.com/en/united-states-esim
+2026-08-11,Nomad,United States,20 GB,30,38.0,https://www.nomadesim.com/en/united-states-esim
+2026-08-11,Nomad,United States,50 GB,30,52.0,https://www.nomadesim.com/en/united-states-esim
 2026-08-11,Nomad,United States,75 GB,180,89.0,https://www.nomadesim.com/en/united-states-esim
 2026-08-11,Nomad,United States,100 GB,365,120.0,https://www.nomadesim.com/en/united-states-esim
+2026-08-11,Saily,United States,1 GB,7,3.99,https://saily.com/esim-united-states/
+2026-08-11,Saily,United States,3 GB,30,8.99,https://saily.com/esim-united-states/
+2026-08-11,Saily,United States,5 GB,30,13.99,https://saily.com/esim-united-states/
+2026-08-11,Saily,United States,10 GB,30,22.99,https://saily.com/esim-united-states/
+2026-08-11,Saily,United States,20 GB,30,36.99,https://saily.com/esim-united-states/
+2026-08-11,Saily,United States,Unlimited,15,45.99,https://saily.com/esim-united-states/
 2026-08-11,Nomad,Canada,Unlimited,3,18.0,https://www.nomadesim.com/en/canada-esim
 2026-08-11,Nomad,Canada,Unlimited,5,25.0,https://www.nomadesim.com/en/canada-esim
 2026-08-11,Nomad,Canada,Unlimited,7,30.0,https://www.nomadesim.com/en/canada-esim
@@ -13585,6 +13593,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Saily,Canada,5 GB,30,17.99,https://saily.com/esim-canada/
 2026-08-11,Saily,Canada,10 GB,30,30.99,https://saily.com/esim-canada/
 2026-08-11,Saily,Canada,20 GB,30,43.99,https://saily.com/esim-canada/
+2026-08-11,Saily,Canada,Unlimited,15,43.99,https://saily.com/esim-canada/
 2026-08-11,Nomad,Mexico,Unlimited,3,10.0,https://www.nomadesim.com/en/mexico-esim
 2026-08-11,Nomad,Mexico,Unlimited,5,17.0,https://www.nomadesim.com/en/mexico-esim
 2026-08-11,Nomad,Mexico,Unlimited,7,22.0,https://www.nomadesim.com/en/mexico-esim
@@ -13612,6 +13621,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Saily,Brazil,5 GB,30,13.99,https://saily.com/esim-brazil/
 2026-08-11,Saily,Brazil,10 GB,30,24.99,https://saily.com/esim-brazil/
 2026-08-11,Saily,Brazil,20 GB,30,39.99,https://saily.com/esim-brazil/
+2026-08-11,Saily,Brazil,Unlimited,15,48.99,https://saily.com/esim-brazil/
 2026-08-11,Nomad,Argentina,1 GB,7,5.0,https://www.nomadesim.com/en/argentina-esim
 2026-08-11,Nomad,Argentina,3 GB,30,9.5,https://www.nomadesim.com/en/argentina-esim
 2026-08-11,Nomad,Argentina,5 GB,30,16.0,https://www.nomadesim.com/en/argentina-esim
@@ -13732,6 +13742,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Saily,Italy,5 GB,30,12.99,https://saily.com/esim-italy/
 2026-08-11,Saily,Italy,10 GB,30,20.99,https://saily.com/esim-italy/
 2026-08-11,Saily,Italy,20 GB,30,28.99,https://saily.com/esim-italy/
+2026-08-11,Saily,Italy,Unlimited,15,43.99,https://saily.com/esim-italy/
 2026-08-11,Nomad,Portugal,Unlimited,3,11.0,https://www.nomadesim.com/en/portugal-esim
 2026-08-11,Nomad,Portugal,Unlimited,5,18.0,https://www.nomadesim.com/en/portugal-esim
 2026-08-11,Nomad,Portugal,Unlimited,7,25.0,https://www.nomadesim.com/en/portugal-esim
@@ -13792,6 +13803,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Saily,Switzerland,5 GB,30,13.99,https://saily.com/esim-switzerland/
 2026-08-11,Saily,Switzerland,10 GB,30,22.99,https://saily.com/esim-switzerland/
 2026-08-11,Saily,Switzerland,20 GB,30,36.99,https://saily.com/esim-switzerland/
+2026-08-11,Saily,Switzerland,Unlimited,15,45.99,https://saily.com/esim-switzerland/
 2026-08-11,Nomad,Austria,Unlimited,3,11.0,https://www.nomadesim.com/en/austria-esim
 2026-08-11,Nomad,Austria,Unlimited,5,18.0,https://www.nomadesim.com/en/austria-esim
 2026-08-11,Nomad,Austria,Unlimited,7,25.0,https://www.nomadesim.com/en/austria-esim
@@ -13844,6 +13856,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Nomad,Poland,1 GB,7,4.5,https://www.nomadesim.com/en/poland-esim
 2026-08-11,Nomad,Poland,3 GB,30,9.0,https://www.nomadesim.com/en/poland-esim
 2026-08-11,Nomad,Poland,5 GB,30,12.5,https://www.nomadesim.com/en/poland-esim
+2026-08-11,Nomad,Poland,10 GB,30,25.0,https://www.nomadesim.com/en/poland-esim
 2026-08-11,Nomad,Poland,20 GB,30,19.0,https://www.nomadesim.com/en/poland-esim
 2026-08-11,Nomad,Poland,50 GB,30,45.0,https://www.nomadesim.com/en/poland-esim
 2026-08-11,Saily,Poland,1 GB,7,4.49,https://saily.com/esim-poland/
@@ -13958,6 +13971,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Nomad,Turkey,Unlimited,10,28.0,https://www.nomadesim.com/en/turkey-esim
 2026-08-11,Nomad,Turkey,1 GB,7,4.0,https://www.nomadesim.com/en/turkey-esim
 2026-08-11,Nomad,Turkey,3 GB,30,6.0,https://www.nomadesim.com/en/turkey-esim
+2026-08-11,Nomad,Turkey,5 GB,30,15.0,https://www.nomadesim.com/en/turkey-esim
 2026-08-11,Nomad,Turkey,10 GB,30,13.0,https://www.nomadesim.com/en/turkey-esim
 2026-08-11,Nomad,Turkey,20 GB,30,20.0,https://www.nomadesim.com/en/turkey-esim
 2026-08-11,Nomad,Turkey,50 GB,30,31.0,https://www.nomadesim.com/en/turkey-esim
@@ -13981,6 +13995,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Saily,Japan,5 GB,30,10.99,https://saily.com/esim-japan/
 2026-08-11,Saily,Japan,10 GB,30,17.99,https://saily.com/esim-japan/
 2026-08-11,Saily,Japan,20 GB,30,24.99,https://saily.com/esim-japan/
+2026-08-11,Saily,Japan,Unlimited,15,48.99,https://saily.com/esim-japan/
 2026-08-11,Nomad,South Korea,Unlimited,3,11.0,https://www.nomadesim.com/en/south-korea-esim
 2026-08-11,Nomad,South Korea,Unlimited,5,18.0,https://www.nomadesim.com/en/south-korea-esim
 2026-08-11,Nomad,South Korea,Unlimited,7,25.0,https://www.nomadesim.com/en/south-korea-esim
@@ -13988,6 +14003,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Nomad,South Korea,1 GB,7,4.0,https://www.nomadesim.com/en/south-korea-esim
 2026-08-11,Nomad,South Korea,3 GB,30,8.0,https://www.nomadesim.com/en/south-korea-esim
 2026-08-11,Nomad,South Korea,5 GB,30,10.0,https://www.nomadesim.com/en/south-korea-esim
+2026-08-11,Nomad,South Korea,10 GB,30,20.0,https://www.nomadesim.com/en/south-korea-esim
 2026-08-11,Nomad,South Korea,20 GB,30,28.0,https://www.nomadesim.com/en/south-korea-esim
 2026-08-11,Nomad,South Korea,50 GB,30,39.0,https://www.nomadesim.com/en/south-korea-esim
 2026-08-11,Saily,South Korea,1 GB,7,3.99,https://saily.com/esim-south-korea/
@@ -14002,6 +14018,8 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Nomad,China,1 GB,7,4.0,https://www.nomadesim.com/en/china-esim
 2026-08-11,Nomad,China,3 GB,30,9.0,https://www.nomadesim.com/en/china-esim
 2026-08-11,Nomad,China,5 GB,30,13.5,https://www.nomadesim.com/en/china-esim
+2026-08-11,Nomad,China,10 GB,30,22.0,https://www.nomadesim.com/en/china-esim
+2026-08-11,Nomad,China,20 GB,30,30.0,https://www.nomadesim.com/en/china-esim
 2026-08-11,Nomad,China,50 GB,45,35.0,https://www.nomadesim.com/en/china-esim
 2026-08-11,Saily,China,1 GB,7,4.49,https://saily.com/esim-china/
 2026-08-11,Saily,China,3 GB,30,10.99,https://saily.com/esim-china/
@@ -14036,6 +14054,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Saily,Taiwan,5 GB,30,11.99,https://saily.com/esim-taiwan/
 2026-08-11,Saily,Taiwan,10 GB,30,19.99,https://saily.com/esim-taiwan/
 2026-08-11,Saily,Taiwan,20 GB,30,30.99,https://saily.com/esim-taiwan/
+2026-08-11,Nomad,Thailand,Unlimited,10,20.0,https://www.nomadesim.com/en/thailand-esim
 2026-08-11,Nomad,Thailand,Unlimited,15,21.0,https://www.nomadesim.com/en/thailand-esim
 2026-08-11,Nomad,Thailand,Unlimited,30,33.0,https://www.nomadesim.com/en/thailand-esim
 2026-08-11,Nomad,Thailand,1 GB,7,5.0,https://www.nomadesim.com/en/thailand-esim
@@ -14048,10 +14067,12 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Saily,Thailand,5 GB,30,7.99,https://saily.com/esim-thailand/
 2026-08-11,Saily,Thailand,10 GB,30,10.99,https://saily.com/esim-thailand/
 2026-08-11,Saily,Thailand,20 GB,30,19.99,https://saily.com/esim-thailand/
+2026-08-11,Saily,Thailand,Unlimited,15,38.99,https://saily.com/esim-thailand/
 2026-08-11,Nomad,Vietnam,Unlimited,5,18.0,https://www.nomadesim.com/en/vietnam-esim
 2026-08-11,Nomad,Vietnam,Unlimited,10,33.0,https://www.nomadesim.com/en/vietnam-esim
 2026-08-11,Nomad,Vietnam,3 GB,30,8.0,https://www.nomadesim.com/en/vietnam-esim
 2026-08-11,Nomad,Vietnam,5 GB,30,10.0,https://www.nomadesim.com/en/vietnam-esim
+2026-08-11,Nomad,Vietnam,10 GB,30,19.0,https://www.nomadesim.com/en/vietnam-esim
 2026-08-11,Nomad,Vietnam,50 GB,30,39.0,https://www.nomadesim.com/en/vietnam-esim
 2026-08-11,Saily,Vietnam,1 GB,7,3.99,https://saily.com/esim-vietnam/
 2026-08-11,Saily,Vietnam,3 GB,30,7.99,https://saily.com/esim-vietnam/
@@ -14063,6 +14084,8 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Nomad,Singapore,1 GB,7,4.0,https://www.nomadesim.com/en/singapore-esim
 2026-08-11,Nomad,Singapore,3 GB,30,6.5,https://www.nomadesim.com/en/singapore-esim
 2026-08-11,Nomad,Singapore,5 GB,30,9.0,https://www.nomadesim.com/en/singapore-esim
+2026-08-11,Nomad,Singapore,10 GB,30,16.0,https://www.nomadesim.com/en/singapore-esim
+2026-08-11,Nomad,Singapore,20 GB,30,25.0,https://www.nomadesim.com/en/singapore-esim
 2026-08-11,Nomad,Singapore,50 GB,30,31.0,https://www.nomadesim.com/en/singapore-esim
 2026-08-11,Saily,Singapore,1 GB,7,3.99,https://saily.com/esim-singapore/
 2026-08-11,Saily,Singapore,3 GB,30,6.99,https://saily.com/esim-singapore/
@@ -14074,6 +14097,7 @@ date,competitor,country,data,days,price_usd,source_url
 2026-08-11,Nomad,Malaysia,1 GB,7,5.0,https://www.nomadesim.com/en/malaysia-esim
 2026-08-11,Nomad,Malaysia,3 GB,30,7.0,https://www.nomadesim.com/en/malaysia-esim
 2026-08-11,Nomad,Malaysia,5 GB,30,11.0,https://www.nomadesim.com/en/malaysia-esim
+2026-08-11,Nomad,Malaysia,10 GB,30,19.0,https://www.nomadesim.com/en/malaysia-esim
 2026-08-11,Nomad,Malaysia,20 GB,45,25.0,https://www.nomadesim.com/en/malaysia-esim
 2026-08-11,Saily,Malaysia,1 GB,7,3.99,https://saily.com/esim-malaysia/
 2026-08-11,Saily,Malaysia,3 GB,30,8.99,https://saily.com/esim-malaysia/
