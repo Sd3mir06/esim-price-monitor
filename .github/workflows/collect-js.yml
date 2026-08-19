@@ -36,7 +36,7 @@ jobs:
         env:
           MODE: ${{ github.event.inputs.mode }}
         run: |
-          case "$MODE" in discover|probe|collect) ;; *) MODE=collect ;; esac  # scheduled runs -> collect
+          case "$MODE" in discover|probe|collect|priceaudit) ;; *) MODE=collect ;; esac  # scheduled runs -> collect
           python3 collect_js.py "$MODE"
       - name: Commit results
         run: |

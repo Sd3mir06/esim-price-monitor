@@ -293,6 +293,53 @@ def _merge_into_dataset(js_rows, today):
     subprocess.run(["python3", "build_history.py"], cwd=HERE, check=False)
 
 
+AUDIT_PAGES = {
+    "Airalo": "https://www.airalo.com/united-states-esim",
+    "Ubigi": "https://cellulardata.ubigi.com/data-plans-and-coverage/ubigi-esim-data-plans/?destination=USA",
+    "Holafly": "https://esim.holafly.com/esim-usa/",
+    "esim.io": "https://esim.io/destinations/esim-united-states-of-america",
+    "PocketeSIM": "https://www.pocketesim.com/en/esim/united-states",
+    "Nomad": "https://www.nomadesim.com/en/united-states-esim",
+    "Saily": "https://saily.com/esim-united-states/",
+}
+DISCOUNT_KW = ["compare_at", "original", "discount", "old-price", "oldprice",
+               "line-through", "strike", "was ", "regular", "sale", "% off", "promo",
+               "crossed", "net_price", "netPrice", "originalPrice", "salePrice"]
+
+
+async def priceaudit():
+    """Dump each competitor's US-page price structure to spot discounted vs list
+    prices (visible price vs what our parser reads, plus struck-through originals)."""
+    from playwright.async_api import async_playwright
+    out = {}
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        ctx = await browser.new_context(
+            user_agent=("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"))
+        page = await ctx.new_page()
+        for name, url in AUDIT_PAGES.items():
+            rec = {"url": url}
+            try:
+                await page.goto(url, wait_until="networkidle", timeout=40000)
+                await page.wait_for_timeout(2500)
+                html = await page.content()
+                rec["discount_kw"] = {k: html.lower().count(k.lower())
+                                      for k in DISCOUNT_KW if html.lower().count(k.lower())}
+                # raw HTML around the first few price markers
+                snips = []
+                for m in list(re.finditer(r'US?\$\s?\d|USD\s?\d|data-price="', html))[:4]:
+                    i = m.start()
+                    snips.append(re.sub(r"\s+", " ", html[max(0, i-260):i+180]))
+                rec["snippets"] = snips
+            except Exception as e:
+                rec["error"] = str(e)[:150]
+            out[name] = rec
+            print(f"  {name}: discount-kw={list(rec.get('discount_kw',{}).keys())}")
+        await browser.close()
+    json.dump(out, open(os.path.join(HERE, "data", "price_audit.json"), "w"), indent=1)
+
+
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "discover"
     if mode == "discover":
@@ -301,6 +348,8 @@ def main():
         asyncio.run(probe())
     elif mode == "collect":
         asyncio.run(collect())
+    elif mode == "priceaudit":
+        asyncio.run(priceaudit())
     else:
         print("unknown mode")
 
