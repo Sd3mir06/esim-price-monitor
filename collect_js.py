@@ -332,10 +332,18 @@ async def priceaudit():
                 rec["discount_kw"] = {k: html.lower().count(k.lower())
                                       for k in DISCOUNT_KW if html.lower().count(k.lower())}
                 snips = []
-                for m in list(re.finditer(r'US?\$\s?\d|USD\s?\d|data-price="', html))[:5]:
+                for m in list(re.finditer(r'US?\$\s?\d|USD\s?\d|data-price="', html))[:3]:
                     i = m.start()
                     snips.append(re.sub(r"\s+", " ", html[max(0, i-280):i+200]))
                 rec["snippets"] = snips
+                # snippets AROUND discount markers (shows original vs sale structure)
+                dsn = []
+                for m in list(re.finditer(
+                        r'originalPrice|line-through|compare_at|"discount|net_price|salePrice|was\s*<',
+                        html, re.I))[:4]:
+                    i = m.start()
+                    dsn.append(re.sub(r"\s+", " ", html[max(0, i-160):i+260]))
+                rec["discount_snippets"] = dsn
             except Exception as e:
                 rec["error"] = str(e)[:150]
             out[name] = rec
