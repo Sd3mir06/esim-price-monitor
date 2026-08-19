@@ -346,6 +346,28 @@ async def priceaudit():
                 rec["discount_snippets"] = dsn
             except Exception as e:
                 rec["error"] = str(e)[:150]
+            # Airalo: resolve a package's full price + promotions from Nuxt blob
+            if name == "Airalo" and not rec.get("error"):
+                try:
+                    import json as _j
+                    blob = re.search(r'id="__NUXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
+                    data = _j.loads(blob.group(1))
+                    def rz(v):
+                        return data[v] if isinstance(v, int) and 0 <= v < len(data) else v
+                    for pk in data:
+                        if isinstance(pk, dict) and "is_unlimited" in pk and "price" in pk and "data" in pk:
+                            po = rz(pk["price"])
+                            dump = {"data": rz(pk.get("data")), "day": rz(pk.get("day")),
+                                    "title": rz(pk.get("title")),
+                                    "price_keys": list(po.keys()) if isinstance(po, dict) else str(po),
+                                    "price_resolved": {k: rz(v) for k, v in po.items()
+                                                       if isinstance(rz(v), (str, int, float))} if isinstance(po, dict) else None,
+                                    "promotions": rz(pk.get("promotions")),
+                                    "pkg_keys": list(pk.keys())}
+                            rec["airalo_pkg"] = dump
+                            break
+                except Exception as e:
+                    rec["airalo_pkg_err"] = str(e)[:120]
             out[name] = rec
             print(f"  {name}: discount-kw={list(rec.get('discount_kw',{}).keys())}")
         await browser.close()
