@@ -318,19 +318,23 @@ async def priceaudit():
             user_agent=("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"))
         page = await ctx.new_page()
+        render_sites = {"Nomad", "Saily"}   # JS — need rendering; rest are SSR (direct HTTP)
         for name, url in AUDIT_PAGES.items():
             rec = {"url": url}
             try:
-                await page.goto(url, wait_until="networkidle", timeout=40000)
-                await page.wait_for_timeout(2500)
-                html = await page.content()
+                if name in render_sites:
+                    await page.goto(url, wait_until="domcontentloaded", timeout=25000)
+                    await page.wait_for_timeout(3500)
+                    html = await page.content()
+                else:
+                    r = await ctx.request.get(url, timeout=25000)
+                    html = await r.text()
                 rec["discount_kw"] = {k: html.lower().count(k.lower())
                                       for k in DISCOUNT_KW if html.lower().count(k.lower())}
-                # raw HTML around the first few price markers
                 snips = []
-                for m in list(re.finditer(r'US?\$\s?\d|USD\s?\d|data-price="', html))[:4]:
+                for m in list(re.finditer(r'US?\$\s?\d|USD\s?\d|data-price="', html))[:5]:
                     i = m.start()
-                    snips.append(re.sub(r"\s+", " ", html[max(0, i-260):i+180]))
+                    snips.append(re.sub(r"\s+", " ", html[max(0, i-280):i+200]))
                 rec["snippets"] = snips
             except Exception as e:
                 rec["error"] = str(e)[:150]
