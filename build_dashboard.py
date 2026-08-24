@@ -310,11 +310,7 @@ TEMPLATE = r"""<!doctype html>
         <select id="country"></select>
       </div>
     </div>
-    <div class="kpis" id="ckpis" style="margin-top:6px"></div>
-    <div class="scoregrid" id="score" style="margin-top:12px"></div>
-
-    <h2 id="h2-detail"></h2>
-    <div class="controls">
+    <div class="controls" style="margin-top:4px">
       <div class="ctl"><label id="lab-size"></label>
         <select id="size" multiple size="4"></select></div>
       <button class="reset" id="reset"></button>
@@ -493,7 +489,6 @@ function renderStatic(){
   $("#h2-market").innerHTML=tr("s_market")+qm(tr("s_market_t"));
   $("#h2-pos").innerHTML=tr("s_pos")+qm(tr("s_pos_t"));
   $("#h2-country").innerHTML=tr("s_country")+qm(tr("s_country_t"));
-  $("#h2-detail").innerHTML=tr("s_detail")+qm(tr("s_detail_t"));
   $("#lab-country").textContent=tr("c_country"); $("#search").placeholder=tr("c_search");
   $("#lab-size").textContent=tr("f_size"); $("#lab-days").textContent=tr("f_days"); $("#reset").textContent=tr("f_reset");
   $("#lab-cochips").textContent=tr("f_cochips"); $("#lab-sizechips").textContent=tr("f_sizechips");
@@ -651,6 +646,7 @@ function fillCountry(f){
 function cRecs(){return D.recs.filter(r=>r.c===country);}
 
 function renderCountry(){
+  if(!$("#ckpis")||!$("#score"))return;   // summary removed
   const rows=cRecs(); const stat={};
   for(const r of rows){
     const s=stat[r.co]=stat[r.co]||{plans:0,minRate:null,cheapest:null,unlim7:null};
@@ -774,7 +770,7 @@ function renderTable(){
     +(sizes.size?" · "+[...sizes].join(", "):"")+(days!=="All"?" · "+days+tr("w_days")[0]:"");
 }
 
-function refreshCountry(){fillSize();fillDays();renderCountry();renderTable();}
+function refreshCountry(){fillSize();fillDays();renderTable();}
 function renderAll(){renderStatic();renderEvents();tickCountdown();renderMarket();fillCountry($("#search").value);fillCoChips();refreshCountry();if(HIST){fillTrendPlans();drawTrend();}}
 
 $("#langtog").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
