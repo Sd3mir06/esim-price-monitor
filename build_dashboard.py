@@ -231,6 +231,17 @@ TEMPLATE = r"""<!doctype html>
   .deal .dco{font-size:14.5px;font-weight:800;color:var(--lowtx);margin-top:1px}
   .deal .dp{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.4px}
   .deal .dm{font-size:11.5px;color:var(--muted);margin-top:1px}
+  .deal .dhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+  .deal .davg{font-size:11px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .deal .drow{display:flex;align-items:center;gap:8px;font-size:13px;padding:3px 0;border-top:1px solid var(--line)}
+  .deal .drow:first-of-type{border-top:0}
+  .deal .drank{width:16px;height:16px;flex:none;border-radius:50%;background:var(--panel2);color:var(--muted);
+    font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .deal .drow:first-of-type .drank{background:var(--lowtx);color:#08130c}
+  .deal .dco2{flex:1;font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .deal .dval{font-weight:800;font-variant-numeric:tabular-nums}
+  .deal .drow:first-of-type .dval{color:var(--lowtx)}
+  #daychips .chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
   .scoregrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:11px}
   .sc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
   .sc .co{font-weight:800;font-size:15px}
@@ -306,13 +317,14 @@ TEMPLATE = r"""<!doctype html>
     <div class="controls">
       <div class="ctl"><label id="lab-size"></label>
         <select id="size" multiple size="4"></select></div>
-      <div class="ctl"><label id="lab-days"></label><select id="days"></select></div>
       <button class="reset" id="reset"></button>
     </div>
     <label class="glab" id="lab-cochips"></label>
     <div class="chips" id="cochips"></div>
     <label class="glab" id="lab-sizechips"></label>
     <div class="chips" id="sizechips"></div>
+    <label class="glab" id="lab-days"></label>
+    <div class="chips" id="daychips"></div>
     <div id="dealwrap"></div>
     <div class="card scroll"><table id="tbl"></table></div>
     <div class="count" id="count"></div>
@@ -377,14 +389,15 @@ const T = {
   ck_range:"Price range", ck_range_t:"The lowest and highest package price in this country (all sizes/durations included).",
   sc_cheap:"Cheapest plan", sc_bestgb:"Best $/GB", sc_7d:"7d unlimited", sc_plans:"Plans",
   // deals + table
-  d_label:"🏆 Best deal — by data size (cheapest across all durations, auto-updates with filters)",
+  d_label:"🏆 Best deals — top 3 by data size (across all durations; unlimited shown per-day)",
+  avg:"avg", per_day:"per-day",
   d_suffix:"· cheapest", no_exp:"no expiry", w_days:"days",
   f_size:"Data size (⌘/Ctrl-click)", f_days:"Validity (days)", f_reset:"Reset",
   f_cochips:"Competitors (click to show/hide)", f_sizechips:"Data size (multi)",
   opt_all:"All", opt_novalid:"No fixed validity",
   t_data:"Data", t_data_t:"Package data amount: GB amount or Unlimited. Click header → sort by size.",
   t_days:"Days", t_days_t:"Package validity in days. '—' = no fixed validity stated (e.g. some Breeze GB plans).",
-  t_rate:"$/GB", t_rate_t:"Unit-data cost = the CHEAPEST price in this row ÷ GB. GB plans only; '—' for unlimited. Click header → sort by best unit price.",
+  t_rate:"$/GB · /day", t_rate_t:"Unit cost of the CHEAPEST price in this row: GB plans → price ÷ GB; Unlimited → price ÷ days (per-day). Click header → sort by best unit cost.",
   t_cheap:"🏆 Cheapest", t_cheap_t:"The cheapest provider and price in THIS row (same data size + same days). For the absolute cheapest per size regardless of days, use the 'Best deal by data size' panel above.",
   t_empty:"No plans match these filters.", firms:"firms", plan_rows:"plan",
   leg_cheaprow:"cheapest in row", leg_exp:"most expensive", leg_gb:"$/GB = price ÷ GB (GB plans only)", leg_trophy:"🏆 = cheapest firm in that row",
@@ -425,14 +438,15 @@ const T = {
   ck_comp:"Buradaki firmalar", ck_comp_s:"aktif", ck_comp_t:"Seçili ülkede en az bir paketi olan firma sayısı.",
   ck_range:"Fiyat aralığı", ck_range_t:"Bu ülkedeki tüm paketlerin en düşük ve en yüksek fiyatı (tüm boyut/süreler dahil).",
   sc_cheap:"En ucuz plan", sc_bestgb:"En iyi $/GB", sc_7d:"7g sınırsız", sc_plans:"Plan sayısı",
-  d_label:"🏆 En uygun — boyuta göre (gün fark etmeksizin, seçili filtreye göre otomatik)",
+  d_label:"🏆 En uygun — boyuta göre ilk 3 (gün fark etmeksizin; sınırsız günlük gösterilir)",
+  avg:"ort.", per_day:"günlük",
   d_suffix:"· en uygun", no_exp:"süresiz", w_days:"gün",
   f_size:"Veri boyutu (⌘/Ctrl-tıkla)", f_days:"Süre (gün)", f_reset:"Sıfırla",
   f_cochips:"Rakipler (tıkla: göster/gizle)", f_sizechips:"Veri boyutu (çoklu)",
   opt_all:"Tümü", opt_novalid:"Sabit süre yok",
   t_data:"Veri", t_data_t:"Paketin veri miktarı: GB miktarı veya Sınırsız. Başlığa tıkla → boyuta göre sırala.",
   t_days:"Gün", t_days_t:"Paketin geçerlilik süresi (gün). '—' = sabit süre belirtilmemiş (ör. bazı Breeze GB planları).",
-  t_rate:"$/GB", t_rate_t:"Birim veri maliyeti = bu satırdaki EN UCUZ fiyat ÷ GB. Sadece GB planları; sınırsızlarda '—'. Başlığa tıkla → en uygun birim fiyata göre sırala.",
+  t_rate:"$/GB · /gün", t_rate_t:"Bu satırdaki EN UCUZ fiyatın birim maliyeti: GB planları → fiyat ÷ GB; Sınırsız → fiyat ÷ gün (günlük). Başlığa tıkla → en uygun birim maliyete göre sırala.",
   t_cheap:"🏆 En ucuz", t_cheap_t:"Bu SATIRIN (aynı veri boyutu + aynı gün) en ucuz firması ve fiyatı. Boyuta göre gün-bağımsız MUTLAK en ucuz için üstteki 'En uygun — boyuta göre' paneline bak.",
   t_empty:"Bu filtrelere uyan plan yok.", firms:"firma", plan_rows:"plan",
   leg_cheaprow:"satırda en ucuz", leg_exp:"en pahalı", leg_gb:"$/GB = fiyat ÷ GB (sadece GB planları)", leg_trophy:"🏆 = o satırdaki en ucuz firma",
@@ -680,22 +694,37 @@ function fillSize(){
   if(cur.join("|")!==avail.join("|")) el.innerHTML=avail.map(s=>`<option value="${s}">${s}</option>`).join("");
   for(const o of el.options)o.selected=sizes.has(o.value);
 }
-function fillDays(){
+function fillDays(){   // validity days as clickable chips (single-select)
   let ds=[...new Set(cRecs().filter(sizeMatch).map(r=>r.n))];
   const blank=ds.includes(null); ds=ds.filter(x=>x!=null).sort((a,b)=>a-b);
-  let o=`<option value="All">${tr("opt_all")}</option>`+ds.map(d=>`<option${String(d)===String(days)?" selected":""}>${d}</option>`).join("");
-  if(blank)o+=`<option value="none"${days==="none"?" selected":""}>${tr("opt_novalid")}</option>`;
-  $("#days").innerHTML=o;
   if(days!=="All"&&days!=="none"&&!ds.map(String).includes(String(days)))days="All";
+  let c=`<span class="chip${days==="All"?" on":""}" data-d="All">${tr("opt_all")}</span>`;
+  c+=ds.map(d=>`<span class="chip${String(d)===String(days)?" on":""}" data-d="${d}">${d}${tr("w_days")[0]}</span>`).join("");
+  if(blank)c+=`<span class="chip${days==="none"?" on":""}" data-d="none">${tr("opt_novalid")}</span>`;
+  $("#daychips").innerHTML=c;
 }
 function renderDeals(vis){
+  // per size: each competitor's cheapest offer (metric = total, or per-day for Unlimited)
   const bySize={};
-  for(const r of vis){const b=bySize[r.d]; if(!b||r.p<b.p)bySize[r.d]={co:r.co,p:r.p,n:r.n,g:r.g};}
+  for(const r of vis){
+    const unl=r.d==="Unlimited"&&r.n;
+    const metric=unl?r.p/r.n:r.p;
+    const m=(bySize[r.d]=bySize[r.d]||{});
+    if(!m[r.co]||metric<m[r.co].m) m[r.co]={co:r.co,p:r.p,n:r.n,m:metric};
+  }
   const list=Object.keys(bySize).sort(sizeOrder);
   if(!list.length){$("#dealwrap").innerHTML="";return;}
-  const cards=list.map(s=>{const b=bySize[s];const rate=b.g?" · "+money(b.p/b.g)+"/GB":"";
-    const dur=b.n==null?tr("no_exp"):b.n+" "+tr("w_days");
-    return `<div class="deal"><div class="ds">${s} ${tr("d_suffix")}</div><div class="dco">${b.co}</div><div class="dp">${money(b.p)}</div><div class="dm">${dur}${rate}</div></div>`;}).join("");
+  const cards=list.map(s=>{
+    const unl=s==="Unlimited";
+    const offers=Object.values(bySize[s]).sort((a,b)=>a.m-b.m);
+    const avg=offers.reduce((t,o)=>t+o.m,0)/offers.length;
+    const fmt=o=>unl?money(o.m)+"/"+tr("w_days")[0]:money(o.p);
+    const rows=offers.slice(0,3).map((o,i)=>
+      `<div class="drow"><span class="drank">${i+1}</span><span class="dco2">${o.co}${betaTag(o.co)}</span><span class="dval">${fmt(o)}</span></div>`).join("");
+    const avgTxt=unl?money(avg)+"/"+tr("w_days")[0]:money(avg);
+    return `<div class="deal"><div class="dhead"><span class="ds">${s}${unl?" · "+tr("per_day"):""}</span>`
+      +`<span class="davg">${tr("avg")} ${avgTxt} · ${offers.length}</span></div>${rows}</div>`;
+  }).join("");
   $("#dealwrap").innerHTML=`<label class="glab">${tr("d_label")}</label><div class="deals">${cards}</div>`;
 }
 function minPx(p){return Math.min(...Object.values(p.px));}
@@ -714,7 +743,7 @@ function renderTable(){
     if(sortCol===null)return dfl(a,b);
     if(sortCol==="data")return sizeOrder(a.d,b.d)*sortDir||((a.n||0)-(b.n||0));
     if(sortCol==="days"){const an=a.n==null?1e9:a.n,bn=b.n==null?1e9:b.n;return (an-bn)*sortDir||sizeOrder(a.d,b.d);}
-    if(sortCol==="rate"){const ar=a.g?minPx(a)/a.g:1e9,br=b.g?minPx(b)/b.g:1e9;return (ar-br)*sortDir||dfl(a,b);}
+    if(sortCol==="rate"){const rt=x=>x.g?minPx(x)/x.g:(x.n?minPx(x)/x.n:1e9);return (rt(a)-rt(b))*sortDir||dfl(a,b);}
     const av=a.px[sortCol],bv=b.px[sortCol];
     if(av==null&&bv==null)return dfl(a,b); if(av==null)return 1; if(bv==null)return -1;
     return (av-bv)*sortDir||dfl(a,b);
@@ -733,7 +762,7 @@ function renderTable(){
     const lo=Math.min(...vals),hi=Math.max(...vals);
     const winC=show.find(c=>p.px[c]===lo);
     body+=`<tr><td class="l"><b>${p.d}</b></td><td class="num">${p.n==null?"—":p.n}</td>`
-      +`<td class="num" style="color:var(--muted)">${p.g?money(lo/p.g):"—"}</td>`;
+      +`<td class="num" style="color:var(--muted)">${p.g?money(lo/p.g):(p.n?money(lo/p.n)+"/"+tr("w_days")[0]:"—")}</td>`;
     for(const c of show){const v=p.px[c];
       if(v==null){body+=`<td class="price na">—</td>`;continue;}
       let cls="price"; if(vals.length>1&&v===lo)cls+=" low"; else if(vals.length>1&&v===hi)cls+=" high";
@@ -756,7 +785,7 @@ $("#search").addEventListener("input",e=>{fillCountry(e.target.value);country=$(
 $("#country").addEventListener("change",e=>{country=e.target.value;sizes.clear();days="All";refreshCountry();});
 $("#size").addEventListener("change",e=>{sizes=new Set([...e.target.selectedOptions].map(o=>o.value));days="All";fillSize();fillDays();renderTable();});
 $("#sizechips").addEventListener("click",e=>{if(!e.target.classList.contains("chip"))return;const v=e.target.dataset.v;if(v==="__all")sizes.clear();else sizes.has(v)?sizes.delete(v):sizes.add(v);days="All";fillSize();fillDays();renderTable();});
-$("#days").addEventListener("change",e=>{days=e.target.value;renderTable();});
+$("#daychips").addEventListener("click",e=>{if(!e.target.classList.contains("chip"))return;days=e.target.dataset.d;fillDays();renderTable();});
 $("#cochips").addEventListener("click",e=>{if(!e.target.classList.contains("chip"))return;const c=e.target.dataset.c;hidden.has(c)?hidden.delete(c):hidden.add(c);if(hidden.size>=cos.length)hidden.delete(c);fillCoChips();renderTable();});
 $("#tbl").addEventListener("click",e=>{if(e.target.closest(".qm"))return;const h=e.target.closest("th[data-sort]");if(!h)return;const c=h.dataset.sort;if(sortCol===c)sortDir=-sortDir;else{sortCol=c;sortDir=1;}renderTable();});
 $("#reset").addEventListener("click",()=>{sizes.clear();days="All";hidden.clear();sortCol=null;sortDir=1;fillCoChips();refreshCountry();});
