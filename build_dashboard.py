@@ -240,6 +240,9 @@ TEMPLATE = r"""<!doctype html>
     font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center}
   .deal .drow:first-of-type .drank{background:var(--lowtx);color:#08130c}
   .deal .dco2{flex:1;font-weight:700;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .deal .dsz{flex:none;min-width:46px;font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;font-variant-numeric:tabular-nums}
+  .deal.solo{background:linear-gradient(135deg,var(--panel2),var(--panel));border-style:dashed}
+  .deal.solo .drow:first-of-type{border-top:0}
   .deal .dval{font-weight:800;font-variant-numeric:tabular-nums}
   .deal .drow:first-of-type .dval{color:var(--lowtx)}
   #daychips .chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
@@ -387,7 +390,7 @@ const T = {
   sc_cheap:"Cheapest plan", sc_bestgb:"Best $/GB", sc_7d:"7d unlimited", sc_plans:"Plans",
   // deals + table
   d_label:"🏆 Best deals — top 3 by data size (across all durations; unlimited shown per-day)",
-  avg:"avg", per_day:"per-day",
+  avg:"avg", per_day:"per-day", solo_label:"Single provider", solo_note:"only one seller",
   d_suffix:"· cheapest", no_exp:"no expiry", w_days:"days",
   f_size:"Data size (⌘/Ctrl-click)", f_days:"Validity (days)", f_reset:"Reset",
   f_cochips:"Competitors (click to show/hide)", f_sizechips:"Data size (multi)",
@@ -436,7 +439,7 @@ const T = {
   ck_range:"Fiyat aralığı", ck_range_t:"Bu ülkedeki tüm paketlerin en düşük ve en yüksek fiyatı (tüm boyut/süreler dahil).",
   sc_cheap:"En ucuz plan", sc_bestgb:"En iyi $/GB", sc_7d:"7g sınırsız", sc_plans:"Plan sayısı",
   d_label:"🏆 En uygun — boyuta göre ilk 3 (gün fark etmeksizin; sınırsız günlük gösterilir)",
-  avg:"ort.", per_day:"günlük",
+  avg:"ort.", per_day:"günlük", solo_label:"Tek sağlayıcı", solo_note:"tek satıcı",
   d_suffix:"· en uygun", no_exp:"süresiz", w_days:"gün",
   f_size:"Veri boyutu (⌘/Ctrl-tıkla)", f_days:"Süre (gün)", f_reset:"Sıfırla",
   f_cochips:"Rakipler (tıkla: göster/gizle)", f_sizechips:"Veri boyutu (çoklu)",
@@ -711,18 +714,31 @@ function renderDeals(vis){
   }
   const list=Object.keys(bySize).sort(sizeOrder);
   if(!list.length){$("#dealwrap").innerHTML="";return;}
-  const cards=list.map(s=>{
-    const unl=s==="Unlimited";
+  const day=x=>x+"/"+tr("w_days")[0];
+  // split: sizes with 2+ sellers get their own card; monopoly sizes (1 seller) collapse into one card
+  const multi=[], solo=[];
+  for(const s of list){
     const offers=Object.values(bySize[s]).sort((a,b)=>a.m-b.m);
+    (offers.length>1?multi:solo).push({s,offers});
+  }
+  const cards=multi.map(({s,offers})=>{
+    const unl=s==="Unlimited";
     const avg=offers.reduce((t,o)=>t+o.m,0)/offers.length;
-    const fmt=o=>unl?money(o.m)+"/"+tr("w_days")[0]:money(o.p);
+    const fmt=o=>unl?day(money(o.m)):money(o.p);
     const rows=offers.slice(0,3).map((o,i)=>
       `<div class="drow"><span class="drank">${i+1}</span><span class="dco2">${o.co}${betaTag(o.co)}</span><span class="dval">${fmt(o)}</span></div>`).join("");
-    const avgTxt=unl?money(avg)+"/"+tr("w_days")[0]:money(avg);
+    const avgTxt=unl?day(money(avg)):money(avg);
     return `<div class="deal"><div class="dhead"><span class="ds">${s}${unl?" · "+tr("per_day"):""}</span>`
       +`<span class="davg">${tr("avg")} ${avgTxt} · ${offers.length}</span></div>${rows}</div>`;
-  }).join("");
-  $("#dealwrap").innerHTML=`<label class="glab">${tr("d_label")}</label><div class="deals">${cards}</div>`;
+  });
+  if(solo.length){
+    const rows=solo.map(({s,offers})=>{const o=offers[0];const unl=s==="Unlimited";
+      const val=unl?day(money(o.m)):money(o.p);
+      return `<div class="drow"><span class="dsz">${s}</span><span class="dco2">${o.co}${betaTag(o.co)}</span><span class="dval">${val}</span></div>`;}).join("");
+    cards.push(`<div class="deal solo"><div class="dhead"><span class="ds">${tr("solo_label")}</span>`
+      +`<span class="davg">${tr("solo_note")} · ${solo.length}</span></div>${rows}</div>`);
+  }
+  $("#dealwrap").innerHTML=`<label class="glab">${tr("d_label")}</label><div class="deals">${cards.join("")}</div>`;
 }
 function minPx(p){return Math.min(...Object.values(p.px));}
 function renderTable(){
