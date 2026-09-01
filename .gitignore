@@ -9,3 +9,6 @@ logs/
 
 # macOS
 .DS_Store
+
+# Kâr motoru — maliyet/marj verisi ASLA public olmamalı
+local/
